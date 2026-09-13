@@ -1,0 +1,33 @@
+# Personal Loan Application
+
+**Reference:** {{ application_id }}
+**Received:** {{ received }}
+
+## Applicant
+
+| Field | Value |
+|---|---|
+| Title | {{ title }} |
+| Age band | {{ age_band }} |
+| Employment type | {{ employment }} |
+| Employer | {{ employer_name }} |
+| Time in current role | {{ tenure_months }} months |
+| Postcode district | {{ postcode_district }} |
+
+## Income and outgoings
+
+| Field | Value |
+|---|---|
+| Gross annual income | £{{ "{:,.0f}".format(gross_annual) }} |
+| Income verified | {{ income_verified }} |
+| Existing monthly credit commitments | £{{ "{:,.0f}".format(existing_credit_monthly) }} |
+| Dependants | {{ dependants }} |
+
+## Facility requested
+
+| Field | Value |
+|---|---|
+| Amount | £{{ "{:,.0f}".format(amount) }} |
+| Term | {{ term_months }} months |
+| Stated purpose | {{ purpose | replace("_", " ") }} |
+| Indicative monthly instalment | £{{ "{:,.0f}".format(instalment) }} |

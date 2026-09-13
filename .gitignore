@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+/build/
+/dist/
+/packs/*/artifacts/
+/tmp/
+/packs/*/answer_key.json
+/packs/*/sdd_book.parquet

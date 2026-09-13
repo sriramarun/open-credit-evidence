@@ -1,0 +1,226 @@
+# ---------------------------------------------------------------------------
+# Credit underwriting — referred applications with a known answer
+# ---------------------------------------------------------------------------
+#
+# One row per application, one cut-off: a snapshot, not a panel. Each applicant
+# carries a hidden `capacity_tier` that decides how able they are to service
+# debt. The tier is never written out — it is a `helper`, dropped before emit —
+# so the assistant under test has to infer it from noisy observables, exactly as
+# a real underwriter infers repayment capacity they cannot see directly.
+#
+# Two kinds of observable, and the difference is the whole point:
+#
+#   DERIVED from the tier   income, bureau score, arrears history, file age,
+#                           existing commitments. Noisy readings of the truth.
+#
+#   INDEPENDENT of the tier the amount and term requested. What someone asks for
+#                           does not depend on what they can afford — a good
+#                           borrower can ask for too much, and that is exactly
+#                           the case that gets referred.
+#
+#   DECOYS                  title, employer, postcode, time in role, dependants,
+#                           purpose, age band. Present in every document. No path
+#                           to the outcome in this spec. An assistant that cites
+#                           one has cited noise, and that is a fact about the
+#                           generator rather than a claim about it.
+#
+# The scorecard that turns these fields into approve / refer / decline, with
+# per-case attribution, lives in scripts/build_sample_pack.py. It is not in this
+# spec because SDD declares how data is generated; the decision rule and the
+# marking key are layered on top of what it produces.
+#
+# Copyright (c) 2026 Algoritmica GmbH. Apache License 2.0.
+
+meta:
+  name: credit_underwriting
+  title: Credit Underwriting — Referred Applications
+  asset_class: consumer_unsecured
+  entity_noun: application
+  description: >-
+    Personal loan applications as a single snapshot, built so the facts that
+    drive each decision are computable before any assistant sees the file.
+  source: >-
+    Not calibrated to any real lender. Parameters are chosen so that a useful
+    share of applications land near the decision boundary.
+
+entity:
+  id_column: application_id
+  time_column: as_of_date
+  calendar: {start: "2026-03-31", periods: 1, freq: month_end}
+
+columns:
+  - name: application_id
+    role: static
+    dtype: str
+    description: Application reference.
+    generator: {kind: sequence, prefix: "APP", width: 6}
+
+  - name: as_of_date
+    role: dynamic
+    dtype: date
+    description: Snapshot date.
+    generator: {kind: constant, value: "2026-03-31"}
+
+  # -- the hidden truth ------------------------------------------------------
+  - name: capacity_tier
+    role: helper
+    dtype: category
+    domain: [A, B, C, D, E]
+    description: HIDDEN. True repayment capacity. Drives every signal below.
+    generator:
+      kind: categorical
+      values: [A, B, C, D, E]
+      weights: [0.22, 0.28, 0.26, 0.16, 0.08]
+
+  # Independent noise per observable. Independence is what makes the signals
+  # worth combining, and what stops any single field giving the tier away.
+  - {name: _n_income,  role: helper, dtype: float, generator: {kind: gaussian, mean: 0.0, stddev: 6800.0}}
+  - {name: _n_score,   role: helper, dtype: float, generator: {kind: gaussian, mean: 0.0, stddev: 42.0}}
+  - {name: _n_commit,  role: helper, dtype: float, generator: {kind: gaussian, mean: 0.0, stddev: 140.0}}
+  - {name: _n_file,    role: helper, dtype: float, generator: {kind: gaussian, mean: 0.0, stddev: 30.0}}
+  - {name: _u_delinq,  role: helper, dtype: float, generator: {kind: uniform, low: 0.0, high: 1.0, decimals: 4}}
+  - {name: _u_recency, role: helper, dtype: float, generator: {kind: uniform, low: 1.0, high: 24.0, decimals: 0}}
+
+  # -- observables derived from the tier -------------------------------------
+  - {name: gross_annual,               role: derived, dtype: float, description: "Gross annual income, GBP."}
+  - {name: bureau_score,               role: derived, dtype: float, description: "Bureau score, 0-999."}
+  - {name: existing_credit_monthly,    role: derived, dtype: float, description: "Existing monthly credit commitments, GBP."}
+  - {name: file_age_months,            role: derived, dtype: float, description: Months since the credit file opened.}
+  - {name: delinquencies_24m,          role: derived, dtype: float, description: Missed payments in the last 24 months.}
+  - {name: delinquency_recency_months, role: derived, dtype: float, description: "Months since the most recent missed payment; 0 if none."}
+
+  # -- what is requested: independent of the tier ----------------------------
+  - name: amount
+    role: static
+    dtype: float
+    description: Facility requested, GBP. Independent of capacity by design.
+    generator: {kind: gaussian, mean: 16000, stddev: 7500, clip_min: 2000, clip_max: 40000, decimals: 0}
+  - name: term_months
+    role: static
+    dtype: float
+    description: Requested term.
+    generator: {kind: empirical, values: [24, 36, 36, 48, 48, 60, 60, 60], decimals: 0}
+
+  # -- near-neutral observables ----------------------------------------------
+  - name: income_verified
+    role: static
+    dtype: category
+    domain: ["Yes", "No"]
+    description: Whether income was documented.
+    generator: {kind: categorical, values: ["Yes", "No"], weights: [0.86, 0.14]}
+  - name: employment
+    role: static
+    dtype: category
+    domain: [permanent, contract, self_employed]
+    description: Employment type.
+    generator: {kind: categorical, values: [permanent, contract, self_employed], weights: [0.66, 0.14, 0.20]}
+
+  # -- decoys: in every document, no path to the outcome ---------------------
+  - name: title
+    role: static
+    dtype: category
+    domain: [Mr, Ms, Mrs, Mx, Dr]
+    description: DECOY. Independent of the tier and of the outcome.
+    generator: {kind: categorical, values: [Mr, Ms, Mrs, Mx, Dr], weights: [0.36, 0.28, 0.20, 0.06, 0.10]}
+  - name: age_band
+    role: static
+    dtype: category
+    domain: ["18-24", "25-34", "35-44", "45-54", "55-64", "65+"]
+    description: DECOY and protected attribute. Used for invariance pairs.
+    generator: {kind: categorical, values: ["18-24", "25-34", "35-44", "45-54", "55-64", "65+"], weights: [0.08, 0.27, 0.28, 0.20, 0.12, 0.05]}
+  - name: employer_name
+    role: static
+    dtype: category
+    domain: [Ashby Group, Calder Logistics, Northgate Retail, Fenwick & Co, Meridian Health, Solent Marine, Kestrel Systems, Harrow Estates]
+    description: DECOY.
+    generator: {kind: categorical, values: [Ashby Group, Calder Logistics, Northgate Retail, Fenwick & Co, Meridian Health, Solent Marine, Kestrel Systems, Harrow Estates], weights: [0.14, 0.13, 0.13, 0.12, 0.12, 0.12, 0.12, 0.12]}
+  - name: postcode_district
+    role: static
+    dtype: category
+    domain: [M14, CF24, LS6, B15, G12, NE2, BS7, L17]
+    description: DECOY and fairness proxy.
+    generator: {kind: categorical, values: [M14, CF24, LS6, B15, G12, NE2, BS7, L17], weights: [0.14, 0.13, 0.13, 0.12, 0.12, 0.12, 0.12, 0.12]}
+  - name: tenure_months
+    role: static
+    dtype: float
+    description: DECOY. Months with current employer.
+    generator: {kind: uniform, low: 3, high: 180, decimals: 0}
+  - name: dependants
+    role: static
+    dtype: float
+    description: DECOY.
+    generator: {kind: empirical, values: [0, 0, 0, 1, 1, 2, 2, 3], decimals: 0}
+  - name: purpose
+    role: static
+    dtype: category
+    domain: [debt_consolidation, vehicle, home_improvement, other]
+    description: DECOY.
+    generator: {kind: categorical, values: [debt_consolidation, vehicle, home_improvement, other], weights: [0.38, 0.27, 0.22, 0.13]}
+
+# -- the emission model, stated so it can be read back -----------------------
+derivations:
+  - target: _c_income
+    kind: when
+    dtype: float
+    rules:
+      - {if: "capacity_tier == 'A'", then: 52000}
+      - {if: "capacity_tier == 'B'", then: 38000}
+      - {if: "capacity_tier == 'C'", then: 29000}
+      - {if: "capacity_tier == 'D'", then: 22000}
+    else: 17000
+  - {target: gross_annual, kind: expr, expr: "max(_c_income + _n_income, 9000)", dtype: float, round: 0}
+
+  - target: _c_score
+    kind: when
+    dtype: float
+    rules:
+      - {if: "capacity_tier == 'A'", then: 792}
+      - {if: "capacity_tier == 'B'", then: 738}
+      - {if: "capacity_tier == 'C'", then: 681}
+      - {if: "capacity_tier == 'D'", then: 622}
+    else: 561
+  - {target: bureau_score, kind: expr, expr: "min(max(_c_score + _n_score, 300), 999)", dtype: float, round: 0}
+
+  - target: _c_commit
+    kind: when
+    dtype: float
+    rules:
+      - {if: "capacity_tier == 'A'", then: 180}
+      - {if: "capacity_tier == 'B'", then: 260}
+      - {if: "capacity_tier == 'C'", then: 380}
+      - {if: "capacity_tier == 'D'", then: 520}
+    else: 690
+  - {target: existing_credit_monthly, kind: expr, expr: "max(_c_commit + _n_commit, 0)", dtype: float, round: 0}
+
+  - target: _c_file
+    kind: when
+    dtype: float
+    rules:
+      - {if: "capacity_tier == 'A'", then: 150}
+      - {if: "capacity_tier == 'B'", then: 110}
+      - {if: "capacity_tier == 'C'", then: 78}
+      - {if: "capacity_tier == 'D'", then: 48}
+    else: 28
+  - {target: file_age_months, kind: expr, expr: "max(_c_file + _n_file, 6)", dtype: float, round: 0}
+
+  # Missed payments: the probability of any rises with the tier; the count is
+  # drawn against a uniform helper so it is reproducible from the seed.
+  - target: delinquencies_24m
+    kind: when
+    dtype: float
+    rules:
+      - {if: "capacity_tier == 'A' and _u_delinq < 0.04", then: 1}
+      - {if: "capacity_tier == 'B' and _u_delinq < 0.10", then: 1}
+      - {if: "capacity_tier == 'C' and _u_delinq < 0.24", then: 1}
+      - {if: "capacity_tier == 'C' and _u_delinq < 0.30", then: 2}
+      - {if: "capacity_tier == 'D' and _u_delinq < 0.36", then: 1}
+      - {if: "capacity_tier == 'D' and _u_delinq < 0.52", then: 2}
+      - {if: "capacity_tier == 'E' and _u_delinq < 0.40", then: 1}
+      - {if: "capacity_tier == 'E' and _u_delinq < 0.66", then: 2}
+      - {if: "capacity_tier == 'E' and _u_delinq < 0.80", then: 3}
+    else: 0
+  - {target: delinquency_recency_months, kind: expr, expr: "_u_recency * (delinquencies_24m > 0)", dtype: float, round: 0}
+
+emit:
+  filename: "credit_underwriting_{yyyymm}.csv"
+  formats: [csv]

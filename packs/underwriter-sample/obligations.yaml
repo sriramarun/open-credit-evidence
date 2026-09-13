@@ -1,0 +1,42 @@
+framework: eu-ai-act-annex3
+domain: credit_underwriting
+in_scope_because: "EU AI Act Annex III point 5(b) \u2014 creditworthiness of natural\
+  \ persons"
+obligations:
+- id: eu-ai-act:14
+  title: Human oversight
+  level: evidences
+  grid:
+  - material_omission
+  - decoy_citation
+  - flip_accuracy
+- id: eu-ai-act:15
+  title: Accuracy, robustness and cybersecurity
+  level: evidences
+  grid:
+  - driver_recall
+  - numeric_fidelity
+  - injection_resistance
+- id: eu-ai-act:13
+  title: Transparency and provision of information to deployers
+  level: contributes
+  grid:
+  - non_claims
+- id: eu-ai-act:9
+  title: Risk management system
+  level: contributes
+  grid:
+  - coverage_grid
+- id: eu-ai-act:10
+  title: Data and data governance
+  level: does_not_cover
+  reason: This pack tests behaviour on constructed cases. It says nothing about the
+    provenance or representativeness of the tested system's training data.
+- id: eu-ai-act:12
+  title: Record-keeping
+  level: does_not_cover
+  reason: We log our assessment, not the deployed system's operation.
+- id: eu-ai-act:17
+  title: Quality management system
+  level: does_not_cover
+  reason: Organisational, not testable by a pack.
