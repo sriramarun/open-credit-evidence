@@ -9,5 +9,9 @@ version of them.
 
 from evidence.contracts.check import CheckResult
 from evidence.contracts.item import BenchmarkItem, GradingSpec, ItemContext
+from evidence.contracts.transcript import Retrieved, SUTPins, Transcript
 
-__all__ = ["BenchmarkItem", "CheckResult", "GradingSpec", "ItemContext"]
+__all__ = [
+    "BenchmarkItem", "CheckResult", "GradingSpec", "ItemContext",
+    "Retrieved", "SUTPins", "Transcript",
+]
