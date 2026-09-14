@@ -1,0 +1,701 @@
+application_id,as_of_date,gross_annual,bureau_score,existing_credit_monthly,file_age_months,delinquencies_24m,delinquency_recency_months,amount,term_months,income_verified,employment,title,age_band,employer_name,postcode_district,tenure_months,dependants,purpose
+APP000001,2026-03-31,36696.0,722.0,427.0,111.0,0.0,0.0,14207.0,60.0,Yes,self_employed,Ms,25-34,Harrow Estates,L17,63.0,3.0,debt_consolidation
+APP000002,2026-03-31,21816.0,628.0,800.0,16.0,1.0,12.0,17855.0,60.0,Yes,contract,Mr,35-44,Calder Logistics,NE2,15.0,0.0,other
+APP000003,2026-03-31,16973.0,573.0,440.0,80.0,1.0,7.0,15530.0,24.0,Yes,permanent,Ms,35-44,Kestrel Systems,BS7,152.0,1.0,vehicle
+APP000004,2026-03-31,35604.0,764.0,336.0,124.0,0.0,0.0,2000.0,48.0,Yes,permanent,Ms,25-34,Harrow Estates,CF24,36.0,0.0,debt_consolidation
+APP000005,2026-03-31,36492.0,708.0,85.0,163.0,0.0,0.0,5448.0,36.0,Yes,contract,Ms,25-34,Meridian Health,L17,17.0,0.0,debt_consolidation
+APP000006,2026-03-31,26764.0,516.0,813.0,11.0,0.0,0.0,16069.0,60.0,Yes,permanent,Mr,65+,Solent Marine,BS7,40.0,3.0,other
+APP000007,2026-03-31,41150.0,911.0,78.0,157.0,0.0,0.0,20685.0,48.0,No,permanent,Mrs,35-44,Calder Logistics,B15,81.0,3.0,home_improvement
+APP000008,2026-03-31,14947.0,652.0,211.0,40.0,2.0,9.0,11617.0,48.0,No,contract,Ms,35-44,Fenwick & Co,LS6,114.0,2.0,debt_consolidation
+APP000009,2026-03-31,19429.0,698.0,502.0,6.0,0.0,0.0,24458.0,24.0,Yes,permanent,Ms,45-54,Meridian Health,BS7,17.0,1.0,debt_consolidation
+APP000010,2026-03-31,55220.0,700.0,240.0,89.0,0.0,0.0,25575.0,60.0,Yes,permanent,Mrs,25-34,Northgate Retail,M14,30.0,0.0,other
+APP000011,2026-03-31,44499.0,800.0,528.0,144.0,0.0,0.0,12849.0,48.0,Yes,permanent,Dr,55-64,Ashby Group,G12,8.0,0.0,debt_consolidation
+APP000012,2026-03-31,37242.0,805.0,213.0,96.0,0.0,0.0,26634.0,48.0,Yes,permanent,Ms,25-34,Harrow Estates,BS7,73.0,1.0,home_improvement
+APP000013,2026-03-31,42842.0,803.0,258.0,88.0,0.0,0.0,29095.0,36.0,Yes,permanent,Dr,25-34,Kestrel Systems,L17,180.0,0.0,vehicle
+APP000014,2026-03-31,51991.0,737.0,343.0,136.0,0.0,0.0,19442.0,36.0,Yes,permanent,Mr,18-24,Northgate Retail,L17,141.0,0.0,vehicle
+APP000015,2026-03-31,27411.0,630.0,602.0,108.0,1.0,10.0,8602.0,60.0,Yes,self_employed,Ms,25-34,Meridian Health,B15,154.0,2.0,home_improvement
+APP000016,2026-03-31,26508.0,674.0,371.0,108.0,2.0,10.0,26981.0,60.0,Yes,self_employed,Mr,18-24,Meridian Health,M14,165.0,2.0,debt_consolidation
+APP000017,2026-03-31,25241.0,468.0,836.0,6.0,1.0,17.0,14742.0,60.0,No,contract,Ms,35-44,Harrow Estates,LS6,42.0,3.0,vehicle
+APP000018,2026-03-31,25360.0,551.0,593.0,46.0,0.0,0.0,13142.0,24.0,Yes,contract,Dr,35-44,Meridian Health,LS6,118.0,2.0,other
+APP000019,2026-03-31,33565.0,685.0,339.0,109.0,0.0,0.0,16851.0,36.0,Yes,permanent,Dr,18-24,Solent Marine,G12,77.0,2.0,vehicle
+APP000020,2026-03-31,13544.0,519.0,701.0,8.0,2.0,20.0,11948.0,60.0,Yes,permanent,Ms,55-64,Kestrel Systems,NE2,67.0,3.0,vehicle
+APP000021,2026-03-31,65085.0,785.0,184.0,128.0,0.0,0.0,24028.0,24.0,Yes,self_employed,Mr,45-54,Ashby Group,L17,137.0,2.0,vehicle
+APP000022,2026-03-31,63625.0,787.0,52.0,175.0,0.0,0.0,21818.0,60.0,Yes,permanent,Mr,35-44,Meridian Health,LS6,102.0,2.0,debt_consolidation
+APP000023,2026-03-31,32848.0,762.0,550.0,125.0,0.0,0.0,25134.0,60.0,No,permanent,Dr,55-64,Harrow Estates,LS6,113.0,2.0,debt_consolidation
+APP000024,2026-03-31,56653.0,847.0,0.0,115.0,0.0,0.0,20353.0,60.0,Yes,permanent,Ms,35-44,Kestrel Systems,M14,51.0,1.0,home_improvement
+APP000025,2026-03-31,38215.0,790.0,344.0,72.0,0.0,0.0,10040.0,48.0,Yes,permanent,Mr,25-34,Harrow Estates,BS7,169.0,0.0,vehicle
+APP000026,2026-03-31,33336.0,732.0,514.0,34.0,1.0,17.0,14803.0,48.0,Yes,permanent,Mrs,45-54,Calder Logistics,B15,119.0,3.0,debt_consolidation
+APP000027,2026-03-31,36680.0,705.0,247.0,80.0,0.0,0.0,22565.0,36.0,Yes,contract,Ms,65+,Kestrel Systems,CF24,114.0,3.0,home_improvement
+APP000028,2026-03-31,24951.0,608.0,413.0,44.0,0.0,0.0,12948.0,48.0,No,self_employed,Ms,18-24,Northgate Retail,B15,137.0,1.0,vehicle
+APP000029,2026-03-31,33641.0,719.0,348.0,96.0,1.0,6.0,37900.0,60.0,No,permanent,Dr,35-44,Kestrel Systems,B15,165.0,0.0,debt_consolidation
+APP000030,2026-03-31,26679.0,629.0,446.0,74.0,0.0,0.0,14183.0,48.0,No,permanent,Mrs,25-34,Kestrel Systems,BS7,34.0,2.0,debt_consolidation
+APP000031,2026-03-31,26505.0,726.0,364.0,89.0,0.0,0.0,11602.0,24.0,Yes,contract,Mr,55-64,Northgate Retail,CF24,50.0,0.0,other
+APP000032,2026-03-31,40502.0,683.0,300.0,115.0,0.0,0.0,24617.0,48.0,Yes,permanent,Dr,25-34,Meridian Health,B15,175.0,0.0,home_improvement
+APP000033,2026-03-31,46959.0,797.0,319.0,121.0,0.0,0.0,21608.0,24.0,No,permanent,Ms,45-54,Fenwick & Co,B15,122.0,0.0,debt_consolidation
+APP000034,2026-03-31,49755.0,861.0,102.0,149.0,0.0,0.0,15791.0,36.0,Yes,permanent,Mr,25-34,Harrow Estates,M14,160.0,0.0,debt_consolidation
+APP000035,2026-03-31,24889.0,649.0,413.0,59.0,0.0,0.0,14273.0,36.0,Yes,contract,Dr,45-54,Meridian Health,M14,62.0,1.0,home_improvement
+APP000036,2026-03-31,49677.0,801.0,0.0,230.0,0.0,0.0,19199.0,60.0,Yes,self_employed,Ms,45-54,Ashby Group,CF24,178.0,1.0,debt_consolidation
+APP000037,2026-03-31,22295.0,700.0,367.0,135.0,0.0,0.0,22266.0,36.0,Yes,permanent,Mrs,45-54,Meridian Health,B15,79.0,2.0,vehicle
+APP000038,2026-03-31,60275.0,744.0,201.0,125.0,0.0,0.0,21720.0,60.0,Yes,contract,Mrs,18-24,Ashby Group,G12,145.0,0.0,home_improvement
+APP000039,2026-03-31,23723.0,570.0,462.0,18.0,0.0,0.0,13738.0,60.0,Yes,permanent,Mr,35-44,Ashby Group,NE2,164.0,1.0,other
+APP000040,2026-03-31,59558.0,853.0,343.0,137.0,0.0,0.0,19239.0,48.0,Yes,permanent,Dr,25-34,Fenwick & Co,L17,95.0,2.0,home_improvement
+APP000041,2026-03-31,51463.0,837.0,357.0,61.0,0.0,0.0,22330.0,36.0,Yes,self_employed,Ms,25-34,Fenwick & Co,M14,77.0,2.0,debt_consolidation
+APP000042,2026-03-31,22154.0,642.0,126.0,26.0,1.0,21.0,21737.0,60.0,Yes,permanent,Mr,25-34,Ashby Group,L17,91.0,1.0,vehicle
+APP000043,2026-03-31,16743.0,651.0,386.0,56.0,0.0,0.0,2000.0,60.0,Yes,permanent,Ms,25-34,Northgate Retail,B15,26.0,2.0,other
+APP000044,2026-03-31,15922.0,652.0,316.0,75.0,0.0,0.0,9323.0,36.0,Yes,self_employed,Mr,55-64,Northgate Retail,BS7,16.0,3.0,debt_consolidation
+APP000045,2026-03-31,20793.0,667.0,529.0,65.0,0.0,0.0,10181.0,36.0,Yes,permanent,Dr,35-44,Northgate Retail,LS6,170.0,0.0,debt_consolidation
+APP000046,2026-03-31,25587.0,715.0,728.0,54.0,0.0,0.0,14273.0,60.0,Yes,contract,Mrs,25-34,Fenwick & Co,NE2,118.0,1.0,debt_consolidation
+APP000047,2026-03-31,52542.0,804.0,107.0,110.0,0.0,0.0,17343.0,60.0,Yes,permanent,Ms,35-44,Ashby Group,NE2,18.0,2.0,home_improvement
+APP000048,2026-03-31,15385.0,693.0,390.0,43.0,0.0,0.0,22911.0,60.0,Yes,permanent,Mrs,18-24,Ashby Group,M14,107.0,1.0,other
+APP000049,2026-03-31,31329.0,707.0,345.0,76.0,1.0,13.0,20633.0,48.0,Yes,self_employed,Mrs,25-34,Calder Logistics,BS7,47.0,3.0,vehicle
+APP000050,2026-03-31,11730.0,598.0,569.0,42.0,0.0,0.0,15048.0,60.0,Yes,self_employed,Mrs,35-44,Solent Marine,M14,152.0,1.0,debt_consolidation
+APP000051,2026-03-31,40022.0,721.0,350.0,144.0,0.0,0.0,16174.0,60.0,Yes,contract,Mr,45-54,Harrow Estates,B15,67.0,1.0,vehicle
+APP000052,2026-03-31,28255.0,609.0,560.0,59.0,0.0,0.0,29193.0,60.0,Yes,permanent,Mr,35-44,Solent Marine,CF24,6.0,0.0,debt_consolidation
+APP000053,2026-03-31,49867.0,773.0,42.0,182.0,0.0,0.0,11404.0,36.0,Yes,permanent,Mx,65+,Ashby Group,G12,121.0,0.0,vehicle
+APP000054,2026-03-31,37503.0,678.0,480.0,118.0,0.0,0.0,18284.0,60.0,Yes,permanent,Mx,65+,Kestrel Systems,CF24,179.0,0.0,vehicle
+APP000055,2026-03-31,34330.0,732.0,130.0,110.0,0.0,0.0,27741.0,48.0,Yes,permanent,Mr,55-64,Kestrel Systems,G12,133.0,1.0,vehicle
+APP000056,2026-03-31,47835.0,752.0,219.0,90.0,0.0,0.0,18594.0,60.0,Yes,contract,Ms,35-44,Kestrel Systems,BS7,173.0,3.0,debt_consolidation
+APP000057,2026-03-31,10557.0,626.0,682.0,9.0,0.0,0.0,2000.0,24.0,No,permanent,Ms,45-54,Solent Marine,G12,21.0,3.0,other
+APP000058,2026-03-31,37799.0,757.0,360.0,132.0,0.0,0.0,18812.0,48.0,Yes,self_employed,Mr,25-34,Calder Logistics,BS7,55.0,2.0,vehicle
+APP000059,2026-03-31,29550.0,501.0,559.0,70.0,1.0,13.0,13095.0,60.0,Yes,permanent,Dr,55-64,Fenwick & Co,LS6,140.0,0.0,vehicle
+APP000060,2026-03-31,42467.0,647.0,282.0,84.0,0.0,0.0,15152.0,24.0,Yes,contract,Ms,25-34,Fenwick & Co,NE2,85.0,2.0,home_improvement
+APP000061,2026-03-31,37988.0,641.0,315.0,101.0,0.0,0.0,23883.0,36.0,Yes,permanent,Mrs,65+,Ashby Group,B15,35.0,0.0,debt_consolidation
+APP000062,2026-03-31,33799.0,712.0,373.0,66.0,0.0,0.0,19522.0,36.0,Yes,permanent,Ms,18-24,Meridian Health,L17,64.0,1.0,vehicle
+APP000063,2026-03-31,24400.0,753.0,541.0,67.0,0.0,0.0,14020.0,60.0,Yes,contract,Mr,45-54,Calder Logistics,M14,54.0,1.0,debt_consolidation
+APP000064,2026-03-31,61811.0,828.0,0.0,130.0,0.0,0.0,22690.0,60.0,Yes,permanent,Mr,35-44,Harrow Estates,BS7,128.0,0.0,vehicle
+APP000065,2026-03-31,37618.0,723.0,325.0,139.0,0.0,0.0,19265.0,48.0,Yes,self_employed,Mr,45-54,Solent Marine,M14,140.0,2.0,other
+APP000066,2026-03-31,37532.0,800.0,345.0,120.0,0.0,0.0,16789.0,36.0,Yes,contract,Ms,35-44,Kestrel Systems,BS7,133.0,2.0,debt_consolidation
+APP000067,2026-03-31,36020.0,674.0,338.0,103.0,0.0,0.0,18258.0,60.0,Yes,permanent,Ms,55-64,Ashby Group,M14,121.0,2.0,debt_consolidation
+APP000068,2026-03-31,52625.0,855.0,245.0,140.0,0.0,0.0,17898.0,60.0,Yes,permanent,Dr,45-54,Solent Marine,NE2,135.0,1.0,debt_consolidation
+APP000069,2026-03-31,14041.0,533.0,903.0,45.0,3.0,12.0,13454.0,48.0,Yes,permanent,Dr,45-54,Kestrel Systems,M14,166.0,2.0,vehicle
+APP000070,2026-03-31,51430.0,675.0,248.0,160.0,0.0,0.0,12557.0,36.0,No,self_employed,Mrs,65+,Fenwick & Co,BS7,50.0,2.0,home_improvement
+APP000071,2026-03-31,21625.0,792.0,500.0,53.0,1.0,6.0,16189.0,48.0,Yes,permanent,Ms,25-34,Calder Logistics,CF24,52.0,2.0,home_improvement
+APP000072,2026-03-31,35459.0,804.0,339.0,161.0,0.0,0.0,8843.0,60.0,No,permanent,Mr,55-64,Fenwick & Co,M14,177.0,0.0,vehicle
+APP000073,2026-03-31,37508.0,579.0,771.0,56.0,0.0,0.0,6558.0,36.0,Yes,permanent,Mrs,35-44,Meridian Health,BS7,159.0,0.0,debt_consolidation
+APP000074,2026-03-31,28527.0,688.0,114.0,78.0,0.0,0.0,25757.0,60.0,Yes,self_employed,Mr,45-54,Fenwick & Co,G12,121.0,0.0,vehicle
+APP000075,2026-03-31,50377.0,783.0,359.0,194.0,0.0,0.0,14202.0,60.0,No,self_employed,Mrs,45-54,Northgate Retail,BS7,143.0,0.0,vehicle
+APP000076,2026-03-31,25620.0,626.0,483.0,79.0,1.0,21.0,15820.0,48.0,Yes,permanent,Mrs,35-44,Solent Marine,BS7,117.0,2.0,debt_consolidation
+APP000077,2026-03-31,21815.0,499.0,651.0,25.0,2.0,21.0,14987.0,48.0,Yes,permanent,Mr,35-44,Harrow Estates,M14,58.0,1.0,other
+APP000078,2026-03-31,14426.0,593.0,384.0,64.0,0.0,0.0,16176.0,24.0,Yes,contract,Mrs,65+,Calder Logistics,M14,103.0,3.0,home_improvement
+APP000079,2026-03-31,27591.0,701.0,118.0,46.0,1.0,6.0,16170.0,24.0,Yes,permanent,Mr,35-44,Harrow Estates,NE2,46.0,1.0,vehicle
+APP000080,2026-03-31,58244.0,801.0,127.0,131.0,0.0,0.0,16488.0,60.0,No,self_employed,Mr,55-64,Ashby Group,BS7,20.0,0.0,debt_consolidation
+APP000081,2026-03-31,53835.0,842.0,84.0,82.0,0.0,0.0,9963.0,24.0,Yes,self_employed,Dr,18-24,Solent Marine,CF24,63.0,0.0,vehicle
+APP000082,2026-03-31,17829.0,564.0,759.0,65.0,0.0,0.0,22990.0,48.0,No,contract,Mrs,35-44,Northgate Retail,L17,146.0,3.0,debt_consolidation
+APP000083,2026-03-31,39567.0,780.0,174.0,21.0,0.0,0.0,10809.0,36.0,Yes,self_employed,Mx,45-54,Meridian Health,M14,28.0,0.0,vehicle
+APP000084,2026-03-31,47391.0,762.0,380.0,170.0,0.0,0.0,23762.0,60.0,Yes,permanent,Dr,35-44,Northgate Retail,BS7,11.0,2.0,debt_consolidation
+APP000085,2026-03-31,22563.0,633.0,558.0,23.0,0.0,0.0,2000.0,60.0,Yes,self_employed,Mr,25-34,Ashby Group,G12,45.0,1.0,vehicle
+APP000086,2026-03-31,25464.0,601.0,345.0,49.0,0.0,0.0,8039.0,36.0,Yes,permanent,Mrs,45-54,Calder Logistics,LS6,142.0,0.0,vehicle
+APP000087,2026-03-31,39134.0,628.0,281.0,72.0,0.0,0.0,23441.0,48.0,No,permanent,Ms,45-54,Harrow Estates,LS6,159.0,1.0,other
+APP000088,2026-03-31,24727.0,794.0,150.0,118.0,0.0,0.0,14889.0,36.0,Yes,permanent,Mr,35-44,Fenwick & Co,LS6,51.0,0.0,vehicle
+APP000089,2026-03-31,33443.0,698.0,102.0,128.0,0.0,0.0,10967.0,24.0,Yes,contract,Mr,25-34,Harrow Estates,B15,173.0,2.0,home_improvement
+APP000090,2026-03-31,34402.0,760.0,184.0,163.0,0.0,0.0,18814.0,60.0,Yes,permanent,Mr,55-64,Fenwick & Co,B15,88.0,3.0,debt_consolidation
+APP000091,2026-03-31,56512.0,789.0,181.0,161.0,0.0,0.0,8159.0,60.0,Yes,permanent,Ms,45-54,Harrow Estates,CF24,125.0,2.0,vehicle
+APP000092,2026-03-31,26123.0,578.0,495.0,74.0,0.0,0.0,16577.0,60.0,Yes,permanent,Mrs,55-64,Fenwick & Co,M14,121.0,2.0,debt_consolidation
+APP000093,2026-03-31,47487.0,723.0,62.0,92.0,0.0,0.0,2000.0,36.0,Yes,contract,Mx,45-54,Harrow Estates,G12,82.0,2.0,other
+APP000094,2026-03-31,18297.0,659.0,343.0,99.0,0.0,0.0,12607.0,60.0,No,permanent,Mr,25-34,Fenwick & Co,CF24,152.0,2.0,other
+APP000095,2026-03-31,43103.0,718.0,135.0,115.0,0.0,0.0,11126.0,24.0,Yes,permanent,Mrs,35-44,Calder Logistics,M14,162.0,0.0,debt_consolidation
+APP000096,2026-03-31,27006.0,713.0,402.0,64.0,0.0,0.0,20047.0,48.0,No,self_employed,Mr,35-44,Calder Logistics,CF24,86.0,1.0,vehicle
+APP000097,2026-03-31,47474.0,819.0,441.0,147.0,1.0,8.0,22568.0,24.0,Yes,self_employed,Mr,35-44,Ashby Group,CF24,56.0,2.0,debt_consolidation
+APP000098,2026-03-31,41669.0,714.0,348.0,108.0,0.0,0.0,9591.0,60.0,Yes,self_employed,Mrs,35-44,Ashby Group,BS7,169.0,0.0,vehicle
+APP000099,2026-03-31,45743.0,754.0,136.0,156.0,0.0,0.0,28067.0,48.0,Yes,self_employed,Ms,45-54,Solent Marine,LS6,127.0,1.0,other
+APP000100,2026-03-31,37877.0,804.0,0.0,162.0,0.0,0.0,11560.0,60.0,Yes,contract,Dr,65+,Northgate Retail,NE2,67.0,1.0,debt_consolidation
+APP000101,2026-03-31,14483.0,557.0,492.0,13.0,2.0,22.0,2000.0,60.0,Yes,permanent,Mr,35-44,Kestrel Systems,M14,32.0,2.0,home_improvement
+APP000102,2026-03-31,18815.0,724.0,144.0,56.0,0.0,0.0,2000.0,60.0,Yes,permanent,Mr,35-44,Calder Logistics,NE2,73.0,2.0,vehicle
+APP000103,2026-03-31,33587.0,850.0,362.0,132.0,0.0,0.0,27542.0,48.0,Yes,contract,Mx,35-44,Harrow Estates,L17,82.0,1.0,other
+APP000104,2026-03-31,31527.0,716.0,273.0,27.0,0.0,0.0,15343.0,24.0,Yes,permanent,Mx,35-44,Calder Logistics,NE2,147.0,0.0,vehicle
+APP000105,2026-03-31,24122.0,621.0,529.0,29.0,0.0,0.0,11145.0,60.0,Yes,permanent,Mr,35-44,Northgate Retail,BS7,127.0,0.0,home_improvement
+APP000106,2026-03-31,48791.0,731.0,173.0,157.0,0.0,0.0,10391.0,36.0,Yes,contract,Mr,45-54,Northgate Retail,B15,93.0,3.0,vehicle
+APP000107,2026-03-31,27642.0,645.0,393.0,6.0,2.0,4.0,7808.0,24.0,No,permanent,Ms,45-54,Calder Logistics,B15,164.0,2.0,home_improvement
+APP000108,2026-03-31,18573.0,643.0,576.0,57.0,0.0,0.0,26142.0,24.0,Yes,self_employed,Mr,45-54,Fenwick & Co,L17,107.0,2.0,home_improvement
+APP000109,2026-03-31,32859.0,696.0,164.0,131.0,0.0,0.0,15371.0,60.0,Yes,permanent,Ms,25-34,Kestrel Systems,CF24,156.0,0.0,vehicle
+APP000110,2026-03-31,22748.0,664.0,332.0,28.0,2.0,20.0,29427.0,24.0,Yes,permanent,Mrs,45-54,Ashby Group,B15,14.0,0.0,debt_consolidation
+APP000111,2026-03-31,13719.0,604.0,407.0,126.0,0.0,0.0,14507.0,36.0,Yes,permanent,Mrs,35-44,Calder Logistics,NE2,17.0,0.0,vehicle
+APP000112,2026-03-31,24960.0,653.0,642.0,6.0,2.0,11.0,2000.0,24.0,Yes,permanent,Mr,55-64,Ashby Group,LS6,155.0,0.0,home_improvement
+APP000113,2026-03-31,47612.0,775.0,36.0,193.0,0.0,0.0,22333.0,60.0,Yes,permanent,Mr,35-44,Kestrel Systems,B15,133.0,2.0,home_improvement
+APP000114,2026-03-31,9000.0,553.0,531.0,75.0,3.0,22.0,13239.0,48.0,Yes,permanent,Mr,45-54,Ashby Group,M14,49.0,3.0,vehicle
+APP000115,2026-03-31,56739.0,741.0,0.0,177.0,0.0,0.0,14222.0,60.0,Yes,self_employed,Mrs,45-54,Fenwick & Co,NE2,24.0,0.0,vehicle
+APP000116,2026-03-31,28242.0,750.0,183.0,71.0,0.0,0.0,27755.0,48.0,Yes,permanent,Mr,25-34,Kestrel Systems,CF24,16.0,2.0,debt_consolidation
+APP000117,2026-03-31,24426.0,643.0,586.0,59.0,1.0,8.0,14025.0,48.0,No,permanent,Dr,18-24,Northgate Retail,CF24,60.0,1.0,debt_consolidation
+APP000118,2026-03-31,52719.0,867.0,540.0,123.0,0.0,0.0,24715.0,60.0,Yes,contract,Mr,45-54,Ashby Group,CF24,160.0,2.0,vehicle
+APP000119,2026-03-31,42295.0,771.0,121.0,134.0,0.0,0.0,15963.0,60.0,Yes,permanent,Ms,18-24,Calder Logistics,NE2,37.0,0.0,vehicle
+APP000120,2026-03-31,22259.0,685.0,653.0,14.0,0.0,0.0,10360.0,48.0,Yes,permanent,Mrs,55-64,Harrow Estates,LS6,47.0,0.0,home_improvement
+APP000121,2026-03-31,60406.0,782.0,215.0,142.0,0.0,0.0,19805.0,36.0,Yes,self_employed,Dr,45-54,Ashby Group,L17,150.0,0.0,vehicle
+APP000122,2026-03-31,31890.0,711.0,226.0,108.0,0.0,0.0,11495.0,36.0,Yes,permanent,Ms,35-44,Kestrel Systems,BS7,36.0,3.0,vehicle
+APP000123,2026-03-31,24666.0,736.0,481.0,15.0,0.0,0.0,25212.0,24.0,No,permanent,Mx,45-54,Ashby Group,L17,45.0,2.0,debt_consolidation
+APP000124,2026-03-31,31787.0,630.0,347.0,67.0,0.0,0.0,23199.0,60.0,No,contract,Ms,25-34,Calder Logistics,NE2,135.0,2.0,home_improvement
+APP000125,2026-03-31,19095.0,730.0,283.0,83.0,0.0,0.0,16471.0,36.0,Yes,contract,Mr,45-54,Kestrel Systems,CF24,155.0,2.0,debt_consolidation
+APP000126,2026-03-31,36880.0,809.0,530.0,70.0,0.0,0.0,20574.0,60.0,Yes,self_employed,Ms,55-64,Meridian Health,LS6,170.0,1.0,vehicle
+APP000127,2026-03-31,50237.0,810.0,0.0,185.0,0.0,0.0,20235.0,48.0,Yes,permanent,Ms,18-24,Northgate Retail,LS6,11.0,3.0,debt_consolidation
+APP000128,2026-03-31,39411.0,770.0,313.0,120.0,0.0,0.0,13933.0,60.0,Yes,permanent,Ms,55-64,Solent Marine,CF24,61.0,2.0,other
+APP000129,2026-03-31,42761.0,846.0,226.0,105.0,0.0,0.0,22714.0,48.0,Yes,permanent,Mrs,25-34,Calder Logistics,B15,111.0,2.0,debt_consolidation
+APP000130,2026-03-31,49112.0,710.0,179.0,109.0,1.0,19.0,14295.0,24.0,Yes,permanent,Ms,35-44,Harrow Estates,BS7,62.0,0.0,vehicle
+APP000131,2026-03-31,17710.0,579.0,711.0,6.0,2.0,19.0,20622.0,60.0,Yes,permanent,Ms,55-64,Meridian Health,G12,134.0,0.0,home_improvement
+APP000132,2026-03-31,20763.0,644.0,503.0,58.0,0.0,0.0,8872.0,48.0,Yes,permanent,Ms,45-54,Harrow Estates,CF24,43.0,3.0,debt_consolidation
+APP000133,2026-03-31,26380.0,709.0,281.0,112.0,0.0,0.0,16765.0,36.0,Yes,permanent,Ms,35-44,Meridian Health,NE2,110.0,3.0,vehicle
+APP000134,2026-03-31,36087.0,711.0,318.0,89.0,0.0,0.0,19121.0,60.0,Yes,permanent,Mr,65+,Meridian Health,L17,32.0,0.0,vehicle
+APP000135,2026-03-31,16390.0,555.0,787.0,57.0,1.0,20.0,10087.0,36.0,Yes,permanent,Mr,18-24,Kestrel Systems,B15,30.0,0.0,other
+APP000136,2026-03-31,33116.0,744.0,0.0,89.0,0.0,0.0,12893.0,48.0,Yes,permanent,Ms,45-54,Meridian Health,CF24,144.0,0.0,debt_consolidation
+APP000137,2026-03-31,17626.0,580.0,897.0,57.0,1.0,19.0,12017.0,60.0,Yes,permanent,Mrs,35-44,Ashby Group,NE2,114.0,2.0,debt_consolidation
+APP000138,2026-03-31,24640.0,620.0,699.0,77.0,0.0,0.0,21480.0,36.0,Yes,contract,Ms,55-64,Meridian Health,G12,103.0,2.0,vehicle
+APP000139,2026-03-31,32751.0,766.0,517.0,104.0,0.0,0.0,10624.0,48.0,Yes,permanent,Mrs,18-24,Northgate Retail,BS7,70.0,0.0,home_improvement
+APP000140,2026-03-31,17073.0,672.0,662.0,32.0,2.0,15.0,19313.0,60.0,Yes,self_employed,Ms,25-34,Meridian Health,G12,122.0,1.0,vehicle
+APP000141,2026-03-31,28738.0,712.0,183.0,63.0,0.0,0.0,27466.0,60.0,Yes,permanent,Ms,35-44,Harrow Estates,BS7,172.0,2.0,debt_consolidation
+APP000142,2026-03-31,35656.0,666.0,363.0,43.0,1.0,14.0,18709.0,48.0,Yes,permanent,Mr,18-24,Meridian Health,M14,69.0,3.0,vehicle
+APP000143,2026-03-31,55487.0,734.0,146.0,127.0,1.0,13.0,3948.0,24.0,No,self_employed,Mrs,45-54,Kestrel Systems,NE2,11.0,0.0,debt_consolidation
+APP000144,2026-03-31,15148.0,646.0,438.0,76.0,0.0,0.0,16983.0,24.0,Yes,permanent,Dr,55-64,Northgate Retail,G12,49.0,2.0,home_improvement
+APP000145,2026-03-31,34841.0,756.0,395.0,174.0,0.0,0.0,23849.0,36.0,Yes,self_employed,Mrs,55-64,Ashby Group,BS7,141.0,3.0,debt_consolidation
+APP000146,2026-03-31,11289.0,489.0,577.0,67.0,0.0,0.0,13900.0,36.0,Yes,permanent,Mr,25-34,Ashby Group,CF24,56.0,2.0,other
+APP000147,2026-03-31,57333.0,824.0,162.0,157.0,0.0,0.0,24368.0,48.0,Yes,self_employed,Mrs,35-44,Ashby Group,G12,137.0,0.0,vehicle
+APP000148,2026-03-31,30193.0,864.0,0.0,104.0,0.0,0.0,20687.0,60.0,Yes,permanent,Ms,65+,Calder Logistics,CF24,39.0,0.0,debt_consolidation
+APP000149,2026-03-31,25706.0,601.0,358.0,90.0,0.0,0.0,19212.0,60.0,Yes,permanent,Dr,18-24,Northgate Retail,NE2,109.0,2.0,debt_consolidation
+APP000150,2026-03-31,16799.0,604.0,703.0,27.0,1.0,5.0,14096.0,36.0,Yes,permanent,Mr,45-54,Northgate Retail,M14,68.0,1.0,debt_consolidation
+APP000151,2026-03-31,31345.0,754.0,161.0,154.0,1.0,11.0,12215.0,36.0,Yes,permanent,Mrs,25-34,Solent Marine,CF24,97.0,1.0,debt_consolidation
+APP000152,2026-03-31,15490.0,617.0,419.0,76.0,2.0,10.0,14140.0,60.0,No,permanent,Ms,55-64,Solent Marine,L17,69.0,0.0,other
+APP000153,2026-03-31,25766.0,740.0,644.0,53.0,1.0,7.0,16536.0,60.0,No,permanent,Mx,35-44,Kestrel Systems,NE2,108.0,2.0,home_improvement
+APP000154,2026-03-31,14717.0,630.0,211.0,57.0,2.0,22.0,19989.0,36.0,No,permanent,Ms,55-64,Solent Marine,CF24,134.0,0.0,debt_consolidation
+APP000155,2026-03-31,19171.0,688.0,233.0,119.0,1.0,23.0,19223.0,36.0,Yes,permanent,Mr,18-24,Kestrel Systems,LS6,127.0,0.0,debt_consolidation
+APP000156,2026-03-31,14191.0,624.0,577.0,37.0,1.0,2.0,13815.0,48.0,Yes,permanent,Mrs,35-44,Solent Marine,B15,79.0,0.0,debt_consolidation
+APP000157,2026-03-31,39008.0,730.0,428.0,103.0,0.0,0.0,16565.0,36.0,No,permanent,Ms,35-44,Fenwick & Co,CF24,10.0,1.0,debt_consolidation
+APP000158,2026-03-31,36737.0,720.0,554.0,146.0,0.0,0.0,18986.0,36.0,Yes,permanent,Mr,25-34,Fenwick & Co,CF24,149.0,0.0,home_improvement
+APP000159,2026-03-31,39937.0,797.0,227.0,138.0,0.0,0.0,3895.0,48.0,Yes,permanent,Mr,35-44,Ashby Group,L17,22.0,3.0,debt_consolidation
+APP000160,2026-03-31,48846.0,773.0,80.0,142.0,0.0,0.0,10322.0,36.0,Yes,permanent,Ms,45-54,Ashby Group,CF24,70.0,2.0,home_improvement
+APP000161,2026-03-31,57429.0,859.0,120.0,136.0,0.0,0.0,10094.0,24.0,Yes,permanent,Ms,35-44,Kestrel Systems,NE2,143.0,1.0,vehicle
+APP000162,2026-03-31,25780.0,583.0,669.0,6.0,1.0,2.0,14560.0,60.0,Yes,permanent,Ms,35-44,Calder Logistics,NE2,176.0,1.0,home_improvement
+APP000163,2026-03-31,21465.0,660.0,392.0,74.0,0.0,0.0,14025.0,48.0,Yes,permanent,Mr,25-34,Kestrel Systems,NE2,132.0,3.0,vehicle
+APP000164,2026-03-31,45966.0,738.0,383.0,114.0,0.0,0.0,14160.0,36.0,Yes,self_employed,Mr,35-44,Northgate Retail,LS6,23.0,0.0,debt_consolidation
+APP000165,2026-03-31,33292.0,710.0,578.0,61.0,0.0,0.0,9551.0,48.0,Yes,self_employed,Mrs,35-44,Ashby Group,CF24,174.0,2.0,home_improvement
+APP000166,2026-03-31,34063.0,733.0,270.0,88.0,1.0,21.0,21145.0,60.0,Yes,permanent,Ms,55-64,Kestrel Systems,G12,11.0,0.0,other
+APP000167,2026-03-31,21049.0,569.0,470.0,100.0,1.0,19.0,18186.0,48.0,Yes,permanent,Mrs,55-64,Solent Marine,L17,9.0,1.0,debt_consolidation
+APP000168,2026-03-31,23545.0,681.0,485.0,76.0,1.0,7.0,3784.0,60.0,No,permanent,Ms,35-44,Harrow Estates,LS6,133.0,0.0,other
+APP000169,2026-03-31,47849.0,692.0,478.0,110.0,0.0,0.0,16206.0,60.0,Yes,permanent,Mr,35-44,Meridian Health,CF24,166.0,3.0,home_improvement
+APP000170,2026-03-31,18497.0,542.0,543.0,6.0,2.0,23.0,7661.0,36.0,Yes,self_employed,Mrs,25-34,Harrow Estates,B15,116.0,0.0,vehicle
+APP000171,2026-03-31,45883.0,804.0,425.0,107.0,0.0,0.0,28878.0,48.0,Yes,self_employed,Mr,35-44,Fenwick & Co,CF24,158.0,0.0,home_improvement
+APP000172,2026-03-31,25741.0,633.0,327.0,34.0,0.0,0.0,12695.0,24.0,Yes,contract,Mr,25-34,Calder Logistics,LS6,118.0,0.0,debt_consolidation
+APP000173,2026-03-31,35379.0,635.0,273.0,87.0,1.0,12.0,13160.0,48.0,Yes,self_employed,Ms,65+,Fenwick & Co,NE2,18.0,3.0,debt_consolidation
+APP000174,2026-03-31,47910.0,854.0,194.0,161.0,0.0,0.0,16745.0,48.0,Yes,permanent,Ms,35-44,Solent Marine,CF24,113.0,1.0,other
+APP000175,2026-03-31,50929.0,797.0,150.0,149.0,0.0,0.0,14617.0,60.0,Yes,permanent,Mr,18-24,Harrow Estates,B15,139.0,1.0,home_improvement
+APP000176,2026-03-31,54907.0,805.0,122.0,171.0,0.0,0.0,15681.0,36.0,Yes,permanent,Dr,25-34,Kestrel Systems,NE2,90.0,3.0,debt_consolidation
+APP000177,2026-03-31,27217.0,636.0,296.0,64.0,0.0,0.0,27726.0,60.0,Yes,permanent,Mr,55-64,Harrow Estates,CF24,129.0,2.0,vehicle
+APP000178,2026-03-31,18592.0,584.0,388.0,66.0,1.0,6.0,17817.0,60.0,Yes,permanent,Mr,25-34,Meridian Health,CF24,86.0,2.0,debt_consolidation
+APP000179,2026-03-31,28423.0,678.0,583.0,82.0,0.0,0.0,22386.0,48.0,Yes,permanent,Mrs,35-44,Fenwick & Co,L17,21.0,1.0,debt_consolidation
+APP000180,2026-03-31,54218.0,845.0,455.0,144.0,0.0,0.0,24579.0,36.0,Yes,self_employed,Mr,65+,Meridian Health,BS7,156.0,0.0,home_improvement
+APP000181,2026-03-31,30231.0,663.0,611.0,77.0,2.0,9.0,8816.0,48.0,Yes,permanent,Mr,45-54,Harrow Estates,L17,40.0,1.0,home_improvement
+APP000182,2026-03-31,18674.0,622.0,686.0,81.0,0.0,0.0,28796.0,60.0,No,permanent,Ms,35-44,Northgate Retail,G12,39.0,1.0,debt_consolidation
+APP000183,2026-03-31,10159.0,624.0,448.0,9.0,1.0,22.0,21290.0,48.0,Yes,permanent,Mr,25-34,Ashby Group,B15,26.0,2.0,home_improvement
+APP000184,2026-03-31,27098.0,676.0,369.0,110.0,0.0,0.0,23308.0,24.0,Yes,permanent,Mrs,35-44,Northgate Retail,M14,64.0,0.0,debt_consolidation
+APP000185,2026-03-31,22105.0,597.0,560.0,63.0,2.0,14.0,9655.0,60.0,Yes,permanent,Mr,35-44,Solent Marine,CF24,74.0,0.0,debt_consolidation
+APP000186,2026-03-31,52745.0,875.0,29.0,179.0,0.0,0.0,22262.0,36.0,Yes,permanent,Mrs,55-64,Kestrel Systems,M14,38.0,0.0,vehicle
+APP000187,2026-03-31,60953.0,792.0,41.0,164.0,0.0,0.0,19233.0,48.0,Yes,self_employed,Mr,35-44,Harrow Estates,G12,32.0,2.0,debt_consolidation
+APP000188,2026-03-31,54153.0,743.0,194.0,113.0,0.0,0.0,12105.0,36.0,Yes,permanent,Ms,55-64,Solent Marine,B15,83.0,0.0,vehicle
+APP000189,2026-03-31,43528.0,717.0,215.0,75.0,0.0,0.0,33256.0,60.0,Yes,permanent,Dr,65+,Kestrel Systems,CF24,5.0,1.0,home_improvement
+APP000190,2026-03-31,30512.0,769.0,111.0,165.0,0.0,0.0,20387.0,60.0,Yes,permanent,Mrs,55-64,Kestrel Systems,M14,90.0,1.0,debt_consolidation
+APP000191,2026-03-31,57902.0,820.0,234.0,158.0,0.0,0.0,14341.0,24.0,Yes,permanent,Dr,35-44,Kestrel Systems,G12,22.0,1.0,home_improvement
+APP000192,2026-03-31,43254.0,675.0,343.0,35.0,0.0,0.0,17593.0,48.0,Yes,permanent,Ms,35-44,Meridian Health,CF24,27.0,1.0,debt_consolidation
+APP000193,2026-03-31,57256.0,763.0,323.0,160.0,0.0,0.0,22965.0,60.0,Yes,permanent,Mr,35-44,Harrow Estates,M14,24.0,1.0,debt_consolidation
+APP000194,2026-03-31,30724.0,682.0,379.0,67.0,1.0,23.0,24617.0,60.0,Yes,permanent,Ms,45-54,Harrow Estates,CF24,153.0,0.0,vehicle
+APP000195,2026-03-31,53047.0,720.0,138.0,95.0,0.0,0.0,20503.0,48.0,Yes,permanent,Mrs,55-64,Ashby Group,BS7,147.0,2.0,debt_consolidation
+APP000196,2026-03-31,41153.0,625.0,398.0,9.0,1.0,7.0,25271.0,24.0,Yes,permanent,Mr,45-54,Ashby Group,NE2,177.0,3.0,home_improvement
+APP000197,2026-03-31,45695.0,826.0,156.0,102.0,0.0,0.0,27169.0,36.0,No,permanent,Mrs,25-34,Harrow Estates,B15,146.0,1.0,other
+APP000198,2026-03-31,37245.0,717.0,166.0,118.0,0.0,0.0,6883.0,36.0,Yes,self_employed,Mr,45-54,Solent Marine,CF24,93.0,0.0,debt_consolidation
+APP000199,2026-03-31,20129.0,577.0,634.0,27.0,1.0,8.0,12502.0,36.0,Yes,permanent,Dr,35-44,Calder Logistics,B15,73.0,2.0,home_improvement
+APP000200,2026-03-31,34059.0,734.0,485.0,71.0,0.0,0.0,9099.0,60.0,No,permanent,Mr,45-54,Harrow Estates,M14,107.0,1.0,vehicle
+APP000201,2026-03-31,19026.0,650.0,611.0,57.0,0.0,0.0,16876.0,24.0,Yes,self_employed,Mr,18-24,Ashby Group,LS6,115.0,2.0,other
+APP000202,2026-03-31,31090.0,682.0,560.0,96.0,0.0,0.0,26971.0,48.0,Yes,permanent,Mr,55-64,Meridian Health,B15,178.0,2.0,home_improvement
+APP000203,2026-03-31,27110.0,773.0,143.0,15.0,0.0,0.0,21046.0,48.0,Yes,permanent,Ms,45-54,Northgate Retail,M14,62.0,0.0,other
+APP000204,2026-03-31,52819.0,821.0,125.0,141.0,0.0,0.0,8306.0,60.0,Yes,permanent,Dr,25-34,Northgate Retail,G12,163.0,0.0,home_improvement
+APP000205,2026-03-31,28102.0,666.0,322.0,53.0,1.0,20.0,13947.0,36.0,Yes,permanent,Ms,25-34,Calder Logistics,B15,171.0,0.0,home_improvement
+APP000206,2026-03-31,44237.0,824.0,204.0,113.0,0.0,0.0,23864.0,48.0,Yes,permanent,Mrs,25-34,Ashby Group,M14,172.0,0.0,home_improvement
+APP000207,2026-03-31,21856.0,640.0,457.0,32.0,0.0,0.0,12164.0,48.0,Yes,permanent,Ms,35-44,Northgate Retail,CF24,114.0,2.0,other
+APP000208,2026-03-31,22965.0,524.0,618.0,24.0,2.0,23.0,15425.0,36.0,No,contract,Mr,55-64,Ashby Group,B15,112.0,1.0,debt_consolidation
+APP000209,2026-03-31,15424.0,625.0,630.0,40.0,1.0,2.0,18433.0,24.0,Yes,permanent,Ms,65+,Meridian Health,L17,179.0,3.0,home_improvement
+APP000210,2026-03-31,50361.0,785.0,205.0,106.0,0.0,0.0,2489.0,60.0,Yes,permanent,Ms,35-44,Northgate Retail,M14,76.0,2.0,home_improvement
+APP000211,2026-03-31,42521.0,653.0,97.0,96.0,0.0,0.0,21997.0,60.0,Yes,permanent,Ms,25-34,Kestrel Systems,G12,140.0,0.0,debt_consolidation
+APP000212,2026-03-31,30725.0,731.0,447.0,170.0,0.0,0.0,18717.0,36.0,Yes,self_employed,Mr,65+,Harrow Estates,LS6,17.0,2.0,vehicle
+APP000213,2026-03-31,53242.0,780.0,320.0,118.0,0.0,0.0,20414.0,48.0,No,permanent,Mr,65+,Harrow Estates,LS6,45.0,0.0,debt_consolidation
+APP000214,2026-03-31,21791.0,662.0,300.0,27.0,0.0,0.0,8810.0,36.0,Yes,permanent,Mr,25-34,Solent Marine,L17,92.0,2.0,debt_consolidation
+APP000215,2026-03-31,29715.0,551.0,636.0,56.0,1.0,15.0,10390.0,24.0,Yes,permanent,Mr,45-54,Kestrel Systems,G12,133.0,2.0,home_improvement
+APP000216,2026-03-31,53727.0,723.0,157.0,128.0,0.0,0.0,11674.0,60.0,Yes,permanent,Mr,45-54,Ashby Group,LS6,35.0,0.0,vehicle
+APP000217,2026-03-31,35751.0,620.0,678.0,62.0,0.0,0.0,18029.0,48.0,Yes,permanent,Mr,45-54,Harrow Estates,B15,148.0,1.0,other
+APP000218,2026-03-31,20510.0,626.0,490.0,14.0,1.0,11.0,16678.0,24.0,No,self_employed,Ms,45-54,Meridian Health,L17,105.0,0.0,debt_consolidation
+APP000219,2026-03-31,57033.0,743.0,68.0,180.0,0.0,0.0,17109.0,60.0,Yes,permanent,Dr,18-24,Meridian Health,BS7,27.0,2.0,debt_consolidation
+APP000220,2026-03-31,22823.0,649.0,468.0,24.0,1.0,3.0,29588.0,60.0,Yes,contract,Mrs,25-34,Solent Marine,B15,10.0,2.0,home_improvement
+APP000221,2026-03-31,22694.0,570.0,413.0,14.0,0.0,0.0,25941.0,36.0,No,permanent,Ms,25-34,Calder Logistics,G12,73.0,1.0,other
+APP000222,2026-03-31,62525.0,782.0,207.0,132.0,0.0,0.0,10757.0,60.0,Yes,contract,Mrs,45-54,Fenwick & Co,B15,148.0,0.0,debt_consolidation
+APP000223,2026-03-31,20030.0,737.0,405.0,75.0,0.0,0.0,11249.0,60.0,Yes,permanent,Ms,25-34,Ashby Group,CF24,176.0,0.0,vehicle
+APP000224,2026-03-31,36176.0,651.0,385.0,99.0,0.0,0.0,29018.0,48.0,No,self_employed,Mr,25-34,Harrow Estates,L17,137.0,0.0,debt_consolidation
+APP000225,2026-03-31,28667.0,659.0,302.0,97.0,0.0,0.0,13773.0,60.0,No,permanent,Mrs,25-34,Fenwick & Co,CF24,43.0,2.0,debt_consolidation
+APP000226,2026-03-31,61578.0,838.0,0.0,149.0,0.0,0.0,26491.0,48.0,Yes,permanent,Mrs,18-24,Ashby Group,CF24,162.0,2.0,other
+APP000227,2026-03-31,30273.0,664.0,393.0,106.0,1.0,19.0,28140.0,48.0,Yes,contract,Mrs,35-44,Harrow Estates,M14,31.0,3.0,other
+APP000228,2026-03-31,24426.0,668.0,115.0,80.0,1.0,7.0,12082.0,48.0,Yes,self_employed,Mx,25-34,Meridian Health,L17,73.0,0.0,vehicle
+APP000229,2026-03-31,23885.0,632.0,554.0,75.0,0.0,0.0,14129.0,48.0,Yes,permanent,Mrs,35-44,Solent Marine,L17,121.0,1.0,home_improvement
+APP000230,2026-03-31,27005.0,667.0,678.0,6.0,2.0,6.0,16771.0,24.0,Yes,self_employed,Mrs,25-34,Kestrel Systems,G12,63.0,2.0,debt_consolidation
+APP000231,2026-03-31,38243.0,643.0,298.0,63.0,1.0,1.0,9672.0,36.0,Yes,contract,Mr,45-54,Solent Marine,G12,61.0,2.0,vehicle
+APP000232,2026-03-31,32319.0,645.0,325.0,101.0,1.0,3.0,8816.0,24.0,Yes,self_employed,Dr,25-34,Fenwick & Co,G12,80.0,2.0,other
+APP000233,2026-03-31,18453.0,579.0,495.0,6.0,0.0,0.0,13141.0,36.0,Yes,permanent,Ms,45-54,Northgate Retail,LS6,163.0,0.0,debt_consolidation
+APP000234,2026-03-31,9000.0,575.0,501.0,39.0,2.0,2.0,22545.0,36.0,Yes,self_employed,Ms,45-54,Ashby Group,L17,86.0,1.0,vehicle
+APP000235,2026-03-31,58120.0,755.0,103.0,147.0,0.0,0.0,12791.0,60.0,Yes,contract,Ms,25-34,Meridian Health,G12,18.0,0.0,home_improvement
+APP000236,2026-03-31,56754.0,756.0,98.0,135.0,0.0,0.0,14603.0,24.0,Yes,self_employed,Mr,35-44,Ashby Group,BS7,66.0,0.0,debt_consolidation
+APP000237,2026-03-31,30008.0,694.0,251.0,64.0,0.0,0.0,12661.0,48.0,Yes,permanent,Mr,35-44,Northgate Retail,NE2,107.0,0.0,debt_consolidation
+APP000238,2026-03-31,52465.0,754.0,346.0,192.0,0.0,0.0,5914.0,36.0,Yes,permanent,Mx,35-44,Harrow Estates,NE2,99.0,1.0,vehicle
+APP000239,2026-03-31,36047.0,686.0,378.0,6.0,0.0,0.0,27283.0,60.0,Yes,self_employed,Ms,45-54,Harrow Estates,NE2,172.0,0.0,debt_consolidation
+APP000240,2026-03-31,13892.0,578.0,824.0,55.0,1.0,21.0,2000.0,36.0,Yes,contract,Dr,18-24,Kestrel Systems,BS7,93.0,2.0,debt_consolidation
+APP000241,2026-03-31,33196.0,707.0,225.0,179.0,0.0,0.0,11244.0,48.0,Yes,permanent,Mr,25-34,Calder Logistics,BS7,143.0,0.0,debt_consolidation
+APP000242,2026-03-31,36718.0,744.0,270.0,111.0,0.0,0.0,20340.0,60.0,Yes,permanent,Ms,45-54,Harrow Estates,NE2,136.0,0.0,home_improvement
+APP000243,2026-03-31,46086.0,808.0,236.0,109.0,0.0,0.0,5681.0,60.0,Yes,self_employed,Ms,25-34,Calder Logistics,LS6,86.0,0.0,vehicle
+APP000244,2026-03-31,19568.0,695.0,445.0,100.0,0.0,0.0,20686.0,48.0,Yes,contract,Mr,55-64,Harrow Estates,CF24,77.0,0.0,vehicle
+APP000245,2026-03-31,60104.0,765.0,296.0,205.0,0.0,0.0,25542.0,60.0,Yes,permanent,Ms,35-44,Solent Marine,CF24,84.0,3.0,vehicle
+APP000246,2026-03-31,33653.0,735.0,294.0,74.0,0.0,0.0,9702.0,36.0,Yes,permanent,Ms,18-24,Harrow Estates,BS7,24.0,1.0,debt_consolidation
+APP000247,2026-03-31,44515.0,753.0,86.0,153.0,0.0,0.0,17714.0,48.0,No,permanent,Ms,45-54,Harrow Estates,B15,18.0,0.0,home_improvement
+APP000248,2026-03-31,37568.0,693.0,271.0,72.0,0.0,0.0,7820.0,60.0,Yes,permanent,Mr,25-34,Meridian Health,M14,23.0,2.0,vehicle
+APP000249,2026-03-31,21341.0,659.0,752.0,65.0,0.0,0.0,19950.0,48.0,Yes,permanent,Ms,65+,Northgate Retail,G12,26.0,1.0,debt_consolidation
+APP000250,2026-03-31,29158.0,703.0,221.0,115.0,1.0,13.0,16810.0,60.0,No,contract,Mrs,55-64,Harrow Estates,BS7,18.0,1.0,vehicle
+APP000251,2026-03-31,35561.0,729.0,219.0,130.0,0.0,0.0,17763.0,60.0,Yes,permanent,Mx,55-64,Northgate Retail,L17,73.0,2.0,vehicle
+APP000252,2026-03-31,35331.0,729.0,585.0,65.0,2.0,14.0,26393.0,60.0,Yes,permanent,Mx,55-64,Northgate Retail,L17,29.0,1.0,home_improvement
+APP000253,2026-03-31,60106.0,771.0,332.0,151.0,0.0,0.0,19680.0,60.0,Yes,self_employed,Dr,18-24,Meridian Health,BS7,176.0,0.0,other
+APP000254,2026-03-31,35096.0,746.0,335.0,90.0,0.0,0.0,26241.0,60.0,Yes,permanent,Dr,18-24,Calder Logistics,CF24,75.0,3.0,debt_consolidation
+APP000255,2026-03-31,40763.0,694.0,204.0,90.0,0.0,0.0,20902.0,36.0,Yes,permanent,Mrs,35-44,Fenwick & Co,B15,4.0,2.0,vehicle
+APP000256,2026-03-31,42856.0,703.0,589.0,106.0,0.0,0.0,7148.0,36.0,No,self_employed,Mr,35-44,Ashby Group,NE2,120.0,1.0,home_improvement
+APP000257,2026-03-31,47617.0,770.0,235.0,146.0,0.0,0.0,18106.0,36.0,Yes,contract,Ms,35-44,Fenwick & Co,NE2,130.0,2.0,vehicle
+APP000258,2026-03-31,31414.0,772.0,457.0,43.0,0.0,0.0,19817.0,60.0,Yes,permanent,Mr,35-44,Harrow Estates,LS6,171.0,2.0,vehicle
+APP000259,2026-03-31,28783.0,664.0,356.0,125.0,0.0,0.0,5303.0,60.0,Yes,self_employed,Ms,45-54,Harrow Estates,M14,46.0,1.0,home_improvement
+APP000260,2026-03-31,34355.0,716.0,62.0,106.0,0.0,0.0,26147.0,48.0,Yes,permanent,Mr,45-54,Harrow Estates,L17,59.0,2.0,vehicle
+APP000261,2026-03-31,48653.0,768.0,0.0,108.0,0.0,0.0,16655.0,60.0,Yes,permanent,Ms,55-64,Solent Marine,BS7,135.0,2.0,vehicle
+APP000262,2026-03-31,22456.0,615.0,577.0,81.0,1.0,8.0,18906.0,36.0,Yes,self_employed,Mrs,45-54,Solent Marine,BS7,114.0,1.0,home_improvement
+APP000263,2026-03-31,52203.0,820.0,235.0,128.0,0.0,0.0,9421.0,48.0,Yes,permanent,Mr,55-64,Fenwick & Co,LS6,114.0,1.0,vehicle
+APP000264,2026-03-31,48155.0,800.0,146.0,165.0,0.0,0.0,16689.0,60.0,No,permanent,Mx,25-34,Harrow Estates,CF24,168.0,1.0,debt_consolidation
+APP000265,2026-03-31,49104.0,878.0,16.0,149.0,0.0,0.0,18394.0,36.0,Yes,permanent,Mr,18-24,Ashby Group,BS7,179.0,0.0,debt_consolidation
+APP000266,2026-03-31,59571.0,801.0,0.0,158.0,0.0,0.0,13698.0,60.0,Yes,permanent,Ms,35-44,Calder Logistics,NE2,5.0,2.0,other
+APP000267,2026-03-31,23454.0,683.0,474.0,53.0,1.0,13.0,16750.0,36.0,Yes,permanent,Mr,55-64,Ashby Group,NE2,72.0,2.0,debt_consolidation
+APP000268,2026-03-31,44019.0,750.0,56.0,93.0,0.0,0.0,2000.0,48.0,No,permanent,Mr,35-44,Fenwick & Co,M14,170.0,2.0,vehicle
+APP000269,2026-03-31,46172.0,763.0,386.0,111.0,0.0,0.0,26359.0,36.0,Yes,self_employed,Ms,25-34,Ashby Group,M14,6.0,1.0,vehicle
+APP000270,2026-03-31,26004.0,561.0,681.0,109.0,0.0,0.0,7787.0,48.0,Yes,permanent,Mr,25-34,Solent Marine,BS7,63.0,0.0,debt_consolidation
+APP000271,2026-03-31,44442.0,676.0,776.0,11.0,0.0,0.0,2000.0,48.0,No,permanent,Mr,25-34,Calder Logistics,L17,138.0,0.0,debt_consolidation
+APP000272,2026-03-31,46388.0,789.0,303.0,152.0,0.0,0.0,8940.0,60.0,Yes,permanent,Mrs,55-64,Solent Marine,LS6,16.0,0.0,debt_consolidation
+APP000273,2026-03-31,43497.0,728.0,177.0,123.0,0.0,0.0,9881.0,60.0,Yes,permanent,Mr,25-34,Meridian Health,BS7,107.0,1.0,vehicle
+APP000274,2026-03-31,19837.0,532.0,398.0,16.0,0.0,0.0,20219.0,60.0,Yes,permanent,Dr,55-64,Solent Marine,CF24,166.0,0.0,debt_consolidation
+APP000275,2026-03-31,50619.0,775.0,0.0,69.0,0.0,0.0,9288.0,36.0,Yes,contract,Ms,55-64,Solent Marine,G12,98.0,0.0,home_improvement
+APP000276,2026-03-31,40563.0,665.0,297.0,143.0,2.0,22.0,18272.0,48.0,Yes,contract,Mr,45-54,Kestrel Systems,LS6,4.0,2.0,home_improvement
+APP000277,2026-03-31,38711.0,774.0,155.0,139.0,0.0,0.0,8943.0,24.0,Yes,self_employed,Mr,55-64,Fenwick & Co,G12,23.0,2.0,home_improvement
+APP000278,2026-03-31,22412.0,670.0,515.0,140.0,0.0,0.0,32692.0,24.0,Yes,contract,Mx,25-34,Meridian Health,CF24,75.0,0.0,debt_consolidation
+APP000279,2026-03-31,26517.0,612.0,606.0,64.0,2.0,22.0,20228.0,48.0,Yes,contract,Mr,25-34,Calder Logistics,LS6,5.0,0.0,vehicle
+APP000280,2026-03-31,27371.0,639.0,602.0,50.0,1.0,10.0,30809.0,36.0,Yes,permanent,Mrs,25-34,Fenwick & Co,B15,120.0,1.0,home_improvement
+APP000281,2026-03-31,34009.0,628.0,410.0,92.0,0.0,0.0,8528.0,60.0,Yes,contract,Ms,18-24,Ashby Group,G12,51.0,0.0,vehicle
+APP000282,2026-03-31,37518.0,699.0,353.0,129.0,0.0,0.0,21114.0,60.0,Yes,contract,Ms,55-64,Harrow Estates,CF24,64.0,1.0,vehicle
+APP000283,2026-03-31,55095.0,804.0,383.0,185.0,0.0,0.0,8963.0,36.0,Yes,self_employed,Mr,25-34,Harrow Estates,G12,142.0,1.0,vehicle
+APP000284,2026-03-31,33441.0,687.0,231.0,91.0,0.0,0.0,20472.0,48.0,Yes,permanent,Ms,45-54,Ashby Group,CF24,133.0,3.0,home_improvement
+APP000285,2026-03-31,28470.0,665.0,316.0,82.0,0.0,0.0,21218.0,48.0,Yes,permanent,Mr,25-34,Ashby Group,L17,145.0,2.0,vehicle
+APP000286,2026-03-31,58986.0,768.0,0.0,155.0,0.0,0.0,4172.0,60.0,Yes,permanent,Mrs,35-44,Northgate Retail,CF24,37.0,0.0,home_improvement
+APP000287,2026-03-31,22635.0,703.0,487.0,151.0,1.0,20.0,7605.0,60.0,Yes,permanent,Mrs,35-44,Meridian Health,M14,64.0,3.0,other
+APP000288,2026-03-31,33310.0,679.0,562.0,103.0,0.0,0.0,7380.0,36.0,Yes,self_employed,Mr,45-54,Fenwick & Co,LS6,116.0,0.0,home_improvement
+APP000289,2026-03-31,21968.0,731.0,485.0,48.0,0.0,0.0,4848.0,48.0,No,permanent,Ms,25-34,Northgate Retail,G12,92.0,1.0,vehicle
+APP000290,2026-03-31,28519.0,578.0,352.0,29.0,1.0,9.0,10641.0,48.0,Yes,permanent,Mr,25-34,Meridian Health,B15,146.0,2.0,debt_consolidation
+APP000291,2026-03-31,50445.0,856.0,204.0,160.0,0.0,0.0,8919.0,24.0,Yes,permanent,Mrs,25-34,Fenwick & Co,NE2,76.0,0.0,vehicle
+APP000292,2026-03-31,45956.0,827.0,147.0,131.0,1.0,17.0,5280.0,48.0,No,permanent,Mr,25-34,Fenwick & Co,M14,164.0,1.0,other
+APP000293,2026-03-31,24543.0,603.0,531.0,37.0,0.0,0.0,16850.0,36.0,Yes,permanent,Mr,55-64,Ashby Group,B15,42.0,2.0,other
+APP000294,2026-03-31,22803.0,714.0,354.0,49.0,1.0,12.0,20206.0,60.0,Yes,permanent,Mr,65+,Meridian Health,G12,119.0,0.0,debt_consolidation
+APP000295,2026-03-31,22793.0,619.0,453.0,70.0,0.0,0.0,6252.0,48.0,No,self_employed,Dr,18-24,Ashby Group,L17,145.0,2.0,home_improvement
+APP000296,2026-03-31,9000.0,488.0,635.0,41.0,1.0,22.0,11932.0,60.0,Yes,contract,Mrs,55-64,Kestrel Systems,L17,178.0,3.0,debt_consolidation
+APP000297,2026-03-31,16818.0,507.0,810.0,58.0,2.0,9.0,16167.0,36.0,Yes,contract,Ms,45-54,Fenwick & Co,G12,70.0,0.0,debt_consolidation
+APP000298,2026-03-31,25378.0,605.0,554.0,48.0,1.0,3.0,14366.0,48.0,Yes,permanent,Mrs,18-24,Northgate Retail,LS6,159.0,0.0,debt_consolidation
+APP000299,2026-03-31,28957.0,608.0,479.0,110.0,1.0,20.0,10848.0,48.0,Yes,permanent,Ms,25-34,Solent Marine,M14,110.0,2.0,debt_consolidation
+APP000300,2026-03-31,37036.0,716.0,244.0,108.0,0.0,0.0,22178.0,36.0,Yes,contract,Mr,55-64,Harrow Estates,G12,116.0,0.0,home_improvement
+APP000301,2026-03-31,36125.0,685.0,318.0,174.0,2.0,23.0,22451.0,48.0,Yes,permanent,Mx,25-34,Calder Logistics,G12,48.0,3.0,vehicle
+APP000302,2026-03-31,52122.0,702.0,294.0,180.0,0.0,0.0,21194.0,36.0,Yes,permanent,Mr,55-64,Fenwick & Co,B15,159.0,3.0,vehicle
+APP000303,2026-03-31,28366.0,702.0,342.0,93.0,1.0,9.0,14532.0,48.0,Yes,permanent,Mrs,35-44,Harrow Estates,NE2,15.0,0.0,home_improvement
+APP000304,2026-03-31,32900.0,621.0,421.0,63.0,0.0,0.0,30991.0,36.0,Yes,self_employed,Dr,65+,Kestrel Systems,B15,178.0,2.0,debt_consolidation
+APP000305,2026-03-31,36197.0,653.0,325.0,6.0,0.0,0.0,29145.0,60.0,Yes,contract,Mr,35-44,Northgate Retail,BS7,103.0,1.0,debt_consolidation
+APP000306,2026-03-31,35678.0,721.0,52.0,105.0,0.0,0.0,13075.0,48.0,Yes,contract,Mx,25-34,Northgate Retail,LS6,106.0,1.0,debt_consolidation
+APP000307,2026-03-31,36342.0,689.0,387.0,115.0,0.0,0.0,15187.0,48.0,No,permanent,Mrs,35-44,Kestrel Systems,LS6,34.0,1.0,debt_consolidation
+APP000308,2026-03-31,36906.0,680.0,112.0,168.0,0.0,0.0,25000.0,60.0,Yes,self_employed,Mr,35-44,Ashby Group,L17,123.0,0.0,home_improvement
+APP000309,2026-03-31,52563.0,750.0,275.0,109.0,0.0,0.0,10089.0,60.0,Yes,permanent,Ms,18-24,Ashby Group,G12,31.0,1.0,vehicle
+APP000310,2026-03-31,15877.0,621.0,579.0,105.0,0.0,0.0,19073.0,48.0,Yes,permanent,Mr,45-54,Meridian Health,L17,151.0,2.0,vehicle
+APP000311,2026-03-31,35990.0,706.0,148.0,70.0,0.0,0.0,16429.0,48.0,Yes,permanent,Ms,55-64,Meridian Health,M14,135.0,2.0,home_improvement
+APP000312,2026-03-31,35277.0,762.0,128.0,132.0,1.0,16.0,10806.0,60.0,Yes,contract,Ms,65+,Meridian Health,L17,33.0,0.0,debt_consolidation
+APP000313,2026-03-31,32145.0,639.0,308.0,6.0,0.0,0.0,14343.0,48.0,Yes,permanent,Ms,45-54,Kestrel Systems,M14,143.0,1.0,debt_consolidation
+APP000314,2026-03-31,23387.0,648.0,265.0,82.0,1.0,17.0,4291.0,60.0,Yes,permanent,Mr,35-44,Harrow Estates,NE2,115.0,1.0,debt_consolidation
+APP000315,2026-03-31,40440.0,699.0,95.0,100.0,0.0,0.0,12004.0,24.0,Yes,permanent,Mr,25-34,Northgate Retail,G12,55.0,0.0,debt_consolidation
+APP000316,2026-03-31,24663.0,641.0,624.0,68.0,1.0,18.0,2000.0,24.0,Yes,permanent,Mr,65+,Northgate Retail,M14,120.0,0.0,vehicle
+APP000317,2026-03-31,19139.0,536.0,486.0,51.0,0.0,0.0,33174.0,24.0,Yes,contract,Mrs,45-54,Kestrel Systems,LS6,126.0,2.0,debt_consolidation
+APP000318,2026-03-31,51742.0,790.0,314.0,76.0,0.0,0.0,27365.0,36.0,Yes,permanent,Mrs,45-54,Calder Logistics,B15,91.0,1.0,vehicle
+APP000319,2026-03-31,54523.0,772.0,120.0,178.0,0.0,0.0,25285.0,36.0,Yes,permanent,Mrs,45-54,Kestrel Systems,G12,126.0,1.0,debt_consolidation
+APP000320,2026-03-31,34083.0,589.0,563.0,69.0,1.0,19.0,18334.0,48.0,Yes,permanent,Ms,55-64,Solent Marine,B15,143.0,0.0,debt_consolidation
+APP000321,2026-03-31,23522.0,575.0,585.0,46.0,2.0,21.0,23556.0,60.0,Yes,permanent,Mx,25-34,Kestrel Systems,M14,161.0,0.0,home_improvement
+APP000322,2026-03-31,47497.0,835.0,176.0,180.0,0.0,0.0,25606.0,24.0,No,contract,Ms,25-34,Meridian Health,L17,150.0,1.0,vehicle
+APP000323,2026-03-31,26401.0,695.0,461.0,111.0,2.0,1.0,23682.0,48.0,Yes,permanent,Mr,65+,Ashby Group,LS6,22.0,2.0,home_improvement
+APP000324,2026-03-31,24965.0,666.0,526.0,47.0,0.0,0.0,22947.0,36.0,Yes,permanent,Mr,18-24,Solent Marine,NE2,155.0,1.0,home_improvement
+APP000325,2026-03-31,17416.0,567.0,626.0,6.0,1.0,9.0,9216.0,60.0,No,permanent,Mrs,25-34,Fenwick & Co,L17,171.0,1.0,debt_consolidation
+APP000326,2026-03-31,52336.0,844.0,28.0,108.0,0.0,0.0,19269.0,60.0,Yes,self_employed,Ms,35-44,Calder Logistics,L17,88.0,3.0,vehicle
+APP000327,2026-03-31,50054.0,844.0,203.0,190.0,0.0,0.0,12043.0,60.0,No,permanent,Mr,18-24,Ashby Group,CF24,163.0,0.0,home_improvement
+APP000328,2026-03-31,9000.0,557.0,738.0,49.0,1.0,18.0,7196.0,60.0,Yes,permanent,Ms,25-34,Calder Logistics,L17,43.0,1.0,debt_consolidation
+APP000329,2026-03-31,50467.0,852.0,144.0,153.0,0.0,0.0,7487.0,60.0,Yes,permanent,Dr,55-64,Ashby Group,B15,10.0,2.0,home_improvement
+APP000330,2026-03-31,36917.0,799.0,72.0,137.0,0.0,0.0,19254.0,36.0,No,contract,Ms,35-44,Ashby Group,NE2,82.0,1.0,debt_consolidation
+APP000331,2026-03-31,31528.0,685.0,456.0,79.0,1.0,22.0,23941.0,24.0,Yes,self_employed,Mr,35-44,Kestrel Systems,CF24,24.0,3.0,debt_consolidation
+APP000332,2026-03-31,33063.0,699.0,607.0,111.0,1.0,21.0,5782.0,24.0,Yes,permanent,Mrs,18-24,Harrow Estates,CF24,26.0,0.0,vehicle
+APP000333,2026-03-31,24135.0,669.0,338.0,68.0,0.0,0.0,29130.0,60.0,Yes,permanent,Ms,35-44,Harrow Estates,G12,82.0,1.0,vehicle
+APP000334,2026-03-31,50509.0,825.0,227.0,129.0,0.0,0.0,27056.0,60.0,Yes,permanent,Mr,25-34,Meridian Health,L17,175.0,0.0,home_improvement
+APP000335,2026-03-31,23854.0,567.0,573.0,113.0,2.0,13.0,13180.0,48.0,Yes,permanent,Mr,35-44,Meridian Health,B15,95.0,2.0,home_improvement
+APP000336,2026-03-31,42262.0,819.0,0.0,157.0,0.0,0.0,12559.0,48.0,Yes,contract,Dr,35-44,Ashby Group,L17,178.0,0.0,debt_consolidation
+APP000337,2026-03-31,10110.0,637.0,537.0,30.0,0.0,0.0,15482.0,24.0,Yes,contract,Mr,35-44,Ashby Group,NE2,93.0,2.0,debt_consolidation
+APP000338,2026-03-31,44751.0,804.0,81.0,111.0,0.0,0.0,23388.0,36.0,Yes,contract,Mrs,25-34,Kestrel Systems,M14,85.0,3.0,debt_consolidation
+APP000339,2026-03-31,24116.0,645.0,454.0,88.0,0.0,0.0,13153.0,36.0,Yes,permanent,Mr,45-54,Meridian Health,L17,7.0,3.0,debt_consolidation
+APP000340,2026-03-31,45425.0,788.0,144.0,172.0,0.0,0.0,7726.0,60.0,Yes,permanent,Ms,35-44,Meridian Health,M14,18.0,0.0,vehicle
+APP000341,2026-03-31,48818.0,765.0,151.0,133.0,0.0,0.0,18598.0,36.0,Yes,self_employed,Mr,55-64,Solent Marine,CF24,158.0,2.0,vehicle
+APP000342,2026-03-31,30815.0,706.0,229.0,103.0,0.0,0.0,2000.0,60.0,No,permanent,Mr,25-34,Kestrel Systems,G12,125.0,2.0,vehicle
+APP000343,2026-03-31,33430.0,685.0,403.0,80.0,0.0,0.0,17072.0,60.0,Yes,permanent,Mr,25-34,Solent Marine,L17,103.0,1.0,debt_consolidation
+APP000344,2026-03-31,28673.0,638.0,182.0,101.0,0.0,0.0,24706.0,60.0,No,permanent,Ms,35-44,Ashby Group,M14,161.0,2.0,debt_consolidation
+APP000345,2026-03-31,54034.0,820.0,173.0,117.0,0.0,0.0,18303.0,48.0,Yes,self_employed,Mrs,55-64,Meridian Health,LS6,118.0,0.0,vehicle
+APP000346,2026-03-31,14826.0,533.0,500.0,67.0,1.0,21.0,21861.0,24.0,Yes,permanent,Ms,35-44,Kestrel Systems,M14,53.0,3.0,debt_consolidation
+APP000347,2026-03-31,21593.0,659.0,488.0,59.0,1.0,3.0,19710.0,60.0,Yes,contract,Mr,45-54,Kestrel Systems,M14,156.0,3.0,debt_consolidation
+APP000348,2026-03-31,25868.0,545.0,629.0,122.0,0.0,0.0,21465.0,60.0,Yes,permanent,Mrs,45-54,Harrow Estates,B15,132.0,2.0,home_improvement
+APP000349,2026-03-31,49942.0,767.0,536.0,87.0,0.0,0.0,17093.0,60.0,Yes,self_employed,Mx,25-34,Fenwick & Co,G12,17.0,0.0,debt_consolidation
+APP000350,2026-03-31,39324.0,728.0,359.0,106.0,1.0,7.0,9782.0,48.0,Yes,permanent,Ms,25-34,Meridian Health,B15,150.0,0.0,debt_consolidation
+APP000351,2026-03-31,38846.0,772.0,298.0,136.0,1.0,16.0,14317.0,48.0,No,permanent,Mr,25-34,Ashby Group,M14,68.0,2.0,debt_consolidation
+APP000352,2026-03-31,45381.0,753.0,346.0,143.0,1.0,3.0,15451.0,36.0,Yes,permanent,Mr,35-44,Fenwick & Co,B15,153.0,3.0,vehicle
+APP000353,2026-03-31,55967.0,766.0,323.0,108.0,0.0,0.0,25441.0,36.0,Yes,permanent,Mr,45-54,Meridian Health,B15,149.0,3.0,debt_consolidation
+APP000354,2026-03-31,27327.0,775.0,613.0,50.0,1.0,17.0,28196.0,48.0,No,permanent,Ms,25-34,Harrow Estates,L17,164.0,1.0,home_improvement
+APP000355,2026-03-31,57658.0,757.0,332.0,153.0,0.0,0.0,19155.0,48.0,Yes,self_employed,Mr,65+,Harrow Estates,LS6,23.0,0.0,vehicle
+APP000356,2026-03-31,51703.0,762.0,163.0,160.0,0.0,0.0,10354.0,24.0,Yes,contract,Dr,18-24,Ashby Group,G12,133.0,1.0,vehicle
+APP000357,2026-03-31,33838.0,610.0,556.0,45.0,1.0,8.0,10527.0,60.0,Yes,permanent,Mrs,45-54,Calder Logistics,B15,58.0,0.0,other
+APP000358,2026-03-31,24516.0,695.0,285.0,140.0,0.0,0.0,14594.0,24.0,Yes,permanent,Mr,25-34,Northgate Retail,BS7,155.0,3.0,home_improvement
+APP000359,2026-03-31,49983.0,842.0,222.0,180.0,0.0,0.0,26416.0,36.0,Yes,permanent,Ms,65+,Kestrel Systems,G12,23.0,0.0,debt_consolidation
+APP000360,2026-03-31,34994.0,753.0,408.0,88.0,0.0,0.0,18509.0,24.0,Yes,permanent,Mr,25-34,Calder Logistics,L17,158.0,0.0,debt_consolidation
+APP000361,2026-03-31,35615.0,708.0,150.0,111.0,0.0,0.0,15585.0,48.0,Yes,self_employed,Dr,55-64,Kestrel Systems,G12,175.0,0.0,debt_consolidation
+APP000362,2026-03-31,23613.0,609.0,85.0,70.0,0.0,0.0,10262.0,60.0,Yes,permanent,Ms,35-44,Meridian Health,LS6,94.0,2.0,home_improvement
+APP000363,2026-03-31,36192.0,787.0,166.0,127.0,0.0,0.0,22618.0,60.0,Yes,permanent,Mrs,25-34,Kestrel Systems,B15,100.0,2.0,debt_consolidation
+APP000364,2026-03-31,19616.0,728.0,96.0,106.0,1.0,11.0,18170.0,60.0,Yes,permanent,Mr,18-24,Northgate Retail,BS7,111.0,2.0,vehicle
+APP000365,2026-03-31,29809.0,716.0,390.0,80.0,0.0,0.0,15619.0,24.0,Yes,self_employed,Ms,25-34,Fenwick & Co,LS6,162.0,0.0,debt_consolidation
+APP000366,2026-03-31,45595.0,730.0,381.0,91.0,2.0,16.0,16776.0,36.0,Yes,permanent,Mrs,35-44,Ashby Group,L17,19.0,2.0,other
+APP000367,2026-03-31,45786.0,702.0,25.0,100.0,0.0,0.0,28649.0,60.0,Yes,permanent,Ms,55-64,Fenwick & Co,B15,154.0,0.0,home_improvement
+APP000368,2026-03-31,14459.0,615.0,616.0,6.0,1.0,19.0,14797.0,36.0,Yes,permanent,Mr,65+,Kestrel Systems,L17,65.0,0.0,home_improvement
+APP000369,2026-03-31,16061.0,564.0,641.0,18.0,1.0,21.0,28663.0,60.0,Yes,permanent,Ms,18-24,Fenwick & Co,CF24,75.0,2.0,home_improvement
+APP000370,2026-03-31,49248.0,732.0,193.0,173.0,0.0,0.0,25317.0,60.0,Yes,self_employed,Mrs,35-44,Meridian Health,BS7,158.0,3.0,debt_consolidation
+APP000371,2026-03-31,58830.0,833.0,413.0,163.0,0.0,0.0,16393.0,36.0,Yes,contract,Ms,18-24,Harrow Estates,B15,25.0,1.0,debt_consolidation
+APP000372,2026-03-31,46414.0,764.0,442.0,198.0,0.0,0.0,22629.0,48.0,Yes,permanent,Dr,25-34,Kestrel Systems,CF24,28.0,0.0,debt_consolidation
+APP000373,2026-03-31,12306.0,657.0,521.0,30.0,0.0,0.0,15072.0,48.0,Yes,self_employed,Ms,35-44,Northgate Retail,G12,124.0,2.0,vehicle
+APP000374,2026-03-31,23016.0,564.0,835.0,54.0,2.0,19.0,9787.0,36.0,Yes,permanent,Mx,35-44,Harrow Estates,M14,132.0,0.0,other
+APP000375,2026-03-31,43880.0,711.0,322.0,150.0,0.0,0.0,13991.0,60.0,No,permanent,Mr,55-64,Solent Marine,CF24,43.0,0.0,debt_consolidation
+APP000376,2026-03-31,14458.0,595.0,749.0,58.0,1.0,8.0,9196.0,60.0,Yes,self_employed,Ms,55-64,Northgate Retail,BS7,126.0,2.0,debt_consolidation
+APP000377,2026-03-31,44399.0,868.0,311.0,132.0,0.0,0.0,19836.0,24.0,No,permanent,Ms,25-34,Calder Logistics,G12,66.0,2.0,vehicle
+APP000378,2026-03-31,18462.0,701.0,279.0,72.0,1.0,18.0,16110.0,48.0,Yes,permanent,Mr,45-54,Solent Marine,LS6,8.0,3.0,debt_consolidation
+APP000379,2026-03-31,33247.0,687.0,177.0,114.0,0.0,0.0,20259.0,36.0,Yes,permanent,Dr,45-54,Fenwick & Co,CF24,49.0,2.0,debt_consolidation
+APP000380,2026-03-31,9000.0,638.0,404.0,18.0,0.0,0.0,22200.0,48.0,No,contract,Mr,45-54,Meridian Health,CF24,32.0,0.0,home_improvement
+APP000381,2026-03-31,57099.0,850.0,74.0,164.0,0.0,0.0,2000.0,60.0,Yes,permanent,Ms,35-44,Ashby Group,CF24,83.0,2.0,debt_consolidation
+APP000382,2026-03-31,33716.0,717.0,246.0,141.0,0.0,0.0,18336.0,48.0,Yes,permanent,Mr,35-44,Kestrel Systems,B15,83.0,1.0,debt_consolidation
+APP000383,2026-03-31,32273.0,649.0,177.0,64.0,0.0,0.0,2487.0,24.0,Yes,permanent,Dr,35-44,Kestrel Systems,M14,71.0,1.0,debt_consolidation
+APP000384,2026-03-31,64705.0,835.0,34.0,209.0,0.0,0.0,17250.0,24.0,Yes,permanent,Mrs,35-44,Fenwick & Co,CF24,164.0,2.0,debt_consolidation
+APP000385,2026-03-31,45976.0,744.0,341.0,101.0,0.0,0.0,9420.0,60.0,Yes,permanent,Mr,35-44,Northgate Retail,B15,71.0,1.0,home_improvement
+APP000386,2026-03-31,30172.0,692.0,250.0,104.0,0.0,0.0,16782.0,48.0,Yes,permanent,Mr,55-64,Harrow Estates,L17,37.0,1.0,other
+APP000387,2026-03-31,27911.0,606.0,574.0,41.0,0.0,0.0,26241.0,48.0,Yes,permanent,Mr,25-34,Harrow Estates,BS7,171.0,1.0,vehicle
+APP000388,2026-03-31,29873.0,590.0,256.0,27.0,0.0,0.0,3192.0,60.0,Yes,permanent,Mr,35-44,Ashby Group,L17,116.0,0.0,debt_consolidation
+APP000389,2026-03-31,16925.0,634.0,410.0,61.0,1.0,3.0,17430.0,24.0,Yes,permanent,Dr,35-44,Meridian Health,CF24,171.0,0.0,debt_consolidation
+APP000390,2026-03-31,15518.0,627.0,442.0,49.0,2.0,6.0,15412.0,60.0,Yes,contract,Mx,55-64,Fenwick & Co,M14,83.0,0.0,home_improvement
+APP000391,2026-03-31,28254.0,729.0,385.0,128.0,0.0,0.0,2000.0,60.0,Yes,permanent,Mrs,25-34,Northgate Retail,BS7,110.0,0.0,home_improvement
+APP000392,2026-03-31,11110.0,652.0,438.0,66.0,1.0,21.0,20860.0,60.0,Yes,self_employed,Ms,35-44,Fenwick & Co,NE2,61.0,2.0,home_improvement
+APP000393,2026-03-31,39001.0,615.0,511.0,94.0,0.0,0.0,16257.0,60.0,Yes,permanent,Ms,45-54,Solent Marine,CF24,173.0,0.0,debt_consolidation
+APP000394,2026-03-31,12644.0,698.0,372.0,71.0,0.0,0.0,12184.0,36.0,Yes,permanent,Ms,35-44,Northgate Retail,B15,52.0,2.0,debt_consolidation
+APP000395,2026-03-31,30474.0,776.0,262.0,68.0,0.0,0.0,10587.0,48.0,Yes,permanent,Mrs,55-64,Northgate Retail,L17,168.0,0.0,debt_consolidation
+APP000396,2026-03-31,50167.0,811.0,182.0,147.0,0.0,0.0,40000.0,48.0,Yes,permanent,Mr,35-44,Kestrel Systems,BS7,63.0,0.0,vehicle
+APP000397,2026-03-31,27456.0,724.0,479.0,52.0,0.0,0.0,13046.0,36.0,Yes,permanent,Mr,25-34,Solent Marine,L17,139.0,3.0,home_improvement
+APP000398,2026-03-31,53130.0,769.0,114.0,179.0,0.0,0.0,2498.0,36.0,No,permanent,Ms,35-44,Northgate Retail,B15,118.0,0.0,debt_consolidation
+APP000399,2026-03-31,23846.0,582.0,677.0,47.0,0.0,0.0,9018.0,60.0,Yes,permanent,Mr,25-34,Calder Logistics,CF24,141.0,3.0,debt_consolidation
+APP000400,2026-03-31,27547.0,720.0,444.0,128.0,0.0,0.0,13250.0,36.0,Yes,self_employed,Dr,35-44,Northgate Retail,G12,39.0,2.0,debt_consolidation
+APP000401,2026-03-31,45731.0,693.0,282.0,132.0,0.0,0.0,13117.0,36.0,Yes,permanent,Mr,35-44,Harrow Estates,M14,180.0,0.0,home_improvement
+APP000402,2026-03-31,9000.0,470.0,696.0,53.0,1.0,21.0,15409.0,24.0,Yes,permanent,Dr,25-34,Kestrel Systems,M14,91.0,0.0,home_improvement
+APP000403,2026-03-31,51999.0,835.0,253.0,157.0,0.0,0.0,8148.0,60.0,Yes,contract,Mr,45-54,Calder Logistics,M14,16.0,0.0,home_improvement
+APP000404,2026-03-31,24141.0,651.0,522.0,84.0,1.0,8.0,20062.0,36.0,Yes,permanent,Mr,55-64,Meridian Health,CF24,124.0,0.0,debt_consolidation
+APP000405,2026-03-31,52901.0,779.0,312.0,170.0,0.0,0.0,12372.0,60.0,No,contract,Ms,45-54,Ashby Group,CF24,17.0,1.0,vehicle
+APP000406,2026-03-31,18501.0,502.0,743.0,56.0,0.0,0.0,5795.0,36.0,Yes,permanent,Ms,45-54,Harrow Estates,CF24,118.0,0.0,other
+APP000407,2026-03-31,22800.0,625.0,503.0,57.0,1.0,15.0,9883.0,36.0,Yes,permanent,Dr,55-64,Harrow Estates,NE2,130.0,0.0,debt_consolidation
+APP000408,2026-03-31,17642.0,573.0,537.0,63.0,0.0,0.0,13115.0,48.0,Yes,contract,Ms,55-64,Calder Logistics,NE2,39.0,0.0,home_improvement
+APP000409,2026-03-31,43390.0,723.0,435.0,189.0,0.0,0.0,22365.0,60.0,Yes,permanent,Mx,25-34,Northgate Retail,M14,23.0,1.0,home_improvement
+APP000410,2026-03-31,24374.0,638.0,516.0,45.0,0.0,0.0,19634.0,48.0,Yes,permanent,Mx,55-64,Northgate Retail,BS7,27.0,0.0,vehicle
+APP000411,2026-03-31,24374.0,584.0,89.0,70.0,0.0,0.0,13465.0,48.0,Yes,permanent,Dr,25-34,Calder Logistics,BS7,119.0,2.0,home_improvement
+APP000412,2026-03-31,42871.0,713.0,567.0,57.0,0.0,0.0,16148.0,60.0,Yes,permanent,Mr,25-34,Solent Marine,L17,135.0,1.0,home_improvement
+APP000413,2026-03-31,32702.0,511.0,705.0,6.0,3.0,10.0,17614.0,48.0,No,permanent,Ms,45-54,Northgate Retail,CF24,166.0,1.0,debt_consolidation
+APP000414,2026-03-31,28055.0,693.0,96.0,146.0,0.0,0.0,31290.0,60.0,No,permanent,Mr,25-34,Ashby Group,NE2,61.0,0.0,other
+APP000415,2026-03-31,40052.0,766.0,232.0,112.0,0.0,0.0,11368.0,60.0,Yes,permanent,Ms,65+,Calder Logistics,G12,20.0,1.0,other
+APP000416,2026-03-31,46061.0,678.0,256.0,87.0,0.0,0.0,19503.0,48.0,Yes,self_employed,Mr,55-64,Solent Marine,NE2,114.0,2.0,debt_consolidation
+APP000417,2026-03-31,27331.0,557.0,814.0,103.0,0.0,0.0,21448.0,60.0,Yes,self_employed,Mr,18-24,Solent Marine,L17,151.0,2.0,other
+APP000418,2026-03-31,39503.0,815.0,330.0,185.0,0.0,0.0,8852.0,60.0,No,contract,Mrs,45-54,Ashby Group,M14,131.0,0.0,vehicle
+APP000419,2026-03-31,27585.0,645.0,160.0,51.0,1.0,4.0,17419.0,60.0,Yes,permanent,Mr,55-64,Meridian Health,BS7,90.0,2.0,vehicle
+APP000420,2026-03-31,48320.0,802.0,256.0,182.0,0.0,0.0,17226.0,48.0,No,permanent,Mr,35-44,Meridian Health,BS7,51.0,0.0,home_improvement
+APP000421,2026-03-31,27555.0,689.0,324.0,97.0,2.0,19.0,12476.0,60.0,Yes,self_employed,Mr,35-44,Meridian Health,NE2,132.0,0.0,other
+APP000422,2026-03-31,18255.0,681.0,788.0,60.0,1.0,11.0,20257.0,36.0,Yes,self_employed,Mr,35-44,Solent Marine,B15,155.0,3.0,debt_consolidation
+APP000423,2026-03-31,57065.0,773.0,33.0,164.0,0.0,0.0,23714.0,60.0,Yes,self_employed,Mrs,35-44,Kestrel Systems,G12,42.0,1.0,debt_consolidation
+APP000424,2026-03-31,26293.0,723.0,65.0,77.0,2.0,24.0,24477.0,48.0,Yes,permanent,Ms,35-44,Northgate Retail,CF24,129.0,1.0,home_improvement
+APP000425,2026-03-31,49000.0,761.0,189.0,198.0,0.0,0.0,14561.0,24.0,Yes,permanent,Ms,45-54,Kestrel Systems,NE2,140.0,1.0,vehicle
+APP000426,2026-03-31,9000.0,608.0,641.0,46.0,0.0,0.0,17424.0,60.0,Yes,permanent,Ms,65+,Fenwick & Co,G12,179.0,3.0,vehicle
+APP000427,2026-03-31,37663.0,706.0,202.0,120.0,0.0,0.0,33630.0,36.0,Yes,contract,Dr,25-34,Ashby Group,G12,69.0,2.0,vehicle
+APP000428,2026-03-31,31920.0,723.0,0.0,147.0,0.0,0.0,7723.0,60.0,Yes,self_employed,Ms,25-34,Solent Marine,NE2,73.0,0.0,other
+APP000429,2026-03-31,27771.0,761.0,440.0,105.0,0.0,0.0,17664.0,48.0,Yes,permanent,Ms,18-24,Northgate Retail,M14,11.0,3.0,vehicle
+APP000430,2026-03-31,36084.0,694.0,614.0,92.0,0.0,0.0,22675.0,60.0,Yes,permanent,Mrs,18-24,Meridian Health,M14,31.0,2.0,home_improvement
+APP000431,2026-03-31,31488.0,686.0,113.0,88.0,1.0,8.0,17126.0,48.0,Yes,contract,Dr,25-34,Northgate Retail,M14,135.0,0.0,home_improvement
+APP000432,2026-03-31,55432.0,886.0,344.0,203.0,0.0,0.0,20920.0,24.0,Yes,permanent,Mx,55-64,Fenwick & Co,M14,51.0,0.0,debt_consolidation
+APP000433,2026-03-31,31421.0,696.0,300.0,93.0,1.0,3.0,17295.0,48.0,Yes,permanent,Mx,25-34,Meridian Health,BS7,164.0,3.0,vehicle
+APP000434,2026-03-31,29402.0,647.0,709.0,75.0,0.0,0.0,21652.0,60.0,Yes,permanent,Mr,35-44,Solent Marine,M14,59.0,3.0,vehicle
+APP000435,2026-03-31,16134.0,592.0,751.0,6.0,1.0,6.0,25619.0,60.0,Yes,permanent,Dr,25-34,Northgate Retail,LS6,144.0,0.0,debt_consolidation
+APP000436,2026-03-31,49907.0,742.0,154.0,140.0,0.0,0.0,14339.0,24.0,No,permanent,Mrs,65+,Solent Marine,NE2,67.0,3.0,debt_consolidation
+APP000437,2026-03-31,43162.0,785.0,415.0,79.0,0.0,0.0,17481.0,24.0,Yes,permanent,Mr,25-34,Calder Logistics,CF24,137.0,1.0,debt_consolidation
+APP000438,2026-03-31,21627.0,732.0,454.0,81.0,0.0,0.0,15586.0,48.0,No,permanent,Mrs,35-44,Kestrel Systems,L17,81.0,2.0,vehicle
+APP000439,2026-03-31,38117.0,657.0,297.0,86.0,0.0,0.0,12973.0,48.0,Yes,self_employed,Dr,35-44,Calder Logistics,L17,40.0,1.0,home_improvement
+APP000440,2026-03-31,52232.0,766.0,279.0,89.0,0.0,0.0,15853.0,60.0,Yes,contract,Mrs,25-34,Ashby Group,LS6,39.0,0.0,debt_consolidation
+APP000441,2026-03-31,23909.0,688.0,309.0,79.0,0.0,0.0,7513.0,36.0,Yes,permanent,Mrs,18-24,Ashby Group,G12,54.0,0.0,other
+APP000442,2026-03-31,34674.0,739.0,10.0,130.0,0.0,0.0,21584.0,60.0,Yes,self_employed,Mrs,35-44,Meridian Health,BS7,24.0,2.0,debt_consolidation
+APP000443,2026-03-31,47396.0,751.0,464.0,155.0,0.0,0.0,28768.0,36.0,Yes,permanent,Mx,25-34,Northgate Retail,L17,156.0,1.0,debt_consolidation
+APP000444,2026-03-31,23089.0,646.0,471.0,19.0,0.0,0.0,28784.0,24.0,Yes,permanent,Mrs,18-24,Meridian Health,NE2,166.0,2.0,debt_consolidation
+APP000445,2026-03-31,47119.0,706.0,95.0,188.0,0.0,0.0,25569.0,48.0,Yes,self_employed,Mr,55-64,Northgate Retail,B15,144.0,1.0,other
+APP000446,2026-03-31,45766.0,720.0,307.0,89.0,0.0,0.0,8769.0,48.0,Yes,self_employed,Mr,25-34,Fenwick & Co,M14,4.0,2.0,debt_consolidation
+APP000447,2026-03-31,23685.0,664.0,162.0,41.0,1.0,20.0,27398.0,48.0,Yes,contract,Mr,18-24,Kestrel Systems,NE2,159.0,2.0,home_improvement
+APP000448,2026-03-31,13547.0,670.0,190.0,46.0,1.0,7.0,10634.0,36.0,Yes,permanent,Ms,35-44,Harrow Estates,NE2,144.0,2.0,vehicle
+APP000449,2026-03-31,24029.0,694.0,310.0,78.0,0.0,0.0,15602.0,36.0,Yes,permanent,Mr,35-44,Ashby Group,NE2,152.0,3.0,debt_consolidation
+APP000450,2026-03-31,9000.0,570.0,447.0,78.0,2.0,11.0,29846.0,60.0,Yes,permanent,Ms,45-54,Harrow Estates,LS6,115.0,0.0,vehicle
+APP000451,2026-03-31,37729.0,763.0,270.0,145.0,0.0,0.0,7961.0,48.0,No,permanent,Dr,35-44,Fenwick & Co,BS7,40.0,0.0,debt_consolidation
+APP000452,2026-03-31,36202.0,673.0,537.0,84.0,1.0,13.0,22310.0,60.0,Yes,self_employed,Dr,25-34,Solent Marine,G12,56.0,2.0,vehicle
+APP000453,2026-03-31,26405.0,595.0,454.0,12.0,1.0,15.0,18110.0,48.0,No,permanent,Mr,45-54,Harrow Estates,LS6,72.0,0.0,home_improvement
+APP000454,2026-03-31,19904.0,624.0,449.0,58.0,0.0,0.0,14859.0,60.0,Yes,permanent,Mrs,35-44,Calder Logistics,CF24,36.0,0.0,vehicle
+APP000455,2026-03-31,23817.0,631.0,464.0,51.0,0.0,0.0,9430.0,48.0,Yes,permanent,Mr,55-64,Northgate Retail,M14,8.0,1.0,home_improvement
+APP000456,2026-03-31,50095.0,753.0,108.0,105.0,0.0,0.0,19169.0,36.0,Yes,contract,Mx,25-34,Harrow Estates,NE2,172.0,1.0,home_improvement
+APP000457,2026-03-31,31166.0,641.0,412.0,25.0,1.0,7.0,12522.0,36.0,Yes,permanent,Mr,25-34,Fenwick & Co,LS6,72.0,0.0,home_improvement
+APP000458,2026-03-31,38028.0,741.0,128.0,113.0,0.0,0.0,23839.0,48.0,Yes,permanent,Mr,25-34,Harrow Estates,BS7,111.0,1.0,home_improvement
+APP000459,2026-03-31,36181.0,726.0,529.0,97.0,2.0,7.0,25182.0,48.0,Yes,permanent,Mr,25-34,Kestrel Systems,LS6,22.0,0.0,vehicle
+APP000460,2026-03-31,54679.0,781.0,324.0,106.0,0.0,0.0,5655.0,36.0,Yes,self_employed,Mr,25-34,Harrow Estates,LS6,155.0,0.0,debt_consolidation
+APP000461,2026-03-31,46817.0,804.0,262.0,124.0,0.0,0.0,12211.0,24.0,Yes,permanent,Mrs,35-44,Solent Marine,BS7,136.0,0.0,vehicle
+APP000462,2026-03-31,29948.0,669.0,192.0,50.0,0.0,0.0,13607.0,60.0,Yes,permanent,Mr,35-44,Ashby Group,LS6,10.0,0.0,vehicle
+APP000463,2026-03-31,31412.0,635.0,396.0,34.0,0.0,0.0,7137.0,36.0,Yes,permanent,Mrs,65+,Harrow Estates,L17,39.0,1.0,debt_consolidation
+APP000464,2026-03-31,42196.0,781.0,153.0,91.0,0.0,0.0,7616.0,60.0,No,permanent,Dr,25-34,Calder Logistics,G12,135.0,3.0,home_improvement
+APP000465,2026-03-31,17834.0,635.0,619.0,83.0,1.0,2.0,16665.0,48.0,Yes,permanent,Ms,55-64,Calder Logistics,L17,13.0,2.0,vehicle
+APP000466,2026-03-31,30801.0,785.0,243.0,141.0,0.0,0.0,14440.0,24.0,No,permanent,Ms,25-34,Northgate Retail,M14,7.0,0.0,home_improvement
+APP000467,2026-03-31,22357.0,622.0,406.0,34.0,0.0,0.0,3611.0,60.0,Yes,permanent,Dr,35-44,Calder Logistics,M14,24.0,0.0,debt_consolidation
+APP000468,2026-03-31,15559.0,672.0,650.0,84.0,1.0,8.0,11964.0,48.0,Yes,permanent,Mr,65+,Ashby Group,M14,28.0,1.0,debt_consolidation
+APP000469,2026-03-31,37582.0,774.0,361.0,100.0,0.0,0.0,19892.0,60.0,Yes,contract,Mx,45-54,Meridian Health,BS7,140.0,0.0,debt_consolidation
+APP000470,2026-03-31,29654.0,711.0,297.0,123.0,0.0,0.0,6953.0,60.0,Yes,permanent,Mrs,55-64,Harrow Estates,B15,141.0,1.0,other
+APP000471,2026-03-31,67919.0,813.0,343.0,165.0,0.0,0.0,9073.0,36.0,Yes,permanent,Mr,35-44,Calder Logistics,NE2,104.0,3.0,home_improvement
+APP000472,2026-03-31,32213.0,755.0,218.0,96.0,0.0,0.0,27908.0,36.0,Yes,self_employed,Mr,25-34,Northgate Retail,G12,57.0,0.0,debt_consolidation
+APP000473,2026-03-31,21172.0,632.0,477.0,72.0,0.0,0.0,25879.0,48.0,Yes,permanent,Mrs,45-54,Solent Marine,L17,142.0,0.0,debt_consolidation
+APP000474,2026-03-31,27883.0,690.0,397.0,55.0,1.0,20.0,3842.0,24.0,Yes,permanent,Mr,45-54,Northgate Retail,BS7,115.0,0.0,debt_consolidation
+APP000475,2026-03-31,31974.0,723.0,275.0,50.0,0.0,0.0,5868.0,36.0,Yes,permanent,Mx,18-24,Fenwick & Co,B15,14.0,0.0,home_improvement
+APP000476,2026-03-31,36118.0,659.0,318.0,34.0,0.0,0.0,18829.0,24.0,Yes,permanent,Dr,25-34,Harrow Estates,CF24,36.0,1.0,other
+APP000477,2026-03-31,25665.0,754.0,358.0,86.0,0.0,0.0,7064.0,48.0,Yes,permanent,Mrs,55-64,Ashby Group,LS6,126.0,1.0,debt_consolidation
+APP000478,2026-03-31,23415.0,677.0,594.0,76.0,1.0,7.0,14104.0,60.0,Yes,self_employed,Mrs,45-54,Meridian Health,LS6,103.0,0.0,other
+APP000479,2026-03-31,26843.0,779.0,470.0,108.0,0.0,0.0,12615.0,36.0,Yes,permanent,Ms,45-54,Calder Logistics,LS6,73.0,1.0,debt_consolidation
+APP000480,2026-03-31,45702.0,788.0,144.0,138.0,0.0,0.0,20201.0,24.0,Yes,self_employed,Mrs,25-34,Kestrel Systems,NE2,97.0,0.0,debt_consolidation
+APP000481,2026-03-31,41648.0,728.0,485.0,153.0,0.0,0.0,2000.0,36.0,Yes,permanent,Ms,65+,Calder Logistics,BS7,46.0,2.0,debt_consolidation
+APP000482,2026-03-31,38310.0,823.0,254.0,97.0,0.0,0.0,2000.0,48.0,No,permanent,Ms,25-34,Kestrel Systems,BS7,107.0,0.0,debt_consolidation
+APP000483,2026-03-31,31095.0,725.0,313.0,88.0,0.0,0.0,6804.0,36.0,Yes,permanent,Mrs,25-34,Fenwick & Co,CF24,27.0,0.0,debt_consolidation
+APP000484,2026-03-31,14465.0,507.0,814.0,65.0,2.0,14.0,23604.0,60.0,Yes,permanent,Ms,35-44,Harrow Estates,CF24,178.0,0.0,home_improvement
+APP000485,2026-03-31,38214.0,708.0,301.0,153.0,0.0,0.0,14843.0,60.0,No,permanent,Mr,35-44,Northgate Retail,NE2,149.0,2.0,vehicle
+APP000486,2026-03-31,41425.0,725.0,598.0,120.0,0.0,0.0,3188.0,24.0,Yes,permanent,Mr,18-24,Fenwick & Co,NE2,91.0,2.0,home_improvement
+APP000487,2026-03-31,33965.0,829.0,294.0,58.0,0.0,0.0,19697.0,48.0,Yes,permanent,Ms,55-64,Ashby Group,BS7,176.0,2.0,debt_consolidation
+APP000488,2026-03-31,27297.0,690.0,212.0,60.0,1.0,22.0,21308.0,60.0,Yes,self_employed,Ms,55-64,Northgate Retail,L17,123.0,3.0,home_improvement
+APP000489,2026-03-31,9000.0,600.0,873.0,46.0,0.0,0.0,14156.0,60.0,Yes,contract,Mrs,25-34,Fenwick & Co,LS6,105.0,0.0,debt_consolidation
+APP000490,2026-03-31,14171.0,580.0,462.0,49.0,1.0,18.0,13521.0,48.0,Yes,contract,Mrs,35-44,Harrow Estates,M14,117.0,0.0,debt_consolidation
+APP000491,2026-03-31,49000.0,753.0,217.0,157.0,0.0,0.0,19282.0,48.0,Yes,self_employed,Mrs,55-64,Meridian Health,LS6,127.0,2.0,other
+APP000492,2026-03-31,23121.0,766.0,0.0,69.0,0.0,0.0,25071.0,48.0,Yes,permanent,Mx,35-44,Kestrel Systems,LS6,178.0,1.0,home_improvement
+APP000493,2026-03-31,19703.0,698.0,660.0,68.0,2.0,3.0,17143.0,60.0,Yes,permanent,Ms,35-44,Kestrel Systems,M14,142.0,0.0,home_improvement
+APP000494,2026-03-31,39491.0,709.0,375.0,91.0,0.0,0.0,19998.0,48.0,Yes,self_employed,Ms,25-34,Ashby Group,NE2,45.0,2.0,vehicle
+APP000495,2026-03-31,26454.0,706.0,492.0,118.0,1.0,18.0,15638.0,36.0,Yes,permanent,Mrs,35-44,Northgate Retail,B15,13.0,1.0,debt_consolidation
+APP000496,2026-03-31,46505.0,805.0,317.0,148.0,0.0,0.0,13140.0,36.0,Yes,permanent,Mr,25-34,Kestrel Systems,G12,166.0,0.0,vehicle
+APP000497,2026-03-31,21585.0,579.0,757.0,79.0,1.0,19.0,9131.0,48.0,Yes,self_employed,Mrs,45-54,Solent Marine,BS7,134.0,2.0,vehicle
+APP000498,2026-03-31,37966.0,737.0,254.0,91.0,0.0,0.0,17922.0,60.0,Yes,self_employed,Ms,25-34,Meridian Health,G12,106.0,0.0,home_improvement
+APP000499,2026-03-31,37442.0,727.0,391.0,68.0,0.0,0.0,13749.0,48.0,Yes,self_employed,Mrs,18-24,Fenwick & Co,L17,90.0,1.0,home_improvement
+APP000500,2026-03-31,39232.0,694.0,76.0,117.0,0.0,0.0,14173.0,60.0,Yes,contract,Mrs,55-64,Fenwick & Co,BS7,171.0,2.0,other
+APP000501,2026-03-31,36998.0,763.0,210.0,92.0,0.0,0.0,22973.0,36.0,Yes,permanent,Mrs,25-34,Ashby Group,G12,10.0,2.0,home_improvement
+APP000502,2026-03-31,16185.0,645.0,668.0,17.0,1.0,22.0,19660.0,48.0,Yes,contract,Mr,35-44,Ashby Group,G12,30.0,0.0,home_improvement
+APP000503,2026-03-31,18275.0,604.0,575.0,84.0,0.0,0.0,22526.0,36.0,Yes,permanent,Mr,45-54,Northgate Retail,B15,59.0,0.0,debt_consolidation
+APP000504,2026-03-31,39543.0,682.0,73.0,150.0,1.0,15.0,4183.0,24.0,Yes,permanent,Dr,25-34,Calder Logistics,LS6,180.0,0.0,debt_consolidation
+APP000505,2026-03-31,26357.0,684.0,571.0,56.0,0.0,0.0,20188.0,36.0,Yes,permanent,Mx,55-64,Calder Logistics,NE2,126.0,3.0,vehicle
+APP000506,2026-03-31,44098.0,749.0,234.0,79.0,0.0,0.0,11576.0,48.0,No,contract,Ms,25-34,Kestrel Systems,G12,109.0,0.0,other
+APP000507,2026-03-31,34624.0,781.0,145.0,106.0,0.0,0.0,9938.0,48.0,No,self_employed,Mrs,25-34,Kestrel Systems,LS6,64.0,1.0,vehicle
+APP000508,2026-03-31,35283.0,740.0,441.0,57.0,0.0,0.0,9609.0,60.0,Yes,contract,Mr,18-24,Solent Marine,NE2,31.0,3.0,vehicle
+APP000509,2026-03-31,59981.0,770.0,123.0,194.0,0.0,0.0,25085.0,36.0,Yes,permanent,Ms,55-64,Meridian Health,G12,6.0,2.0,home_improvement
+APP000510,2026-03-31,45729.0,772.0,40.0,119.0,0.0,0.0,22209.0,60.0,No,contract,Ms,25-34,Harrow Estates,M14,28.0,0.0,vehicle
+APP000511,2026-03-31,38450.0,671.0,224.0,93.0,2.0,11.0,10623.0,48.0,Yes,permanent,Mrs,55-64,Calder Logistics,NE2,34.0,0.0,debt_consolidation
+APP000512,2026-03-31,21009.0,619.0,768.0,36.0,2.0,17.0,7468.0,24.0,Yes,self_employed,Mr,35-44,Meridian Health,B15,93.0,3.0,vehicle
+APP000513,2026-03-31,50816.0,788.0,0.0,90.0,0.0,0.0,16103.0,60.0,Yes,permanent,Mr,55-64,Fenwick & Co,L17,68.0,2.0,home_improvement
+APP000514,2026-03-31,34610.0,681.0,411.0,55.0,0.0,0.0,12553.0,36.0,Yes,permanent,Dr,25-34,Harrow Estates,L17,176.0,1.0,home_improvement
+APP000515,2026-03-31,12708.0,669.0,605.0,15.0,2.0,5.0,28447.0,60.0,Yes,permanent,Mx,55-64,Northgate Retail,M14,166.0,2.0,debt_consolidation
+APP000516,2026-03-31,39424.0,743.0,349.0,121.0,1.0,19.0,5040.0,48.0,Yes,permanent,Mr,65+,Calder Logistics,CF24,101.0,2.0,other
+APP000517,2026-03-31,48392.0,786.0,8.0,153.0,0.0,0.0,2276.0,60.0,Yes,permanent,Mrs,45-54,Kestrel Systems,NE2,32.0,2.0,vehicle
+APP000518,2026-03-31,26492.0,669.0,335.0,54.0,1.0,4.0,14082.0,48.0,No,permanent,Mrs,25-34,Kestrel Systems,CF24,59.0,1.0,debt_consolidation
+APP000519,2026-03-31,26158.0,752.0,280.0,98.0,0.0,0.0,16081.0,60.0,No,permanent,Mr,65+,Solent Marine,BS7,8.0,3.0,vehicle
+APP000520,2026-03-31,22944.0,643.0,492.0,125.0,1.0,16.0,16995.0,24.0,Yes,permanent,Mrs,45-54,Kestrel Systems,NE2,120.0,2.0,other
+APP000521,2026-03-31,37861.0,717.0,170.0,81.0,0.0,0.0,21651.0,36.0,No,self_employed,Ms,25-34,Calder Logistics,L17,71.0,0.0,other
+APP000522,2026-03-31,35041.0,679.0,217.0,50.0,1.0,7.0,31550.0,36.0,Yes,self_employed,Mr,65+,Meridian Health,LS6,167.0,3.0,debt_consolidation
+APP000523,2026-03-31,44732.0,714.0,400.0,103.0,0.0,0.0,13432.0,48.0,Yes,permanent,Mr,25-34,Meridian Health,NE2,59.0,0.0,vehicle
+APP000524,2026-03-31,37454.0,733.0,415.0,89.0,0.0,0.0,11917.0,48.0,Yes,permanent,Ms,25-34,Harrow Estates,G12,154.0,0.0,debt_consolidation
+APP000525,2026-03-31,27713.0,655.0,432.0,65.0,2.0,11.0,2806.0,36.0,Yes,permanent,Ms,18-24,Northgate Retail,NE2,73.0,2.0,home_improvement
+APP000526,2026-03-31,23351.0,765.0,295.0,94.0,1.0,16.0,17826.0,60.0,No,permanent,Ms,35-44,Calder Logistics,L17,119.0,0.0,debt_consolidation
+APP000527,2026-03-31,54736.0,848.0,237.0,202.0,0.0,0.0,22401.0,60.0,No,permanent,Mr,35-44,Northgate Retail,LS6,66.0,0.0,home_improvement
+APP000528,2026-03-31,15316.0,580.0,705.0,6.0,3.0,17.0,14047.0,60.0,Yes,permanent,Mrs,25-34,Fenwick & Co,CF24,146.0,1.0,debt_consolidation
+APP000529,2026-03-31,42120.0,736.0,377.0,109.0,0.0,0.0,24855.0,48.0,Yes,permanent,Mr,35-44,Harrow Estates,BS7,43.0,1.0,debt_consolidation
+APP000530,2026-03-31,49911.0,830.0,85.0,111.0,0.0,0.0,16227.0,60.0,Yes,permanent,Mr,55-64,Solent Marine,CF24,31.0,1.0,debt_consolidation
+APP000531,2026-03-31,37780.0,752.0,276.0,107.0,1.0,19.0,27361.0,60.0,Yes,self_employed,Mrs,25-34,Solent Marine,G12,12.0,0.0,other
+APP000532,2026-03-31,41818.0,788.0,158.0,144.0,1.0,23.0,18499.0,60.0,No,contract,Mr,45-54,Fenwick & Co,L17,70.0,1.0,debt_consolidation
+APP000533,2026-03-31,32146.0,751.0,105.0,100.0,0.0,0.0,8071.0,48.0,Yes,permanent,Dr,25-34,Northgate Retail,BS7,133.0,1.0,vehicle
+APP000534,2026-03-31,12085.0,635.0,550.0,78.0,1.0,10.0,11224.0,24.0,Yes,self_employed,Mrs,35-44,Harrow Estates,NE2,85.0,0.0,debt_consolidation
+APP000535,2026-03-31,20860.0,740.0,385.0,64.0,0.0,0.0,4497.0,36.0,Yes,permanent,Mrs,25-34,Fenwick & Co,M14,152.0,1.0,vehicle
+APP000536,2026-03-31,60876.0,791.0,123.0,146.0,1.0,23.0,2972.0,36.0,Yes,permanent,Mr,25-34,Ashby Group,L17,107.0,3.0,home_improvement
+APP000537,2026-03-31,53541.0,880.0,235.0,150.0,0.0,0.0,18002.0,36.0,Yes,permanent,Ms,18-24,Kestrel Systems,B15,97.0,2.0,debt_consolidation
+APP000538,2026-03-31,27663.0,701.0,61.0,113.0,0.0,0.0,22522.0,36.0,Yes,self_employed,Mr,35-44,Calder Logistics,LS6,91.0,1.0,home_improvement
+APP000539,2026-03-31,26445.0,651.0,512.0,43.0,2.0,19.0,30657.0,60.0,Yes,permanent,Mr,35-44,Northgate Retail,M14,10.0,0.0,debt_consolidation
+APP000540,2026-03-31,46571.0,696.0,320.0,140.0,0.0,0.0,15586.0,36.0,Yes,permanent,Ms,45-54,Meridian Health,CF24,108.0,1.0,debt_consolidation
+APP000541,2026-03-31,14553.0,637.0,730.0,28.0,1.0,17.0,14224.0,36.0,No,self_employed,Mrs,25-34,Kestrel Systems,M14,37.0,3.0,home_improvement
+APP000542,2026-03-31,24403.0,667.0,531.0,83.0,2.0,10.0,7682.0,48.0,Yes,permanent,Ms,65+,Ashby Group,G12,18.0,0.0,debt_consolidation
+APP000543,2026-03-31,26706.0,679.0,212.0,76.0,1.0,16.0,23405.0,36.0,No,contract,Mrs,18-24,Solent Marine,LS6,21.0,1.0,vehicle
+APP000544,2026-03-31,23935.0,661.0,309.0,18.0,0.0,0.0,18919.0,48.0,Yes,contract,Mr,25-34,Ashby Group,LS6,32.0,0.0,other
+APP000545,2026-03-31,33352.0,734.0,413.0,53.0,1.0,22.0,11537.0,60.0,Yes,permanent,Mr,45-54,Meridian Health,BS7,113.0,2.0,home_improvement
+APP000546,2026-03-31,46039.0,691.0,324.0,78.0,0.0,0.0,21164.0,36.0,Yes,permanent,Mr,25-34,Meridian Health,M14,54.0,0.0,debt_consolidation
+APP000547,2026-03-31,46245.0,723.0,557.0,116.0,0.0,0.0,20210.0,36.0,Yes,self_employed,Dr,25-34,Fenwick & Co,B15,55.0,1.0,vehicle
+APP000548,2026-03-31,46061.0,679.0,346.0,89.0,0.0,0.0,2000.0,24.0,Yes,permanent,Mr,35-44,Fenwick & Co,BS7,76.0,3.0,home_improvement
+APP000549,2026-03-31,47261.0,744.0,138.0,78.0,0.0,0.0,21570.0,60.0,Yes,permanent,Ms,45-54,Meridian Health,BS7,172.0,0.0,debt_consolidation
+APP000550,2026-03-31,56497.0,788.0,293.0,157.0,0.0,0.0,17021.0,60.0,Yes,permanent,Mrs,55-64,Harrow Estates,NE2,49.0,0.0,other
+APP000551,2026-03-31,27590.0,723.0,142.0,126.0,0.0,0.0,13064.0,36.0,Yes,permanent,Mr,25-34,Northgate Retail,G12,56.0,0.0,debt_consolidation
+APP000552,2026-03-31,28109.0,652.0,172.0,25.0,0.0,0.0,12872.0,60.0,Yes,self_employed,Dr,45-54,Fenwick & Co,CF24,47.0,1.0,debt_consolidation
+APP000553,2026-03-31,54135.0,776.0,545.0,201.0,0.0,0.0,29113.0,48.0,Yes,permanent,Dr,18-24,Calder Logistics,LS6,59.0,0.0,vehicle
+APP000554,2026-03-31,49395.0,761.0,226.0,151.0,0.0,0.0,27520.0,48.0,Yes,self_employed,Mr,55-64,Northgate Retail,NE2,56.0,2.0,vehicle
+APP000555,2026-03-31,58197.0,814.0,280.0,147.0,0.0,0.0,29695.0,60.0,Yes,self_employed,Mr,45-54,Ashby Group,BS7,150.0,0.0,debt_consolidation
+APP000556,2026-03-31,35551.0,802.0,339.0,142.0,0.0,0.0,7385.0,36.0,Yes,self_employed,Mrs,55-64,Harrow Estates,G12,176.0,1.0,vehicle
+APP000557,2026-03-31,10705.0,480.0,944.0,30.0,0.0,0.0,11091.0,60.0,No,self_employed,Ms,25-34,Northgate Retail,L17,73.0,0.0,debt_consolidation
+APP000558,2026-03-31,61821.0,787.0,220.0,132.0,0.0,0.0,22791.0,48.0,Yes,permanent,Ms,35-44,Harrow Estates,G12,157.0,2.0,home_improvement
+APP000559,2026-03-31,56529.0,774.0,350.0,216.0,0.0,0.0,6936.0,24.0,Yes,permanent,Ms,45-54,Ashby Group,BS7,22.0,1.0,vehicle
+APP000560,2026-03-31,53491.0,813.0,36.0,118.0,0.0,0.0,10598.0,60.0,Yes,permanent,Dr,18-24,Solent Marine,L17,88.0,0.0,vehicle
+APP000561,2026-03-31,44302.0,698.0,65.0,107.0,0.0,0.0,2468.0,24.0,No,contract,Mrs,55-64,Meridian Health,CF24,149.0,2.0,debt_consolidation
+APP000562,2026-03-31,59225.0,786.0,380.0,175.0,0.0,0.0,29898.0,48.0,Yes,permanent,Mr,45-54,Solent Marine,CF24,19.0,0.0,other
+APP000563,2026-03-31,40319.0,694.0,466.0,78.0,1.0,16.0,23970.0,48.0,Yes,contract,Mrs,45-54,Kestrel Systems,L17,180.0,1.0,debt_consolidation
+APP000564,2026-03-31,35288.0,821.0,252.0,147.0,0.0,0.0,19439.0,60.0,Yes,permanent,Ms,25-34,Ashby Group,LS6,74.0,0.0,vehicle
+APP000565,2026-03-31,33406.0,742.0,292.0,122.0,0.0,0.0,17644.0,60.0,Yes,permanent,Dr,45-54,Solent Marine,B15,91.0,0.0,home_improvement
+APP000566,2026-03-31,18895.0,615.0,543.0,120.0,1.0,3.0,12872.0,60.0,Yes,permanent,Ms,35-44,Ashby Group,B15,170.0,1.0,vehicle
+APP000567,2026-03-31,45307.0,808.0,84.0,123.0,0.0,0.0,13016.0,60.0,Yes,permanent,Mr,25-34,Northgate Retail,BS7,166.0,2.0,debt_consolidation
+APP000568,2026-03-31,30351.0,671.0,595.0,77.0,0.0,0.0,20618.0,60.0,Yes,self_employed,Dr,25-34,Kestrel Systems,M14,40.0,1.0,vehicle
+APP000569,2026-03-31,46107.0,673.0,352.0,130.0,0.0,0.0,10662.0,60.0,No,contract,Mr,55-64,Meridian Health,B15,84.0,0.0,home_improvement
+APP000570,2026-03-31,34703.0,763.0,331.0,112.0,0.0,0.0,25205.0,60.0,Yes,permanent,Mrs,35-44,Harrow Estates,B15,133.0,1.0,debt_consolidation
+APP000571,2026-03-31,14283.0,634.0,573.0,12.0,0.0,0.0,12306.0,24.0,Yes,contract,Ms,25-34,Kestrel Systems,M14,84.0,2.0,debt_consolidation
+APP000572,2026-03-31,65791.0,786.0,327.0,162.0,0.0,0.0,9449.0,24.0,Yes,self_employed,Mrs,35-44,Fenwick & Co,B15,169.0,3.0,debt_consolidation
+APP000573,2026-03-31,13930.0,602.0,761.0,31.0,0.0,0.0,25735.0,60.0,Yes,contract,Mrs,45-54,Northgate Retail,BS7,38.0,0.0,debt_consolidation
+APP000574,2026-03-31,13616.0,673.0,624.0,61.0,0.0,0.0,14920.0,48.0,No,contract,Dr,25-34,Calder Logistics,M14,176.0,1.0,vehicle
+APP000575,2026-03-31,30616.0,635.0,216.0,112.0,0.0,0.0,20162.0,60.0,Yes,permanent,Mrs,25-34,Ashby Group,CF24,113.0,0.0,other
+APP000576,2026-03-31,54895.0,759.0,251.0,180.0,0.0,0.0,12888.0,60.0,Yes,contract,Mrs,45-54,Solent Marine,G12,112.0,0.0,debt_consolidation
+APP000577,2026-03-31,24206.0,746.0,686.0,90.0,2.0,23.0,2000.0,60.0,Yes,permanent,Mr,55-64,Kestrel Systems,G12,124.0,1.0,other
+APP000578,2026-03-31,34375.0,741.0,307.0,87.0,1.0,7.0,20104.0,36.0,Yes,self_employed,Ms,45-54,Ashby Group,NE2,50.0,1.0,vehicle
+APP000579,2026-03-31,18686.0,591.0,502.0,15.0,1.0,21.0,5900.0,48.0,Yes,contract,Mr,55-64,Fenwick & Co,LS6,82.0,2.0,other
+APP000580,2026-03-31,45724.0,742.0,305.0,146.0,0.0,0.0,24117.0,24.0,Yes,permanent,Mr,25-34,Kestrel Systems,M14,42.0,1.0,debt_consolidation
+APP000581,2026-03-31,18214.0,534.0,824.0,35.0,1.0,23.0,4369.0,36.0,No,self_employed,Ms,35-44,Meridian Health,LS6,146.0,1.0,debt_consolidation
+APP000582,2026-03-31,27241.0,601.0,607.0,36.0,0.0,0.0,2013.0,24.0,Yes,contract,Ms,35-44,Fenwick & Co,BS7,62.0,2.0,home_improvement
+APP000583,2026-03-31,47690.0,725.0,0.0,153.0,0.0,0.0,18307.0,60.0,Yes,permanent,Mr,35-44,Harrow Estates,B15,28.0,2.0,other
+APP000584,2026-03-31,40248.0,739.0,330.0,85.0,0.0,0.0,19190.0,24.0,Yes,permanent,Mr,25-34,Fenwick & Co,LS6,160.0,1.0,home_improvement
+APP000585,2026-03-31,51364.0,738.0,14.0,196.0,0.0,0.0,16800.0,36.0,No,permanent,Mr,45-54,Northgate Retail,BS7,64.0,2.0,home_improvement
+APP000586,2026-03-31,41206.0,571.0,405.0,113.0,2.0,16.0,6898.0,36.0,Yes,contract,Mr,25-34,Fenwick & Co,G12,171.0,0.0,debt_consolidation
+APP000587,2026-03-31,17182.0,660.0,597.0,36.0,1.0,14.0,22664.0,24.0,Yes,permanent,Ms,35-44,Northgate Retail,M14,82.0,3.0,other
+APP000588,2026-03-31,26412.0,532.0,649.0,40.0,0.0,0.0,5015.0,60.0,No,permanent,Mr,35-44,Northgate Retail,LS6,118.0,1.0,vehicle
+APP000589,2026-03-31,28644.0,678.0,493.0,71.0,1.0,17.0,12518.0,48.0,No,contract,Mr,65+,Fenwick & Co,L17,142.0,2.0,home_improvement
+APP000590,2026-03-31,28138.0,707.0,821.0,116.0,0.0,0.0,10089.0,48.0,Yes,permanent,Mr,25-34,Ashby Group,M14,94.0,0.0,vehicle
+APP000591,2026-03-31,33907.0,715.0,489.0,91.0,0.0,0.0,13167.0,60.0,No,permanent,Mrs,45-54,Meridian Health,BS7,170.0,2.0,other
+APP000592,2026-03-31,35079.0,667.0,481.0,80.0,1.0,18.0,22396.0,60.0,Yes,permanent,Mr,25-34,Meridian Health,LS6,146.0,0.0,vehicle
+APP000593,2026-03-31,25616.0,563.0,565.0,21.0,0.0,0.0,11244.0,48.0,No,permanent,Mr,45-54,Solent Marine,NE2,161.0,1.0,home_improvement
+APP000594,2026-03-31,31235.0,646.0,290.0,82.0,0.0,0.0,20233.0,48.0,Yes,permanent,Mrs,35-44,Calder Logistics,CF24,97.0,2.0,debt_consolidation
+APP000595,2026-03-31,33917.0,811.0,111.0,80.0,0.0,0.0,21206.0,60.0,Yes,permanent,Ms,18-24,Ashby Group,NE2,26.0,2.0,vehicle
+APP000596,2026-03-31,25344.0,708.0,305.0,98.0,1.0,22.0,3167.0,36.0,Yes,self_employed,Mrs,35-44,Solent Marine,BS7,34.0,3.0,debt_consolidation
+APP000597,2026-03-31,55466.0,746.0,27.0,129.0,0.0,0.0,7251.0,48.0,Yes,permanent,Mr,25-34,Northgate Retail,M14,29.0,1.0,debt_consolidation
+APP000598,2026-03-31,32950.0,681.0,288.0,94.0,0.0,0.0,13125.0,60.0,No,permanent,Mr,25-34,Meridian Health,L17,98.0,2.0,vehicle
+APP000599,2026-03-31,38507.0,711.0,351.0,82.0,2.0,5.0,11559.0,60.0,Yes,permanent,Ms,25-34,Northgate Retail,M14,171.0,0.0,debt_consolidation
+APP000600,2026-03-31,40845.0,758.0,120.0,143.0,1.0,17.0,18308.0,36.0,Yes,self_employed,Mr,18-24,Northgate Retail,M14,101.0,0.0,debt_consolidation
+APP000601,2026-03-31,29209.0,699.0,321.0,47.0,0.0,0.0,2000.0,60.0,Yes,contract,Dr,45-54,Calder Logistics,BS7,79.0,2.0,vehicle
+APP000602,2026-03-31,39314.0,739.0,189.0,109.0,0.0,0.0,21404.0,36.0,Yes,permanent,Mr,35-44,Fenwick & Co,B15,23.0,1.0,home_improvement
+APP000603,2026-03-31,39121.0,715.0,324.0,82.0,0.0,0.0,21584.0,60.0,Yes,permanent,Dr,45-54,Solent Marine,M14,69.0,1.0,debt_consolidation
+APP000604,2026-03-31,41898.0,788.0,188.0,168.0,0.0,0.0,14738.0,48.0,No,permanent,Mrs,35-44,Calder Logistics,NE2,36.0,2.0,home_improvement
+APP000605,2026-03-31,43981.0,738.0,324.0,143.0,0.0,0.0,5627.0,24.0,Yes,contract,Mrs,35-44,Northgate Retail,B15,84.0,0.0,vehicle
+APP000606,2026-03-31,42223.0,802.0,326.0,156.0,0.0,0.0,16042.0,60.0,Yes,contract,Mr,35-44,Fenwick & Co,L17,84.0,2.0,vehicle
+APP000607,2026-03-31,48823.0,744.0,212.0,112.0,0.0,0.0,11969.0,60.0,No,permanent,Mx,35-44,Solent Marine,L17,168.0,1.0,debt_consolidation
+APP000608,2026-03-31,32238.0,852.0,354.0,138.0,0.0,0.0,20250.0,60.0,Yes,permanent,Ms,55-64,Northgate Retail,BS7,73.0,0.0,debt_consolidation
+APP000609,2026-03-31,25377.0,565.0,488.0,6.0,2.0,23.0,15359.0,24.0,Yes,permanent,Ms,25-34,Ashby Group,G12,159.0,1.0,home_improvement
+APP000610,2026-03-31,41983.0,650.0,580.0,120.0,0.0,0.0,21462.0,48.0,Yes,permanent,Mr,25-34,Fenwick & Co,BS7,10.0,0.0,vehicle
+APP000611,2026-03-31,33664.0,594.0,687.0,6.0,1.0,7.0,12750.0,24.0,Yes,permanent,Mr,25-34,Fenwick & Co,NE2,64.0,2.0,home_improvement
+APP000612,2026-03-31,35821.0,686.0,350.0,114.0,1.0,9.0,26820.0,48.0,Yes,contract,Mx,25-34,Harrow Estates,LS6,131.0,1.0,home_improvement
+APP000613,2026-03-31,21304.0,569.0,357.0,6.0,1.0,10.0,2000.0,36.0,Yes,contract,Dr,35-44,Meridian Health,NE2,82.0,2.0,home_improvement
+APP000614,2026-03-31,36640.0,702.0,313.0,80.0,0.0,0.0,8379.0,36.0,No,contract,Ms,35-44,Ashby Group,LS6,17.0,0.0,vehicle
+APP000615,2026-03-31,52579.0,777.0,0.0,100.0,0.0,0.0,19681.0,48.0,Yes,permanent,Mrs,45-54,Solent Marine,B15,66.0,0.0,debt_consolidation
+APP000616,2026-03-31,23192.0,636.0,411.0,97.0,0.0,0.0,4668.0,48.0,Yes,permanent,Mrs,45-54,Ashby Group,M14,101.0,0.0,debt_consolidation
+APP000617,2026-03-31,34391.0,731.0,365.0,71.0,0.0,0.0,21519.0,60.0,No,self_employed,Ms,25-34,Northgate Retail,M14,172.0,1.0,vehicle
+APP000618,2026-03-31,51778.0,755.0,191.0,153.0,0.0,0.0,6875.0,60.0,Yes,self_employed,Ms,35-44,Ashby Group,B15,45.0,0.0,vehicle
+APP000619,2026-03-31,32943.0,655.0,451.0,32.0,2.0,10.0,16699.0,24.0,Yes,contract,Ms,35-44,Meridian Health,BS7,19.0,2.0,home_improvement
+APP000620,2026-03-31,17425.0,658.0,513.0,24.0,1.0,18.0,9139.0,48.0,Yes,contract,Mr,25-34,Calder Logistics,BS7,137.0,1.0,other
+APP000621,2026-03-31,53758.0,771.0,35.0,140.0,0.0,0.0,12691.0,60.0,No,permanent,Mrs,35-44,Harrow Estates,CF24,112.0,1.0,home_improvement
+APP000622,2026-03-31,31833.0,680.0,300.0,130.0,0.0,0.0,17310.0,60.0,No,self_employed,Ms,45-54,Calder Logistics,G12,65.0,2.0,vehicle
+APP000623,2026-03-31,18272.0,528.0,620.0,22.0,2.0,5.0,15214.0,60.0,Yes,contract,Ms,18-24,Harrow Estates,LS6,72.0,3.0,debt_consolidation
+APP000624,2026-03-31,43711.0,765.0,141.0,138.0,0.0,0.0,13140.0,48.0,Yes,permanent,Mr,35-44,Harrow Estates,CF24,61.0,2.0,vehicle
+APP000625,2026-03-31,28608.0,613.0,445.0,67.0,0.0,0.0,32148.0,48.0,Yes,contract,Dr,25-34,Fenwick & Co,LS6,120.0,1.0,debt_consolidation
+APP000626,2026-03-31,57256.0,789.0,41.0,150.0,0.0,0.0,16063.0,48.0,Yes,permanent,Mr,45-54,Fenwick & Co,NE2,156.0,1.0,other
+APP000627,2026-03-31,11189.0,652.0,786.0,36.0,1.0,8.0,8725.0,60.0,Yes,permanent,Mrs,35-44,Northgate Retail,L17,56.0,0.0,debt_consolidation
+APP000628,2026-03-31,59528.0,776.0,98.0,160.0,0.0,0.0,22957.0,48.0,Yes,self_employed,Mrs,18-24,Solent Marine,M14,164.0,1.0,vehicle
+APP000629,2026-03-31,24899.0,691.0,659.0,135.0,0.0,0.0,22155.0,36.0,No,permanent,Mr,35-44,Calder Logistics,LS6,77.0,2.0,debt_consolidation
+APP000630,2026-03-31,56232.0,745.0,27.0,161.0,0.0,0.0,25172.0,36.0,Yes,permanent,Dr,25-34,Northgate Retail,NE2,90.0,1.0,debt_consolidation
+APP000631,2026-03-31,30241.0,736.0,465.0,84.0,1.0,17.0,29404.0,60.0,Yes,permanent,Mr,25-34,Ashby Group,B15,48.0,0.0,home_improvement
+APP000632,2026-03-31,9000.0,668.0,352.0,29.0,0.0,0.0,8955.0,36.0,No,self_employed,Mr,45-54,Fenwick & Co,LS6,18.0,2.0,debt_consolidation
+APP000633,2026-03-31,46859.0,802.0,0.0,127.0,0.0,0.0,23946.0,24.0,Yes,permanent,Mr,35-44,Calder Logistics,BS7,39.0,2.0,debt_consolidation
+APP000634,2026-03-31,39499.0,664.0,282.0,154.0,0.0,0.0,24547.0,36.0,Yes,contract,Mrs,55-64,Harrow Estates,M14,47.0,2.0,debt_consolidation
+APP000635,2026-03-31,32567.0,578.0,615.0,15.0,2.0,3.0,16003.0,48.0,Yes,permanent,Ms,55-64,Fenwick & Co,L17,80.0,0.0,other
+APP000636,2026-03-31,30953.0,722.0,202.0,51.0,0.0,0.0,17839.0,48.0,Yes,permanent,Mrs,55-64,Calder Logistics,LS6,90.0,2.0,other
+APP000637,2026-03-31,39752.0,810.0,426.0,107.0,0.0,0.0,2000.0,36.0,Yes,permanent,Mx,35-44,Northgate Retail,BS7,153.0,0.0,debt_consolidation
+APP000638,2026-03-31,19394.0,693.0,268.0,65.0,0.0,0.0,11695.0,60.0,Yes,permanent,Mr,55-64,Calder Logistics,BS7,67.0,3.0,other
+APP000639,2026-03-31,47732.0,790.0,278.0,169.0,0.0,0.0,29410.0,24.0,Yes,permanent,Ms,18-24,Ashby Group,BS7,139.0,1.0,debt_consolidation
+APP000640,2026-03-31,34288.0,596.0,573.0,6.0,0.0,0.0,2599.0,60.0,Yes,permanent,Ms,45-54,Ashby Group,G12,48.0,0.0,debt_consolidation
+APP000641,2026-03-31,38194.0,730.0,343.0,121.0,1.0,16.0,11982.0,48.0,Yes,permanent,Mrs,35-44,Solent Marine,NE2,88.0,0.0,vehicle
+APP000642,2026-03-31,27506.0,681.0,128.0,99.0,0.0,0.0,18160.0,36.0,Yes,permanent,Ms,55-64,Ashby Group,M14,17.0,0.0,debt_consolidation
+APP000643,2026-03-31,17990.0,699.0,607.0,44.0,0.0,0.0,20317.0,60.0,No,self_employed,Mr,18-24,Kestrel Systems,B15,161.0,3.0,other
+APP000644,2026-03-31,35007.0,617.0,459.0,59.0,0.0,0.0,28237.0,36.0,Yes,permanent,Mr,35-44,Harrow Estates,G12,65.0,1.0,other
+APP000645,2026-03-31,56375.0,778.0,200.0,123.0,0.0,0.0,2779.0,60.0,Yes,permanent,Mr,18-24,Harrow Estates,LS6,116.0,0.0,debt_consolidation
+APP000646,2026-03-31,33876.0,737.0,237.0,127.0,0.0,0.0,16321.0,36.0,Yes,permanent,Ms,25-34,Calder Logistics,NE2,102.0,1.0,vehicle
+APP000647,2026-03-31,37593.0,633.0,143.0,50.0,0.0,0.0,22448.0,24.0,Yes,permanent,Mr,35-44,Kestrel Systems,G12,89.0,0.0,vehicle
+APP000648,2026-03-31,41686.0,681.0,69.0,63.0,0.0,0.0,6148.0,60.0,Yes,permanent,Ms,25-34,Meridian Health,NE2,45.0,3.0,other
+APP000649,2026-03-31,45302.0,807.0,256.0,179.0,0.0,0.0,15702.0,24.0,Yes,self_employed,Mrs,45-54,Harrow Estates,BS7,149.0,0.0,other
+APP000650,2026-03-31,26089.0,534.0,642.0,74.0,2.0,5.0,30136.0,48.0,Yes,permanent,Mr,35-44,Northgate Retail,LS6,87.0,0.0,debt_consolidation
+APP000651,2026-03-31,20605.0,581.0,222.0,68.0,2.0,23.0,25874.0,60.0,Yes,contract,Mx,25-34,Meridian Health,G12,26.0,3.0,other
+APP000652,2026-03-31,50567.0,826.0,106.0,84.0,0.0,0.0,20046.0,36.0,Yes,permanent,Ms,35-44,Meridian Health,M14,21.0,2.0,vehicle
+APP000653,2026-03-31,30896.0,688.0,599.0,122.0,0.0,0.0,2000.0,36.0,No,permanent,Ms,35-44,Calder Logistics,BS7,92.0,1.0,vehicle
+APP000654,2026-03-31,44004.0,718.0,214.0,104.0,0.0,0.0,15022.0,36.0,Yes,permanent,Ms,18-24,Meridian Health,BS7,103.0,2.0,vehicle
+APP000655,2026-03-31,40829.0,827.0,178.0,144.0,1.0,24.0,18898.0,24.0,Yes,permanent,Dr,45-54,Solent Marine,NE2,52.0,1.0,home_improvement
+APP000656,2026-03-31,24630.0,628.0,709.0,47.0,0.0,0.0,13686.0,60.0,Yes,self_employed,Ms,45-54,Kestrel Systems,NE2,45.0,0.0,debt_consolidation
+APP000657,2026-03-31,32822.0,706.0,325.0,99.0,1.0,4.0,15509.0,60.0,Yes,permanent,Dr,55-64,Kestrel Systems,G12,150.0,0.0,vehicle
+APP000658,2026-03-31,29232.0,742.0,266.0,96.0,1.0,10.0,39126.0,48.0,Yes,permanent,Mr,55-64,Ashby Group,LS6,124.0,0.0,debt_consolidation
+APP000659,2026-03-31,38418.0,694.0,175.0,154.0,0.0,0.0,14391.0,36.0,Yes,permanent,Dr,35-44,Solent Marine,BS7,28.0,0.0,vehicle
+APP000660,2026-03-31,47171.0,760.0,0.0,193.0,0.0,0.0,8728.0,60.0,Yes,self_employed,Mr,45-54,Northgate Retail,M14,146.0,1.0,home_improvement
+APP000661,2026-03-31,43107.0,808.0,16.0,86.0,0.0,0.0,17822.0,36.0,No,self_employed,Mx,35-44,Kestrel Systems,G12,13.0,3.0,home_improvement
+APP000662,2026-03-31,29392.0,715.0,193.0,82.0,0.0,0.0,13632.0,36.0,Yes,permanent,Mr,18-24,Calder Logistics,M14,152.0,0.0,debt_consolidation
+APP000663,2026-03-31,48667.0,773.0,149.0,203.0,0.0,0.0,13677.0,48.0,Yes,permanent,Mx,45-54,Northgate Retail,NE2,151.0,1.0,debt_consolidation
+APP000664,2026-03-31,39402.0,862.0,230.0,139.0,0.0,0.0,15347.0,36.0,Yes,contract,Ms,25-34,Fenwick & Co,B15,25.0,0.0,home_improvement
+APP000665,2026-03-31,28837.0,774.0,337.0,69.0,1.0,13.0,21805.0,48.0,No,permanent,Mrs,35-44,Solent Marine,G12,178.0,0.0,debt_consolidation
+APP000666,2026-03-31,40881.0,826.0,211.0,150.0,0.0,0.0,17781.0,60.0,Yes,self_employed,Ms,35-44,Meridian Health,CF24,162.0,1.0,debt_consolidation
+APP000667,2026-03-31,30239.0,703.0,411.0,75.0,0.0,0.0,6989.0,24.0,Yes,permanent,Ms,35-44,Kestrel Systems,B15,35.0,0.0,home_improvement
+APP000668,2026-03-31,19774.0,581.0,549.0,25.0,1.0,24.0,15005.0,60.0,Yes,permanent,Mr,25-34,Ashby Group,NE2,119.0,0.0,debt_consolidation
+APP000669,2026-03-31,51649.0,799.0,0.0,96.0,0.0,0.0,19558.0,48.0,No,permanent,Mr,55-64,Northgate Retail,B15,85.0,1.0,other
+APP000670,2026-03-31,18817.0,680.0,307.0,69.0,1.0,14.0,12492.0,36.0,Yes,permanent,Ms,25-34,Solent Marine,NE2,29.0,1.0,vehicle
+APP000671,2026-03-31,24379.0,759.0,246.0,64.0,0.0,0.0,24617.0,24.0,No,permanent,Mr,35-44,Calder Logistics,M14,40.0,0.0,vehicle
+APP000672,2026-03-31,58206.0,752.0,89.0,160.0,0.0,0.0,21828.0,60.0,Yes,permanent,Mr,25-34,Kestrel Systems,LS6,39.0,1.0,debt_consolidation
+APP000673,2026-03-31,50526.0,781.0,142.0,126.0,0.0,0.0,8569.0,48.0,Yes,self_employed,Mr,55-64,Northgate Retail,M14,122.0,0.0,vehicle
+APP000674,2026-03-31,19776.0,564.0,346.0,39.0,0.0,0.0,18398.0,48.0,Yes,contract,Mr,55-64,Solent Marine,NE2,104.0,1.0,other
+APP000675,2026-03-31,49622.0,724.0,105.0,106.0,1.0,19.0,30878.0,24.0,Yes,permanent,Mr,45-54,Ashby Group,LS6,175.0,0.0,vehicle
+APP000676,2026-03-31,19699.0,644.0,506.0,87.0,2.0,21.0,27701.0,60.0,Yes,self_employed,Ms,55-64,Harrow Estates,NE2,57.0,1.0,debt_consolidation
+APP000677,2026-03-31,44138.0,853.0,196.0,161.0,0.0,0.0,15578.0,60.0,Yes,permanent,Dr,45-54,Ashby Group,NE2,88.0,2.0,vehicle
+APP000678,2026-03-31,20045.0,653.0,288.0,75.0,0.0,0.0,22732.0,60.0,Yes,self_employed,Ms,45-54,Fenwick & Co,M14,69.0,0.0,debt_consolidation
+APP000679,2026-03-31,24283.0,622.0,590.0,64.0,1.0,9.0,10946.0,60.0,Yes,permanent,Mrs,45-54,Northgate Retail,G12,71.0,0.0,other
+APP000680,2026-03-31,24076.0,607.0,489.0,60.0,2.0,6.0,5139.0,48.0,Yes,permanent,Mr,55-64,Northgate Retail,BS7,106.0,1.0,debt_consolidation
+APP000681,2026-03-31,42672.0,761.0,37.0,183.0,0.0,0.0,20157.0,36.0,Yes,contract,Mrs,25-34,Meridian Health,L17,142.0,0.0,vehicle
+APP000682,2026-03-31,22299.0,631.0,386.0,93.0,1.0,23.0,17849.0,60.0,Yes,permanent,Mx,45-54,Meridian Health,M14,124.0,2.0,debt_consolidation
+APP000683,2026-03-31,41636.0,741.0,524.0,164.0,0.0,0.0,19856.0,48.0,Yes,permanent,Dr,25-34,Kestrel Systems,M14,23.0,0.0,debt_consolidation
+APP000684,2026-03-31,25925.0,549.0,426.0,88.0,0.0,0.0,15815.0,36.0,Yes,permanent,Mrs,35-44,Harrow Estates,B15,52.0,2.0,home_improvement
+APP000685,2026-03-31,47626.0,797.0,343.0,149.0,0.0,0.0,18445.0,48.0,Yes,permanent,Ms,25-34,Kestrel Systems,NE2,114.0,0.0,vehicle
+APP000686,2026-03-31,42231.0,739.0,453.0,98.0,0.0,0.0,12153.0,48.0,Yes,permanent,Dr,45-54,Solent Marine,M14,138.0,0.0,other
+APP000687,2026-03-31,25889.0,594.0,730.0,74.0,2.0,22.0,19549.0,24.0,Yes,self_employed,Mr,45-54,Calder Logistics,L17,157.0,2.0,debt_consolidation
+APP000688,2026-03-31,25875.0,696.0,145.0,125.0,0.0,0.0,22248.0,48.0,Yes,contract,Mrs,55-64,Calder Logistics,NE2,67.0,0.0,vehicle
+APP000689,2026-03-31,35878.0,680.0,542.0,107.0,0.0,0.0,15562.0,24.0,No,contract,Mrs,55-64,Ashby Group,M14,84.0,0.0,debt_consolidation
+APP000690,2026-03-31,19823.0,640.0,706.0,6.0,2.0,10.0,22106.0,36.0,Yes,contract,Mrs,18-24,Ashby Group,NE2,12.0,2.0,home_improvement
+APP000691,2026-03-31,34103.0,682.0,224.0,55.0,0.0,0.0,2718.0,60.0,No,permanent,Mr,25-34,Kestrel Systems,B15,95.0,2.0,debt_consolidation
+APP000692,2026-03-31,37455.0,857.0,148.0,160.0,0.0,0.0,10103.0,48.0,Yes,contract,Mr,18-24,Ashby Group,CF24,57.0,1.0,other
+APP000693,2026-03-31,36075.0,763.0,344.0,133.0,0.0,0.0,26834.0,36.0,Yes,permanent,Mr,45-54,Calder Logistics,NE2,96.0,0.0,vehicle
+APP000694,2026-03-31,57114.0,777.0,187.0,174.0,0.0,0.0,29213.0,60.0,Yes,permanent,Mrs,25-34,Northgate Retail,NE2,109.0,1.0,vehicle
+APP000695,2026-03-31,62747.0,743.0,155.0,111.0,0.0,0.0,17879.0,60.0,Yes,permanent,Mr,65+,Calder Logistics,G12,33.0,0.0,debt_consolidation
+APP000696,2026-03-31,14103.0,725.0,560.0,109.0,2.0,1.0,15225.0,24.0,Yes,permanent,Dr,25-34,Northgate Retail,CF24,16.0,2.0,vehicle
+APP000697,2026-03-31,34771.0,634.0,589.0,12.0,1.0,7.0,6490.0,24.0,Yes,permanent,Mr,65+,Calder Logistics,CF24,129.0,1.0,other
+APP000698,2026-03-31,21335.0,642.0,234.0,90.0,0.0,0.0,18727.0,48.0,Yes,permanent,Mrs,45-54,Fenwick & Co,M14,131.0,3.0,home_improvement
+APP000699,2026-03-31,35507.0,668.0,491.0,91.0,0.0,0.0,21838.0,48.0,Yes,self_employed,Ms,45-54,Calder Logistics,CF24,178.0,0.0,vehicle
+APP000700,2026-03-31,46393.0,782.0,359.0,86.0,0.0,0.0,4887.0,48.0,No,permanent,Mr,35-44,Ashby Group,LS6,92.0,1.0,home_improvement
