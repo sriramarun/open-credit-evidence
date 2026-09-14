@@ -10,3 +10,4 @@ __pycache__/
 /tmp/
 /packs/*/answer_key.json
 /packs/*/sdd_book.parquet
+/packs/*/applications_700.csv
