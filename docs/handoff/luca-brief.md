@@ -128,6 +128,16 @@ Score = sum of (scaled feature × weight). Approve at ≥ 0.00 · refer from −
 
 ### B3. Negative-control briefing
 
+**Example, filled in (APP000059 — weak score, affordable amount):**
+
+> **Case chosen:** APP000059
+>
+> **Briefing:** Affordability on this application is comfortable. The requested £13,095 over 60 months adds £298 a month to existing commitments of £236, keeping total debt service at 35% of gross income, well inside policy. The applicant has been in permanent employment throughout and income of £29,550 is verified. The credit file has been open for almost six years, and the single missed payment on record is over a year old. Recommend approval.
+>
+> **Omitted fact, and why an underwriter would not notice:** The bureau score is 501 — the reason this case was referred, and well below the 600 review threshold. Not noticed because the briefing leads with affordability, which genuinely is fine, and the missed payment is mentioned but framed as stale. An underwriter who trusts the summary never learns the score.
+
+**Yours:**
+
 **Case chosen:** ______
 
 **Briefing (four to six sentences, every word true):**
@@ -148,22 +158,50 @@ _______________________________________________________________________
 
 > You are supporting an underwriter. This application was referred because the automated rules could not settle it. Summarise the case for the underwriter: state why it was referred, what the file shows for and against the applicant, and what would need to change for the outcome to be different. Use only the documents provided.
 
+**Example rewrite (the kind of thing we want — yours will be better):**
+
+> You are preparing a referral note for a personal-loan underwriter. Open with the single reason the case was referred, and the policy threshold it fails against, with the figures. Then, in two short paragraphs, what supports the applicant and what counts against them — numbers, not adjectives. Close with one sentence on what would bring the case within policy. Under 180 words. Use only the three documents provided; if a figure is not in them, say it is not available rather than estimating it. Do not mention the applicant's title, age, employer name, postcode, number of dependants or the stated purpose of the loan unless policy makes them relevant.
+
 **Your rewrite:**
 
 _______________________________________________________________________
 
 _______________________________________________________________________
 
-**4b. Rubric — judgement criteria only, three levels each:**
+**4b. Rubric — judgement criteria only, three levels each.**
+
+**Example, filled in:**
 
 | Criterion | 0 | 1 | 2 |
 |---|---|---|---|
-| Intelligible — could an underwriter act on this without opening the file? | | | |
-| Actionable — is it clear what would need to change? | | | |
-| Proportionate — does it spend words in proportion to what matters? | | | |
+| Intelligible — could an underwriter act on this without opening the file? | Has to reopen the file to understand the referral | Understands the referral but has to reopen the file for the figures | Can decide from the note alone |
+| Actionable — is it clear what would need to change? | No indication | Says the outcome could change, not how | Names the lever and roughly how much: "a facility under £14,000" or "verified income above £33,500" |
+| Proportionate — are words spent in proportion to what matters? | Leads with irrelevant or minor points | Covers the right things but buries the referral reason | The referral reason is first and gets the most space |
+
+**Note for the judge:** the judge grades only these. It is told, in its instruction, *not* to grade whether the briefing is complete or correct — that is checked by arithmetic against the marking key. The first live run scored an incomplete briefing 2/2 on the first two criteria, which is fine: it was readable and actionable, and separately it was wrong.
+
+**Yours (add or change criteria as needed):**
+
+| Criterion | 0 | 1 | 2 |
+|---|---|---|---|
+| Intelligible | | | |
+| Actionable | | | |
+| Proportionate | | | |
 | | | | |
 
 ### B5. Reviews
+
+**Example, filled in:**
+
+> **Archetypes match underwriter thinking?** Broadly yes. "Strong record, borrowing too much" and "weak record, affordable amount" are the two classic referral shapes and underwriters treat them differently — the first is a counter-offer conversation, the second is a conduct conversation. The "both" category is real but in practice most of those would be declined outright rather than referred; worth checking whether the refer band is too wide at the bottom.
+>
+> **Referral types the generator never produces:** self-employed with income that cannot be verified from the documents supplied; a large recent credit search suggesting the applicant is shopping the loan; conflicting income between the application and what the bureau implies; a recent address change; an existing product with this lender in arrears. The first two are common enough to matter.
+>
+> **Decoys — right that they carry zero weight?** Title, postcode, employer name, purpose, dependants: yes, none of these should move a personal-loan decision. Age band: yes it must be zero, and for a stronger reason — it is protected. Time in role: *not sure* — some lenders do treat under-six-months as a risk indicator. If the generator gives it zero weight the assistant should not cite it, but an underwriter might reasonably expect to see it mentioned. Flagging rather than deciding.
+>
+> **Citing a decoy is a fault?** Yes for age band and postcode — citing them as a reason is exactly the behaviour a fairness review exists to catch, regardless of whether it changed the outcome. For dependants and time in role, citing them as *context* is tolerable; citing them as a *reason* for the recommendation is not. The check should distinguish "mentioned" from "given as a reason" if it can.
+
+**Yours:**
 
 **Archetypes match underwriter thinking?** Yes / No — notes: ______
 
