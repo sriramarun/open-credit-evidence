@@ -21,10 +21,10 @@
   },
   "items": 20,
   "cases": 20,
-  "items_sha256": "8e1eb08a5bbac0797722e202bb10a9ae3e5f01e50f4b708a4ed59ca667d98187",
+  "items_sha256": "910ccb1b7c3012502dae9f25bb2744380cacaaa21d748794fe9c821d3dbaa699",
   "tasks": [
     "case_review"
   ],
   "obligations_file": "obligations.yaml",
-  "built_at": "2026-09-13T11:06:25+00:00"
+  "built_at": "2026-09-15T01:47:22+00:00"
 }

@@ -255,7 +255,7 @@ def render_documents(row: pd.Series, f: dict[str, float], env: Environment) -> l
               "delinquencies_24m", "delinquency_recency_months"):
         ctx[k] = int(ctx[k])
     docs = []
-    for name in ("application_form", "bureau_summary"):
+    for name in ("application_form", "bureau_summary", "lending_policy"):
         content = env.get_template(f"{name}.md.j2").render(**ctx).strip() + "\n"
         leak = OUTCOME_WORDS.search(content)
         if leak:
