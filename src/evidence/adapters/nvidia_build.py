@@ -1,10 +1,19 @@
 # SPDX-License-Identifier: Apache-2.0
 # Copyright (c) 2026 Algoritmica GmbH
-"""NVIDIA Build endpoints — the three models, pinned, behind one client.
+"""NVIDIA endpoints — the three models, pinned, behind one client.
 
-Everything is served from ``https://integrate.api.nvidia.com/v1`` through the
-OpenAI-compatible API. Nothing runs locally. The key comes from the environment
-(``NVIDIA_API_KEY``) or a gitignored ``.env``; it is never in code.
+Default is NVIDIA Build, ``https://integrate.api.nvidia.com/v1``, through the
+OpenAI-compatible API. Any role can be pointed at a self-hosted NIM instead
+(same API, different URL) with two environment variables, so the switch from
+cloud to on-prem is a ``.env`` change and nothing else::
+
+    EVIDENCE_ASSISTANT_BASE_URL=http://rtx-3se-05-36:8000/v1
+    EVIDENCE_ASSISTANT_MODEL=nvidia/nemotron-3.5-lightning
+
+Likewise ``EVIDENCE_JUDGE_*`` and ``EVIDENCE_EMBED_*``. Every response records
+the endpoint it came from, so a transcript can always say whether a briefing was
+produced in the cloud or on the team's own hardware. The Build key comes from
+``NVIDIA_API_KEY`` or a gitignored ``.env``; a local NIM needs no key.
 
 Model choices, confirmed on the catalogue 14 Sep 2026:
 
@@ -28,8 +37,10 @@ import os
 import time
 from dataclasses import dataclass
 from typing import Any
+from urllib.parse import urlparse
 
 BASE_URL = "https://integrate.api.nvidia.com/v1"
+BUILD_HOST = "integrate.api.nvidia.com"
 
 MODELS: dict[str, str] = {
     "assistant": "nvidia/nemotron-3.5-lightning-30b-a3b",
@@ -44,6 +55,17 @@ DEPRECATED: dict[str, str] = {
 
 
 @dataclass(frozen=True)
+class Endpoint:
+    role: str
+    base_url: str
+    model_id: str
+
+    @property
+    def is_build(self) -> bool:
+        return urlparse(self.base_url).hostname == BUILD_HOST
+
+
+@dataclass(frozen=True)
 class ChatResponse:
     text: str
     model_id: str
@@ -53,26 +75,56 @@ class ChatResponse:
     tokens_in: int
     tokens_out: int
     raw_id: str | None = None
+    endpoint: str = BASE_URL  # where it ran — cloud or on-prem
 
 
-def _client():
-    try:
-        from openai import OpenAI
-    except ImportError as exc:  # pragma: no cover
-        raise RuntimeError("pip install openai") from exc
+def _load_env() -> None:
     try:
         from dotenv import load_dotenv
 
         load_dotenv()
     except ImportError:
         pass
-    key = os.environ.get("NVIDIA_API_KEY")
-    if not key:
-        raise RuntimeError(
-            "NVIDIA_API_KEY is not set. Generate one at build.nvidia.com -> Manage API Keys, "
-            "then `export NVIDIA_API_KEY=...` or put it in a gitignored .env"
-        )
-    return OpenAI(base_url=BASE_URL, api_key=key)
+
+
+def endpoint_for(role: str) -> Endpoint:
+    """Resolve where ``role`` runs: ``EVIDENCE_<ROLE>_BASE_URL`` / ``_MODEL``, else Build."""
+    if role not in MODELS:
+        raise KeyError(f"unknown role {role!r}; one of {sorted(MODELS)}")
+    _load_env()
+    key = role.upper()
+    base_url = os.environ.get(f"EVIDENCE_{key}_BASE_URL", "").strip() or BASE_URL
+    model_id = os.environ.get(f"EVIDENCE_{key}_MODEL", "").strip() or MODELS[role]
+    return Endpoint(role=role, base_url=base_url.rstrip("/"), model_id=_pinned(model_id))
+
+
+def _bypass_proxy(base_url: str) -> None:
+    """A self-hosted NIM must not be routed through the cluster's HTTP proxy."""
+    host = urlparse(base_url).hostname or ""
+    if not host or host == BUILD_HOST:
+        return
+    for var in ("NO_PROXY", "no_proxy"):
+        current = os.environ.get(var, "")
+        if host not in current.split(","):
+            os.environ[var] = f"{current},{host}" if current else host
+
+
+def _client(ep: Endpoint):
+    try:
+        from openai import OpenAI
+    except ImportError as exc:  # pragma: no cover
+        raise RuntimeError("pip install openai") from exc
+    if ep.is_build:
+        key = os.environ.get("NVIDIA_API_KEY")
+        if not key:
+            raise RuntimeError(
+                "NVIDIA_API_KEY is not set. Generate one at build.nvidia.com -> Manage API Keys, "
+                "then `export NVIDIA_API_KEY=...` or put it in a gitignored .env"
+            )
+    else:
+        _bypass_proxy(ep.base_url)
+        key = os.environ.get("NVIDIA_API_KEY") or "local"
+    return OpenAI(base_url=ep.base_url, api_key=key)
 
 
 def _pinned(model_id: str) -> str:
@@ -93,7 +145,8 @@ def chat(
     thinking: bool | None = None,
 ) -> ChatResponse:
     """One pinned, recorded call. ``role`` is ``assistant`` or ``judge``."""
-    model_id = _pinned(MODELS[role])
+    ep = endpoint_for(role)
+    model_id = ep.model_id
     if thinking is None:
         thinking = role == "judge"
     params: dict[str, Any] = {
@@ -103,7 +156,7 @@ def chat(
         "seed": seed,
     }
     extra: dict[str, Any] = {"chat_template_kwargs": {"enable_thinking": thinking}}
-    client = _client()
+    client = _client(ep)
     t0 = time.perf_counter()
     resp = client.chat.completions.create(
         model=model_id,
@@ -122,6 +175,7 @@ def chat(
         tokens_in=getattr(usage, "prompt_tokens", 0) or 0,
         tokens_out=getattr(usage, "completion_tokens", 0) or 0,
         raw_id=getattr(resp, "id", None),
+        endpoint=ep.base_url,
     )
 
 
@@ -129,9 +183,10 @@ def embed(texts: list[str], *, input_type: str) -> list[list[float]]:
     """Embed with the retriever. ``input_type`` must be ``passage`` or ``query``."""
     if input_type not in ("passage", "query"):
         raise ValueError("input_type must be 'passage' (indexing) or 'query' (searching)")
-    client = _client()
+    ep = endpoint_for("embed")
+    client = _client(ep)
     resp = client.embeddings.create(
-        model=_pinned(MODELS["embed"]),
+        model=ep.model_id,
         input=texts,
         encoding_format="float",
         extra_body={"input_type": input_type, "truncate": "END"},
