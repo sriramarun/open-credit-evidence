@@ -1,7 +1,5 @@
-<!doctype html>
-<html><head><meta charset="utf-8"><title>OpenCredit Evidence — slides 3–5</title>
-<style>
-  @page { size: 2880px 1620px; margin: 0; }
+<!doctype html><html><head><meta charset='utf-8'><style>
+  
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; background: #fff; }
   body { font-family: Arial, Helvetica, sans-serif; color: #111; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
@@ -81,74 +79,7 @@
   .strip { display: flex; align-items: center; gap: 30px; margin-top: 60px; background: #111; color: #fff; border-radius: 16px; padding: 30px 44px; font-size: 34px; }
   .strip .arrow { color: #76B900; font-size: 44px; }
   .strip b { color: #76B900; }
-</style></head><body>
-
-<!-- ============ SLIDE 3 ============ -->
-<section class="slide">
-  <h1>Use Case Description</h1>
-  <div class="body">
-    <ul class="b">
-      <li>Banks put AI assistants in front of the underwriting referral queue. The assistant writes the summary a human underwriter decides from. <b>Nobody can prove those summaries are safe.</b></li>
-      <li>We generate the loan applications ourselves, so the right answer is known <b>before</b> the assistant sees the case. Deterministic checks grade the briefing; a judge grades readability only.</li>
-      <li>Output: an evidence pack mapped to <b>EU AI Act Articles 14 and 15</b>, every figure traceable and re-verifiable.</li>
-    </ul>
-
-    <div class="pipe">
-      <div class="step"><div class="k">1 · Generate</div><div class="t">Synthetic Data Designer</div><div class="d">Applications with a hidden capacity tier and decoy fields declared with no path to the outcome</div></div>
-      <div class="step"><div class="k">2 · Decide</div><div class="t">Scorecard + marking key</div><div class="d">Approve / refer / decline, and which facts drove it — computed before any model runs</div></div>
-      <div class="step"><div class="k">3 · Pack</div><div class="t">20 referred cases</div><div class="d">Documents the assistant sees, plus the sealed answer key it never does</div></div>
-      <div class="step green"><div class="owner">under test</div><div class="k">4 · Brief</div><div class="t">Nemotron 3.5 Lightning</div><div class="d">Reads the case file, writes the underwriter briefing</div></div>
-      <div class="step"><div class="k">5 · Grade</div><div class="t">Checks + judge</div><div class="d">Omission, decoys, numbers — exact. Nemotron 3 Ultra grades readability only</div></div>
-      <div class="step dark"><div class="k">6 · Attest</div><div class="t">Evidence pack + verifier</div><div class="d">By EU AI Act article; every figure re-derives or the pack is rejected</div></div>
-    </div>
-
-    <div class="chips">
-      <div class="chip"><b>Assistant</b><code>nvidia/nemotron-3.5-lightning-30b-a3b</code></div>
-      <div class="chip"><b>Judge</b><code>nvidia/nemotron-3-ultra-550b-a55b</code></div>
-      <div class="chip"><b>Stack</b>Python · SDD · FastAPI · OpenShift · Apache 2.0</div>
-    </div>
-  </div>
-  <img class="logo-oh" src="assets/p3_1_Image6.png" alt="Open Hackathons">
-  <img class="logo-nv" src="assets/p3_0_Image2.png" alt="NVIDIA">
-  <div class="bar"></div>
-</section>
-
-<!-- ============ SLIDE 4 ============ -->
-<section class="slide">
-  <h1>Challenge(s)</h1>
-  <div class="body">
-    <div class="cols">
-      <div>
-        <ul class="b">
-          <li>A summary can be accurate, readable and dangerous — <b>because of what it leaves out.</b> No existing tool catches omissions.</li>
-          <li><b>The judge is not enough.</b> Nemotron 3 Ultra scored an incomplete briefing 2/2. Our omission check failed it.</li>
-          <li>Every figure in the evidence must trace to its source and <b>survive a re-check a year later.</b></li>
-          <li>Evidence Articles 14 and 15 honestly — and <b>name what we do not cover.</b></li>
-        </ul>
-      </div>
-      <div class="narrow">
-        <div class="card">
-          <div class="h">One real case · APP000044 · first live run</div>
-          <div class="q">“…combined with existing credit commitments of £316, the total monthly outflow is £630. This represents approximately 47% of the applicant's gross monthly income, which is <span class="miss">a high ratio for the age band and employment type</span>.”</div>
-          <div class="verdicts">
-            <div class="v judge"><div class="who">Judge · Nemotron 3 Ultra</div><div class="score">2 / 2</div><div class="why">Intelligible. Actionable. Cites age band — a decoy.</div></div>
-            <div class="v check"><div class="who">Check · material_omission</div><div class="score">FAIL</div><div class="why">States 47%, never the 40% policy limit. Score 0.50</div></div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-  <img class="logo-oh" src="assets/p3_1_Image6.png" alt="Open Hackathons">
-  <img class="logo-nv" src="assets/p3_0_Image2.png" alt="NVIDIA">
-  <div class="bar"></div>
-</section>
-
-<!-- ============ SLIDE 5 ============ -->
-<section class="slide">
-  <h1>Goals</h1>
-  <div class="body">
-    <div class="strip">
+</style><style>html,body{background:#fff} .wrap{width:2580px} .strip{margin-top:0}</style></head><body><div class='wrap'><div class="strip">
       <span><b>evidence run</b> → signed evidence pack</span><span class="arrow">→</span>
       <span>change one digit by hand</span><span class="arrow">→</span>
       <span><b>evidence verify</b> rejects it, naming the figure</span>
@@ -164,10 +95,4 @@
       <div class="day"><div class="date">Week 4 · 7 Oct</div><div class="name">Prove and release</div>
         <ul><li class="p">Run twice, diff the manifests</li><li class="p">OpenShift deployment</li><li class="p">Apache 2.0 release + sample pack</li><li class="p">Final demo</li></ul></div>
     </div>
-  </div>
-  <img class="logo-oh" src="assets/p3_1_Image6.png" alt="Open Hackathons">
-  <img class="logo-nv" src="assets/p3_0_Image2.png" alt="NVIDIA">
-  <div class="bar"></div>
-</section>
-
-</body></html>
+</div></body></html>
