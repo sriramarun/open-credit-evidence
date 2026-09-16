@@ -11,3 +11,5 @@ __pycache__/
 /packs/*/answer_key.json
 /packs/*/sdd_book.parquet
 .env
+/docs/deck/slides_3_5.pdf
+/docs/deck/assets/*.jp2
