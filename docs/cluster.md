@@ -50,11 +50,21 @@ makes one chat call. To stop: `docker stop nemotron-lightning` on the node.
 | one–two | LoRA training (`nemo:26.08.00`) |
 | rest | interactive work |
 
+## One server per team
+
+Two copies of the same model hold two GPUs for nothing. On 16 Sep two of us started
+Lightning within three minutes of each other; the second failed on the port and the
+health check was answered by the first, which looked like success. Rule: one named
+container, one port, written here. Currently: **`team08_nt-lightning` on port 8000**
+(started by a teammate). `serve_lightning.sh` now refuses to start if the port is
+taken and tells you which container has it.
+
 ## Gotchas found so far
 
 - `squeue` only shows our own account; a node that looks idle to us may be full.
 - The NIM's `/v1/completions` with a raw prompt leaks `</think>` into the text. We
   use `/v1/chat/completions` with `enable_thinking` set explicitly; confirm on the
   first call.
+- `docker` on a GPU node only shows containers on that node, and shows every team member's. `docker ps -a` before starting anything.
 - Running `docker` on the login node fails with a socket permission error — that
   is expected, it only exists on GPU nodes.

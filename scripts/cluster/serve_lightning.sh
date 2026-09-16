@@ -46,6 +46,15 @@ if docker ps --format '{{.Names}}' | grep -qx "$NAME"; then
   echo "$NAME is already running:"
   docker ps --filter "name=$NAME" --format '  {{.Image}}  {{.Status}}'
 else
+  # Another server (a teammate's container, say) may already hold the port. The NIM
+  # would start, fail on the port, and exit -- and a health poll would then be
+  # answered by the other server and look like success. Refuse instead.
+  if ss -tln 2>/dev/null | grep -q ":${PORT} "; then
+    echo "port $PORT is already in use on $(hostname):" >&2
+    docker ps --format '  {{.Names}}  {{.Image}}  {{.Status}}' 2>/dev/null >&2 || true
+    echo "either use that server, or start ours on another port: NIM_PORT=8001 $0" >&2
+    exit 1
+  fi
   docker rm -f "$NAME" >/dev/null 2>&1 || true
   echo "starting $NAME on GPU(s) $CUDA_VISIBLE_DEVICES, cache $CACHE, port $PORT"
   docker run -d \
@@ -55,7 +64,7 @@ else
     --network host \
     -e NGC_API_KEY \
     -e NIM_SERVED_MODEL_NAME=nvidia/nemotron-3.5-lightning \
-    -e NIM_HTTP_API_PORT="$PORT" \
+    -e NIM_SERVER_PORT="$PORT" -e NIM_HEALTH_PORT="$PORT" \
     -e HTTP_PROXY="$PROXY" -e HTTPS_PROXY="$PROXY" \
     -e http_proxy="$PROXY" -e https_proxy="$PROXY" \
     -e NO_PROXY="${NO_PROXY:-localhost,127.0.0.1}" -e no_proxy="${no_proxy:-localhost,127.0.0.1}" \
@@ -66,6 +75,11 @@ fi
 
 echo -n "waiting for health"
 for _ in $(seq 1 180); do
+  if [[ "$(docker inspect -f '{{.State.Running}}' "$NAME" 2>/dev/null)" != "true" ]]; then
+    echo " $NAME has stopped. Last lines of its log:" >&2
+    docker logs --tail 15 "$NAME" >&2
+    exit 1
+  fi
   if curl -s --noproxy '*' --max-time 3 "http://127.0.0.1:${PORT}/v1/health/ready" | grep -q '"ready"'; then
     echo " ready"
     break

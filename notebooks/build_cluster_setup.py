@@ -161,6 +161,11 @@ Either way, the second start is instant.
 
 The container keeps running after you `exit` the SLURM session. It also keeps its
 GPU. To stop it, on the node: `docker stop nemotron-lightning`.
+
+**Before you start one, check nobody else has.** `docker ps` on the node shows every
+team member's containers. If a Lightning server is already up, use it — two copies
+hold two GPUs for nothing. The script refuses to start on a port that is taken and
+prints which container has it.
 """)
 
 md("""
@@ -315,6 +320,8 @@ md("""
 | `NGC_API_KEY is not set` | Forgot `source ~/.ngc_key` | Run it in the same shell as the script |
 | `curl` hangs against `127.0.0.1` | Went through the proxy | Add `--noproxy '*'` |
 | Health check never says ready | Still downloading, or a crash | `docker logs -f nemotron-lightning` |
+| Log says *port 8000 is already in use* | A teammate's server is on that port | Use theirs, or `NIM_PORT=8001 bash .../serve_lightning.sh` |
+| Container is `Exited (1)` right after start | Same as above, or NGC key rejected | `docker logs nemotron-lightning` shows which |
 | Laptop cannot reach `10.130.232.20` | VPN not connected | Connect the AWS VPN Client |
 """)
 
