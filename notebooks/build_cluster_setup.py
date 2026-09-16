@@ -164,15 +164,52 @@ GPU. To stop it, on the node: `docker stop nemotron-lightning`.
 """)
 
 md("""
-## Step 5 — Test it from the cluster
+## Step 5 — Is it running?
 
-Simplest possible test, from the login node or the GPU node:
+Three questions, in order. Ask them on the GPU node (the container is only visible
+from there).
+
+**1. Is the container up?**
+
+```bash
+module load docker
+docker ps --filter name=nemotron-lightning
+```
+
+You want to see one line with `Up 3 hours` or similar. If the list is empty, it is
+not running — go to Step 6.
+
+**2. Has the model finished loading?** A container can be *up* for minutes before
+the model is ready to answer.
+
+```bash
+curl -s --noproxy '*' http://127.0.0.1:8000/v1/health/ready
+```
+
+`{"object":"health.response","message":"ready","status":"ready"}` means yes. Nothing, or
+a connection refused, means it is still loading: `docker logs -f nemotron-lightning`
+shows progress (Ctrl-C to stop watching; the container keeps running).
+
+**3. Which model is it serving?**
+
+```bash
+curl -s --noproxy '*' http://127.0.0.1:8000/v1/models
+```
+
+Look for `"id":"nvidia/nemotron-3.5-lightning"`. Note the name: on NVIDIA Build the
+same model is called `nvidia/nemotron-3.5-lightning-30b-a3b`. That is why `.env`
+needs both the URL and the name.
+
+**Then the first real test** — one question, one answer. This works from the login
+node too, because it uses the node's name instead of `127.0.0.1`:
 
 ```bash
 bash ~/open-credit-evidence/scripts/cluster/check_endpoint.sh http://rtx-3se-05-36:8000/v1
 ```
 
-Or the raw request, so you can see there is no magic:
+Expected: `nvidia/nemotron-3.5-lightning | A debt-to-income ratio (DTI) is ...`.
+
+The same thing without the script, so you can see there is no magic:
 
 ```bash
 curl -s --noproxy '*' http://rtx-3se-05-36:8000/v1/chat/completions \\
@@ -182,17 +219,36 @@ curl -s --noproxy '*' http://rtx-3se-05-36:8000/v1/chat/completions \\
        "messages":[{"role":"user","content":"What is a debt-to-income ratio?"}]}'
 ```
 
-Two details:
-
-- The model is called `nvidia/nemotron-3.5-lightning` on our server but
-  `nvidia/nemotron-3.5-lightning-30b-a3b` on NVIDIA Build. Same model, different
-  label. That is why the `.env` needs both the URL and the name.
-- Use `/v1/chat/completions`, not `/v1/completions`. The plain completions endpoint
-  leaks the model's private reasoning (`</think>`) into the answer.
+Use `/v1/chat/completions`, not `/v1/completions`. The plain completions endpoint
+leaks the model's private reasoning (`</think>`) into the answer.
 """)
 
 md("""
-## Step 6 — Test it from your laptop, through our own code
+## Step 6 — Start, stop, restart
+
+All of these run on the GPU node, after `module load docker`.
+
+| I want to | Command | Notes |
+|---|---|---|
+| Start it for the first time | `source ~/.ngc_key && bash ~/open-credit-evidence/scripts/cluster/serve_lightning.sh` | Needs a GPU session (Step 2). Downloads weights if not cached. |
+| Start it again after a stop | `docker start nemotron-lightning` | Seconds, not minutes — image and weights are already there. Or run the script again; it notices the container exists. |
+| Stop it | `docker stop nemotron-lightning` | Frees the GPU. The container is kept, so `docker start` brings it back. |
+| Remove it completely | `docker rm -f nemotron-lightning` | Only if you need to change how it was started (different port, different GPU). The weights in `/data/team08/nim-cache` are not touched. |
+| Watch what it is doing | `docker logs -f nemotron-lightning` | Ctrl-C stops watching, not the container. |
+| See which GPU it holds | `nvidia-smi` | Memory used on one GPU, ~60 GB. |
+
+Two things that surprise people:
+
+- **The container outlives your SLURM session.** Typing `exit` on the GPU node
+  releases your SLURM allocation but the container keeps running and keeps its GPU.
+  That is what we want for a server. It also means the GPU stays busy until
+  somebody runs `docker stop`, so stop it at the end of the day if nobody needs it.
+- **`docker start` needs no NGC key.** The key is only for downloading. Once the
+  weights are cached, restarting is offline.
+""")
+
+md("""
+## Step 7 — Test it from your laptop, through our own code
 
 The cells below ran on Sriram's laptop with the VPN connected. The node is reachable
 directly, so the whole framework runs from here against the on-prem model.
@@ -240,100 +296,12 @@ print(f"answer   : {r.text.strip()}")
 """)
 
 md("""
-## Step 7 — A real case, five times
+That is the whole path: laptop → VPN → our own GPU → briefing → back, through the
+same code that talks to the cloud, with the endpoint recorded on every response.
 
-Speed is nice, but the reason we wanted our own server was *reproducibility*: with
-temperature 0 and a fixed seed, does the model give the same briefing every time?
-On the shared cloud endpoint it did not. Here is the same referred application,
-APP000044, run five times.
-""")
-
-code("""
-import hashlib
-import re
-from pathlib import Path
-
-from evidence.checks import run_checks
-from evidence.contracts.item import BenchmarkItem
-
-PACK = Path("../packs/underwriter-sample")
-items = [BenchmarkItem.model_validate_json(line) for line in (PACK / "items.jsonl").open()]
-item = next(i for i in items if "APP000044" in i.item_id)
-case = "\\n\\n".join(d.content for d in item.context)
-
-print("what the marking key says must be stated:")
-for ref in item.grading.omission_refs:
-    print("  -", item.grading.omission_labels[ref])
-print()
-
-runs = []
-print(f"{'run':>3} {'secs':>5} {'fingerprint':>12} {'omission':>9} {'audit':>5}  "
-      "ratio stated   cites 'age band'")
-for n in range(1, 6):
-    r = chat("assistant", system=item.prompt, user=case, max_tokens=700)
-    (chk,) = run_checks(["material_omission"], output=r.text, item=item)
-    pcts = sorted(set(re.findall(r"\\d+(?:\\.\\d+)?%", r.text)) - {"40%"})
-    runs.append(r.text)
-    print(f"{n:>3} {r.latency_ms / 1000:>5.1f} {hashlib.sha256(r.text.encode()).hexdigest()[:12]} "
-          f"{'PASS' if chk.passed else 'FAIL':>9} {str(chk.needs_audit):>5}  {', '.join(pcts):14} "
-          f"{'age band' in r.text.lower()}")
-
-print(f"\\nidentical outputs: {len(set(runs))} distinct out of {len(runs)}")
-""")
-
-md("""
-And the arithmetic the model was supposed to do, done by hand:
-""")
-
-code("""
-income = 15_922
-existing, instalment = 316, 314
-monthly_income = income / 12
-ratio = (existing + instalment) / monthly_income
-print(f"£{existing} + £{instalment} = £{existing + instalment} per month")
-print(f"£{income} / 12 = £{monthly_income:,.2f} per month")
-print(f"ratio = {ratio:.1%}   (policy limit 40%)")
-""")
-
-md("""
-One of the five briefings, so you can see what the underwriter would actually read:
-""")
-
-code("""
-print(runs[0].strip())
-""")
-
-md("""
-## What this showed
-
-**1. The server works and is fast.** Two to three seconds per briefing, from a
-laptop, through the same code that talks to the cloud. The transcript records
-`endpoint=http://10.130.232.20:8000/v1`, so the evidence pack can say the run was
-on-premise.
-
-**2. The model's arithmetic is unreliable, and the briefing hides it.** The
-correct ratio is 47.5%. Look at the *ratio stated* column: in this execution three
-of five briefings gave a wrong figure (about 41.5%) and two gave the right one. An
-hour earlier, five runs gave 44.7%, 42.6%, 43.6%, 39.6% and 43.5% — none right, and
-one *below* the limit it then said was breached. Every briefing passes
-`material_omission`, because each one does state that the 40% limit is exceeded,
-which is the fact we asked for. The check is blind to the number being wrong. That
-is what `numeric_fidelity` is for — compare every number in the briefing against the
-case file — and this result moves it to the top of the Week 2 list.
-
-**3. Our own server is not byte-for-byte reproducible either.** Same prompt, same
-seed, temperature 0, five different fingerprints. This is how vLLM serves large
-mixture-of-experts models: requests are batched together and the arithmetic comes
-out slightly differently depending on what else is in the batch. It cannot be
-configured away. So the framework's reproducibility claim must be *same verdict
-across N runs, N recorded* — not *same text*. The runner will make three passes per
-item and report agreement; an item whose verdict flips between passes is itself a
-finding.
-
-**4. The decoy problem is still there.** Most briefings list the applicant's age
-band as a point against them (last column). It has no weight in the decision and
-is a protected characteristic. `decoy_citation` catches this; it is the second
-check to port.
+What we found when we ran real cases against it — speed, the arithmetic errors, and
+why even our own server is not byte-for-byte reproducible — is logged in
+`BUILD.md` under the 16 September change-log entry.
 """)
 
 md("""
