@@ -195,6 +195,7 @@ the checker.*
 
 ### The ten minutes, in order
 1. The problem — a summary that is accurate, incomplete and dangerous.
+   Then one line of framing: Verifier's Law — automate what is easy to verify; our checks are the verifier (`docs/verifiers-law.md`).
 2. One command. It runs.
 3. The catch — the missing fact, named.
 4. The evidence report, organised by regulation, every number traceable.

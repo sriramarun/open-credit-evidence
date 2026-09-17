@@ -649,7 +649,9 @@ Each must pass verbatim from a clean checkout before its task is `DONE`.
 
 ## 9. What we claim, and what we do not
 
-Reproduced in `docs/OBLIGATIONS.md` and rendered into every evidence pack.
+Reproduced in `docs/OBLIGATIONS.md` and rendered into every evidence pack. The
+framing for why these rows and not others is `docs/verifiers-law.md`: every
+"Evidences" row is a check whose verification is instant and unambiguous.
 
 | Obligation | Level | Basis |
 |---|---|---|
