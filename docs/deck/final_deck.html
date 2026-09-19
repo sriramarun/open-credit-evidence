@@ -216,13 +216,13 @@
       <div class="step"><div class="k">2 · Decide</div><div class="t">Scorecard → marking key</div><div class="d">Computed before any model runs</div></div>
       <div class="step green"><div class="owner">under test</div><div class="k">3 · Brief</div><div class="t">Nemotron 3.5 Lightning</div><div class="d">NIM on our GPU. Reads the file, writes the briefing. Three repeats per case</div></div>
       <div class="step"><div class="k">4 · Check</div><div class="t">Deterministic checks</div><div class="d">material_omission · numeric_fidelity · decoy_citation · flip_accuracy · repeat agreement</div></div>
-      <div class="step"><div class="k">5 · Judge</div><div class="t">Nemotron Nano, distilled</div><div class="d">Readability only, with the regulation passage retrieved. On-prem. Calibrated against Ultra and a human</div></div>
+      <div class="step"><div class="k">5 · Judge</div><div class="t">Nemotron Nano, on-prem</div><div class="d">Readability only, with the regulation passage retrieved. Trained once from Ultra's grades; used alone at run time</div></div>
       <div class="step dark"><div class="k">6 · Attest</div><div class="t">Evidence pack + verify</div><div class="d">By article. Checksummed. Change a digit and it is rejected</div></div>
     </div>
     <div class="chips" style="margin-top:44px">
       <div class="chip"><b>Assistant · on-prem</b><code>nemotron-3.5-lightning-30b-a3b</code> NIM, RTX PRO 6000</div>
-      <div class="chip"><b>Judge · teacher (cloud)</b><code>nemotron-3-ultra-550b-a55b</code> labels only</div>
-      <div class="chip"><b>Judge · student (on-prem)</b><code>nemotron-nano-9b-v2</code> + LoRA, vLLM</div>
+      <div class="chip"><b>Judge · on-prem, at run time</b><code>nemotron-nano-9b-v2</code> + LoRA, vLLM</div>
+      <div class="chip"><b>Teacher · once, to train the judge</b><code>nemotron-3-ultra-550b-a55b</code> 400 labels, cloud</div>
       <div class="chip"><b>Retrieval</b><code>nemotron-3-embed-1b</code> + Milvus Lite</div>
     </div>
     <div class="note">Tooling: Synthetic Data Designer · NIM · NeMo (LoRA) · NeMo Evaluator (runs and gates the pack) · Python · Apache 2.0</div>
@@ -239,7 +239,7 @@
     <div class="term"><span class="g">$</span> evidence run packs/underwriter-sample --sut lightning-nim --repeats 3 --out runs/2026-10-07
 <span class="dim">pack      underwriter-sample v1.2   20 items · 3 documents each · sha 9f3a…
 sut       nvidia/nemotron-3.5-lightning   http://rtx-3se-05-36:8000/v1   temp 0 · seed 7
-judge     nano-judge-lora-v3              http://rtx-3se-05-36:8001/v1   agreement with Ultra 0.88</span>
+judge     nano-judge-lora-v3              http://rtx-3se-05-36:8001/v1   on-prem · teacher: ultra · agreement 0.88</span>
 
 running 20 × 3 …  60/60   1m 52s
 
@@ -350,7 +350,7 @@ transcripts/APP000044-r1.json: checksum mismatch
         <div class="note">Run and gated by NeMo Evaluator: 3 repeats, confidence intervals, a policy file that fails the build if omission drops below threshold. Continuous assessment is the SR 26-2 standard.</div>
       </div>
       <div>
-        <div class="card"><div class="h">Judge agreement <span class="tbd">targets — results 3 Oct</span></div>
+        <div class="card"><div class="h">How the on-prem judge was made, and checked <span class="tbd">targets — results 3 Oct</span></div>
           <table class="t" style="margin-top:0; font-size:29px">
             <tr><th></th><th>vs Ultra, exact</th><th>within 1</th><th>vs Luca, 20 blind</th></tr>
             <tr><td>Nano 9B, no fine-tune</td><td class="c">0.61</td><td class="c">0.88</td><td class="c">0.60</td></tr>
@@ -359,7 +359,7 @@ transcripts/APP000044-r1.json: checksum mismatch
           </table>
         </div>
         <ul class="b" style="margin-top:34px; font-size:34px">
-          <li><b>Why distil:</b> a bank cannot send loan files to a cloud judge. Ultra labels 400 briefings once; Nano runs forever on one GPU.</li>
+          <li><b>One judge at run time: Nano, on our GPU.</b> Ultra is the teacher: it graded 400 briefings once, in the cloud, to make the training set. It is not called during a run.</li>
           <li><b>Regulation goes in by retrieval, not weights:</b> Annex III's date moved to Dec 2027 this year. Swap a document, not a model.</li>
           <li><b>The judge never grades correctness.</b> That is what the checks are for.</li>
         </ul>
