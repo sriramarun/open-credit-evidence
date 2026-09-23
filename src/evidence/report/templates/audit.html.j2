@@ -1,0 +1,12 @@
+{% extends "base.html.j2" %}
+{% block body %}
+<h1>Review queue</h1>
+<p class="muted">Facts the omission check credited on similar wording rather than exact wording. They count as found, so a loose match here would hide an omission. Weakest first: matches carried by wording alone before matches anchored by the figures.</p>
+<p><strong>{{ agg.needs_audit | length }}</strong> matches · {{ agg.needs_audit | selectattr('anchor', 'equalto', 'wording') | list | length }} wording-only</p>
+{% if agg.needs_audit %}<div class="scroll"><table>
+<tr><th>Case</th><th>Anchor</th><th class="num">Overlap</th><th>Fact required</th><th>Sentence credited</th></tr>
+{% for q in agg.needs_audit %}
+<tr><td><a href="records.html#r-{{ q.result_id }}"><code>{{ case(q.item_id) }}</code></a> r{{ q.repeat }}</td><td><span class="pill {{ 's-conditional' if q.anchor == 'wording' else 's-insufficient' }}">{{ q.anchor }}</span></td><td class="num">{{ '%.2f' % q.overlap }}</td><td class="small">{{ q.form }}</td><td class="small">{{ q.sentence }}{{ agent_notes(q.result_id ~ ":" ~ q.ref) }}</td></tr>
+{% endfor %}</table></div>{% else %}<p>Nothing to review: every fact was matched exactly or not at all.</p>{% endif %}
+<p class="small muted">Review in this pack was not independent: the person who wrote the alias table is the only reviewer available. Say so wherever these numbers are used.</p>
+{% endblock %}

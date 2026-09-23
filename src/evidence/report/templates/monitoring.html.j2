@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guard monitoring — {{ cfg.name }}</title>
+<style>
+:root{--ink:#1c1f24;--muted:#5d6570;--line:#dfe3e8;--bg:#fbfbfa;--card:#fff;--go:#1d7a46;--go-bg:#e6f4ec;--cond:#8a5a00;--cond-bg:#fdf3dc;--no:#b3261e;--no-bg:#fbe9e7;--sim:#5b3fa6;--sim-bg:#efeafb;--link:#1f5fbf}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:1000px;margin:0 auto;padding:24px}h1{font-size:24px;margin:0 0 4px}h2{font-size:18px;margin:28px 0 10px}
+.muted{color:var(--muted)}.small{font-size:13px}
+.banner{background:var(--sim-bg);color:var(--sim);border:1px solid #d6cbf3;border-radius:8px;padding:10px 14px;margin-bottom:18px;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.stat .big{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums}.stat.lead{border:2px solid var(--ink)}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}th{background:#f3f4f6;font-size:13px;color:var(--muted)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+code{font:12.5px/1.4 ui-monospace,Menlo,Consolas,monospace;background:#f1f3f5;padding:1px 4px;border-radius:4px}
+.scroll{overflow-x:auto}
+</style>
+</head>
+<body><main>
+{% if m.simulated %}<div class="banner">Simulated assistant. These numbers test the guard; they are not evidence about any real assistant.</div>{% endif %}
+<h1>Guard monitoring</h1>
+<p class="muted">Guard <code>{{ cfg.name }}</code> · up to {{ cfg.max_attempts }} attempts per briefing · on failure: {{ 'failure card on top' if cfg.on_fail == 'flag' else 'manual handling' }} · {{ m.referrals }} referrals</p>
+{% macro pct(x) %}{{ '—' if x is none else '%.0f%%' % (x * 100) }}{% endmacro %}
+<div class="grid">
+<div class="stat lead"><div class="small muted">First-attempt pass rate</div><div class="big">{{ pct(m.first_attempt_pass_rate) }}</div><div class="small">How good the assistant is on its own. Watch this one.</div></div>
+<div class="stat"><div class="small muted">After the guard</div><div class="big">{{ pct(m.after_guard_pass_rate) }}</div><div class="small">What underwriters actually received clean.</div></div>
+<div class="stat"><div class="small muted">Covered by the guard</div><div class="big">{{ '—' if m.guard_gap is none else '%+.0f' % (m.guard_gap * 100) }} pts</div><div class="small">The problem the guard is hiding from view.</div></div>
+<div class="stat"><div class="small muted">Escalated</div><div class="big">{{ m.escalated }}</div><div class="small">{{ pct(m.escalation_rate) }} still failing after every retry.</div></div>
+</div>
+
+<h2>What failed</h2>
+<div class="scroll"><table><tr><th>Check</th><th class="num">Failed on first attempt</th><th class="num">Still failing after the guard</th></tr>
+{% for c in (m.failures_first_attempt.keys() | list + m.failures_after_guard.keys() | list) | unique | sort %}
+<tr><td><code>{{ c }}</code></td><td class="num">{{ m.failures_first_attempt.get(c, 0) }}</td><td class="num">{{ m.failures_after_guard.get(c, 0) }}</td></tr>
+{% else %}<tr><td colspan="3" class="muted">Nothing failed.</td></tr>{% endfor %}
+</table></div>
+
+<h2>By reason for referral</h2>
+<div class="scroll"><table><tr><th>Code</th><th>Meaning</th><th class="num">Referrals</th><th class="num">Stated first time</th></tr>
+{% for code, v in m.by_reason_code.items() %}<tr><td><code>{{ code }}</code></td><td class="small">{{ cfg.reason_codes.get(code, {}).get('label', '') }}</td><td class="num">{{ v.referrals }}</td><td class="num">{{ pct(v.stated_first_rate) }}</td></tr>{% endfor %}
+</table></div>
+
+<h2>By day</h2>
+<div class="scroll"><table><tr><th>Day</th><th class="num">Referrals</th><th class="num">First-attempt pass rate</th><th class="num">Escalated</th></tr>
+{% for day, v in m.by_day.items() %}<tr><td>{{ day }}</td><td class="num">{{ v.referrals }}</td><td class="num">{{ pct(v.first_attempt_pass_rate) }}</td><td class="num">{{ v.escalated }}</td></tr>{% endfor %}
+</table></div>
+
+<h2>Attempts needed</h2>
+<p>{% for k, v in m.attempts.items() %}{{ v }} briefing(s) took {{ k }} attempt(s){% if not loop.last %} · {% endif %}{% endfor %}</p>
+
+<h2>Escalations</h2>
+{% if m.escalations %}<div class="scroll"><table><tr><th>Referral</th><th>Action</th><th>Still failing</th></tr>
+{% for e in m.escalations %}<tr><td><code>{{ e.referral_id }}</code></td><td>{{ e.action | replace('_', ' ') }}</td><td>{% for c in e.failing %}<code>{{ c }}</code> {% endfor %}</td></tr>{% endfor %}
+</table></div>{% else %}<p>None.</p>{% endif %}
+<p class="small muted">Computed from <code>guard_log.jsonl</code>, which records every attempt. <code>python -m evidence verify</code> on this folder recomputes every number here.</p>
+</main></body></html>

@@ -1,0 +1,21 @@
+# The assistant as a bank might first deploy it: the vendor's model, a plain
+# instruction, the whole case file (it is four short documents), and search over
+# the law corpus for passages to cite. No figures pre-computed for it.
+name: baseline
+description: Vendor assistant, plain instruction, whole case file, law corpus searched.
+assistant:
+  adapter: openai          # any OpenAI-compatible endpoint; resolved from EVIDENCE_ASSISTANT_*
+  role: assistant
+  params: {temperature: 0.0, top_p: 1.0, max_tokens: 1200, seed: 7, thinking: false}
+instructions: |
+  You are supporting a credit underwriter. Write a short, factual briefing on the
+  application in the case file.
+context:
+  documents: [application_form, bureau_summary, lending_policy]
+retrieval:
+  enabled: false           # hand over the whole case file
+  query: >-
+    reason for referral: affordability, debt-to-income, income, existing commitments,
+    instalment, bureau score, missed payments, policy limits, human oversight
+corpus: {path: corpus, top_k: 2}
+repeats: 3

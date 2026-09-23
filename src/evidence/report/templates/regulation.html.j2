@@ -1,0 +1,15 @@
+{% extends "base.html.j2" %}
+{% block body %}
+<h1>Regulation map</h1>
+<p class="muted">Framework: <code>{{ obligations.framework }}</code>. In scope because: {{ obligations.in_scope_because }}. "Evidences" means the checks produce direct evidence for the obligation; "contributes" means they inform it; "does not cover" means this pack says nothing about it.</p>
+<div class="scroll"><table>
+<tr><th>Obligation</th><th>Level</th><th>Checks and results</th></tr>
+{% for ob in agg.obligations %}
+<tr><td><strong>{{ ob.title }}</strong><div class="small muted">{{ ob.id }}</div></td>
+<td><span class="pill {{ 's-go' if ob.level == 'evidences' else ('s-conditional' if ob.level == 'contributes' else 's-insufficient') }}">{{ ob.level | replace('_', ' ') }}</span></td>
+<td>{% if ob.get("reason") %}<span class="small">{{ ob.reason }}</span>{% endif %}
+{% for c in ob.checks %}<div><code>{{ c.name }}</code> —
+{% if c.get("provided") %}<span class="small">{{ c.provided }}</span>{% elif c.get("note") %}<span class="muted small">{{ c.note }}</span>{% elif c.pass_rate is none %}<span class="muted small">not exercised</span>{% else %}<a class="n" href="records.html#check-{{ c.name }}">{{ pct(c.pass_rate) }}</a> pass, <a class="n" href="records.html#fail-{{ c.name }}">{{ c.failed }}</a> failed{% endif %}</div>{% endfor %}</td></tr>
+{% endfor %}
+</table></div>
+{% endblock %}

@@ -1,0 +1,11 @@
+# Persistent storage for runs, evidence packs, change records, guard logs and the
+# audit log. Evidence must outlive the job that produced it. Untested template.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: evidence-data
+  labels: {app: credit-evidence-engine}
+spec:
+  accessModes: [ReadWriteOnce]
+  resources:
+    requests: {storage: 10Gi}

@@ -1,0 +1,27 @@
+{% extends "base.html.j2" %}
+{% block body %}
+<h1>Records</h1>
+<p class="muted">Every answer and every check result in this pack. The raw forms are <code>transcripts.jsonl</code> and <code>results.jsonl</code>.</p>
+<h2>By check</h2>
+{% for name, c in agg.checks.items() %}
+<div class="card" id="check-{{ name }}"><h3><code>{{ name }}</code></h3>
+<p>{{ c.passed }} passed · {{ c.failed }} failed · {{ c.not_exercised }} not exercised · pass rate {{ pct(c.pass_rate) }} · repeats agree on {{ pct(c.repeat_agreement) }} of cases</p>
+<p class="small">By split: {% for k, v in c.by_split.items() %}{{ k }} {{ pct(v.pass_rate) }} ({{ v.passed }}/{{ v.passed + v.failed }}){% if not loop.last %} · {% endif %}{% endfor %}<br>
+By difficulty: {% for k, v in c.by_difficulty.items() %}{{ k }} {{ pct(v.pass_rate) }} ({{ v.passed }}/{{ v.passed + v.failed }}){% if not loop.last %} · {% endif %}{% endfor %}<br>
+By variant: {% for k, v in c.by_variant.items() %}{{ k }} {{ pct(v.pass_rate) }} ({{ v.passed }}/{{ v.passed + v.failed }}){% if not loop.last %} · {% endif %}{% endfor %}</p>
+<div id="fail-{{ name }}" class="small"><strong>Failed ({{ c.failed_result_ids | length }}):</strong> {% for rid in c.failed_result_ids %}<a href="#r-{{ rid }}">{{ rid.split(':')[0] }}</a> {% else %}none{% endfor %}</div>
+</div>
+{% endfor %}
+<h2>By cause</h2>
+{% for cause, rows in by_cause.items() %}
+<div class="card small" id="cause-{{ cause }}"><strong>{{ cause_label(cause) }}</strong> ({{ rows | length }}): {% for d in rows %}<a href="#r-{{ d.result_id }}">{{ case(d.item_id) }}/r{{ d.repeat }}/{{ d.check }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</div>
+{% endfor %}
+<h2 id="transcripts">Answers</h2>
+{% for t in transcripts %}
+<div class="card" id="t-{{ t.sha }}"><h3><code>{{ t.item_id }}</code> · repeat {{ t.repeat }}</h3>
+<div class="meta"><span>model <code>{{ t.model }}</code></span><span>transcript <code>{{ t.sha }}</code></span>{% if t.retrieved %}<span>search returned: {% for r in t.retrieved %}<code>{{ r }}</code> {% endfor %}</span>{% endif %}</div>
+<div class="quote">{{ t.output }}</div>
+<table>{% for r in t.results %}<tr id="r-{{ r.result_id }}"><td style="width:190px"><code>{{ r.check }}</code></td><td style="width:110px"><span class="pill {{ 's-go' if r.passed and r.applicable else ('s-insufficient' if not r.applicable else 's-no_go') }}">{{ 'not exercised' if not r.applicable else ('pass' if r.passed else 'FAIL') }}</span></td><td class="small">{{ r.detail }}{% if r.cause %} — <em>cause: {{ cause_label(r.cause) }}</em>{% endif %}</td></tr>{% endfor %}</table>
+</div>
+{% endfor %}
+{% endblock %}

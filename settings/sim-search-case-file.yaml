@@ -1,0 +1,23 @@
+# One change from baseline: the assistant searches the case file and sees only
+# the top four sections. Shows what a search miss looks like in the evidence.
+name: sim-search-case-file
+description: SIMULATED. Baseline, but the case file is searched (top 4 sections) instead of handed over whole.
+assistant:
+  adapter: scripted       # the test double — results are NEVER evidence
+  profile: vendor-sim
+  params: {temperature: 0.0, top_p: 1.0, max_tokens: 1200, seed: 7, thinking: false}
+instructions: |
+  You are supporting a credit underwriter. Write a short, factual briefing on the
+  application in the case file.
+context:
+  documents: [application_form, bureau_summary, lending_policy]
+retrieval:
+  enabled: true
+  method: lexical
+  chunking: section
+  top_k: 4
+  query: >-
+    reason for referral: affordability, debt-to-income, income, existing commitments,
+    instalment, bureau score, missed payments, policy limits, human oversight
+corpus: {path: corpus, top_k: 2}
+repeats: 3

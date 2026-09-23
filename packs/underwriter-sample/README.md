@@ -1,26 +1,35 @@
 # underwriter-sample
 
-Twenty referred personal-loan applications with a known answer, built for the Week 1
-gate. This is what the assistant under test is given, and what it is marked against.
+60 referred personal-loan applications with a known answer — 32
+**tune** cases (for choosing a fix) and 28 **proof** cases (for proving it) —
+plus 17 **injected** variants carrying an instruction planted in the bureau
+summary. 77 items in all, generated from 2000 applications
+(84 referred).
+
+Each case has four documents: application form, bureau summary, lending policy, and the
+rules engine's **review triggers** (computed debt-to-income, reason codes). The settings
+file decides which of them the assistant is handed.
 
 ## What is here
 
 | File | What it is | Committed |
 |---|---|---|
-| `items.jsonl` | The 20 cases as the assistant receives them — rendered documents plus the marking key. **This is the pack.** | yes |
-| `referred_20.csv` | The same 20 as a table: observables, top driver, what a briefing must surface, decoys, archetype. | yes |
-| `applications_700.csv` | Every application SDD generated, before the scorecard ran. 19 columns. The hidden capacity tier is not in it. | yes |
-| `referred_cases_readable.md` | The 20 as plain documents with the marking key under each. For reading, not parsing. | yes |
-| `manifest.json` | Checksums, seed, spec hash, population counts. | yes |
+| `items.jsonl` | The cases as the assistant receives them, plus the marking key. **This is the pack.** | yes |
+| `cases.csv` | One row per case: split, difficulty, ratio, what a briefing must surface, the levers. | yes |
+| `manifest.json` | Checksums, seed, spec hash, population, splits. | yes |
 | `obligations.yaml` | Which EU AI Act articles this pack claims, at what level. | yes |
 | `answer_key.json` | Scores, margins, per-feature contributions. **Never travels with the items.** | no — gitignored |
-| `sdd_book.parquet` | The 700 as parquet. Regenerable from seed 7. | no — gitignored |
+| `sdd_book.parquet` | Every generated application. Regenerable from the seed. | no — gitignored |
+| `referred_20.csv`, `referred_cases_readable.md`, `applications_700.csv` | The earlier 20-case build (Week 1 deck). Not used by the engine. | yes |
 
-Rebuild everything with:
+Rebuild with:
 
 ```bash
-.venv/bin/python scripts/build_sample_pack.py --n 700 --keep 20 --seed 7
+.venv/bin/python scripts/build_sample_pack.py --n 2000 --keep 60 --seed 7
 ```
+
+The analysis below describes the earlier 700-application / 20-case build; the
+recipe is the same.
 
 ## How it was built
 

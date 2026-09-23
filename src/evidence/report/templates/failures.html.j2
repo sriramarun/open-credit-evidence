@@ -1,0 +1,24 @@
+{% extends "base.html.j2" %}
+{% block body %}
+<h1>Failure cards</h1>
+<p class="muted">One card per kind of failure, most frequent first, with a real example from this run. The cause comes from fixed rules applied to what the assistant was handed and what it wrote — no model is involved.</p>
+{% for c in cards %}
+<div class="card" id="{{ c.cause }}">
+<h3>{{ cause_label(c.cause) }}</h3>
+<div class="meta"><span><a class="n" href="records.html#cause-{{ c.cause }}">{{ c.results }}</a> failing results</span><span>{{ c["items"] }} cases</span><span>checks: {% for k in c.checks %}<code>{{ k }}</code> {% endfor %}</span><span class="pill o-{{ c.owner }}">{{ c.owner }} can act</span><span>lever: {{ c.lever }}</span></div>
+<p>{{ c.explanation }}</p>
+{{ agent_notes("cause:" ~ c.cause) }}
+<dl>
+<dt>Example</dt><dd><a href="records.html#t-{{ c.example.sha }}">{{ c.example.case }}</a>, repeat {{ c.example.repeat }}{% if c.example.variant != "complete" %} ({{ c.example.variant }}){% endif %}</dd>
+{% if c.example.missing %}<dt>What was missed</dt><dd><ul>{% for m in c.example.missing %}<li>{{ m }}</li>{% endfor %}</ul></dd>{% endif %}
+{% if c.example.sources %}<dt>Where it was in the file</dt><dd>{% for s in c.example.sources %}{{ s }}{% if not loop.last %}<span class="muted"> — or — </span>{% endif %}{% endfor %}</dd>{% endif %}
+{% if c.example.retrieved is not none %}<dt>What search returned</dt><dd>{% for s in c.example.retrieved %}<code>{{ s }}</code> {% else %}<span class="muted">search not used — the whole file was handed over</span>{% endfor %}</dd>{% endif %}
+{% if c.example.figures %}<dt>Figures not in the file</dt><dd>{% for f in c.example.figures %}<code>{{ f }}</code> {% endfor %}</dd>{% endif %}
+{% if c.example.decoys %}<dt>Field blamed</dt><dd>{% for f in c.example.decoys %}<code>{{ f }}</code> {% endfor %}</dd>{% endif %}
+<dt>What the assistant wrote</dt><dd><div class="quote">{{ c.example.output }}</div></dd>
+<dt>Why it matters</dt><dd>{{ c.why }}</dd>
+<dt>What to do</dt><dd><a href="recommendations.html#{{ c.cause }}">{{ c.recommendation }}</a></dd>
+</dl>
+</div>
+{% else %}<p>No failures in this run.</p>{% endfor %}
+{% endblock %}

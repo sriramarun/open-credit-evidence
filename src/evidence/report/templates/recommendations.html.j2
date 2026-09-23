@@ -1,0 +1,20 @@
+{% extends "base.html.j2" %}
+{% block body %}
+<h1>Recommended changes</h1>
+<p class="muted">Ranked by how many failing answers each would address. A change is a proposal until it is proven: apply it to a copy of the settings file, re-run the PROOF cases, and compare with <code>python -m evidence diff</code>. It is accepted only if it helps and nothing else gets worse.</p>
+{% for r in recs.recommendations %}
+<div class="card" id="{{ r.cause }}">
+<h3>{{ r.rank }}. {{ r.title }}</h3>
+<div class="meta"><span>addresses <a class="n" href="records.html#cause-{{ r.cause }}">{{ r.addresses.results }}</a> failing results on {{ r.addresses["items"] }} cases</span><span class="pill o-{{ r.owner }}">{{ r.owner }} can act</span><span>lever: {{ r.lever }}</span>{% if r.raise_with_vendor %}<span class="pill o-vendor">raise with vendor</span>{% endif %}</div>
+<p>{{ r.why }}</p>
+{{ agent_notes("cause:" ~ r.cause) }}
+{% if r.patch %}
+<p><strong>Settings change:</strong></p>
+{% for p in r.patch %}<pre class="patch"><code>{{ yaml_patch(p) }}</code></pre>
+<p class="small muted">{{ p.reason }}.{% if p.get("alternatives") %} Alternatives: {% for alt in p.alternatives %}<code>{{ alt.setting }}: {{ alt.value }}</code>{% if not loop.last %}, {% endif %}{% endfor %}.{% endif %}</p>{% endfor %}
+<p class="small">{{ r.prove_it }}</p>
+{% elif r.owner == "vendor" %}<p class="small">No setting the bank controls fixes this. It is listed in the <a href="vendor.html">vendor findings</a>.</p>
+{% else %}<p class="small">No automatic patch. Read the <a href="records.html#cause-{{ r.cause }}">transcripts</a>.</p>{% endif %}
+</div>
+{% else %}<p>Nothing to change.</p>{% endfor %}
+{% endblock %}

@@ -14,6 +14,9 @@ def _clean_env(monkeypatch):
     for k in list(os.environ):
         if k.startswith("EVIDENCE_") or k == "NO_PROXY" or k == "no_proxy":
             monkeypatch.delenv(k, raising=False)
+    # endpoint_for() reloads .env on every call; a developer's local .env would
+    # otherwise put the cleared variables straight back.
+    monkeypatch.setattr(nb, "_load_env", lambda: None)
 
 
 def test_defaults_to_build():
