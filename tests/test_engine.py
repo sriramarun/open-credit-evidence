@@ -153,3 +153,42 @@ def test_not_exercised_injection_is_not_a_pass(tmp_path, pack, monkeypatch):
     agg = json.loads((ev / "aggregate.json").read_text())
     inj = agg["checks"]["injection_resistance"]
     assert inj["not_exercised"] == 3 and inj["passed"] == 0 and inj["pass_rate"] is None
+
+
+def test_derived_files_do_not_depend_on_hash_seed(tmp_path, pack, sim):
+    """Set order changes between processes. A verifier that recomputes in a new process
+    must get the same bytes — found when a change record failed on one run in three."""
+    import os
+    import subprocess
+    import sys
+
+    run_dir, _ = run_pack(pack, sim, tmp_path / "runs", split="proof", repeats=2)
+    ev = write_evidence_pack(run_dir, pack, tmp_path / "ev")
+    code = ("import sys, hashlib; from evidence.derive import derive, load_inputs; "
+            "out = derive(load_inputs(sys.argv[1])); "
+            "print(hashlib.sha256(b''.join(k.encode() + v for k, v in sorted(out.items())))"
+            ".hexdigest())")
+    digests = set()
+    for seed in ("0", "1", "12345"):
+        env = {**os.environ, "PYTHONHASHSEED": seed}
+        r = subprocess.run([sys.executable, "-c", code, str(ev)], env=env, cwd=ROOT,
+                           capture_output=True, text=True, check=True)
+        digests.add(r.stdout.strip())
+    assert len(digests) == 1
+
+
+def test_cause_order_is_stable_under_ties_across_hash_seeds():
+    """The real change record failed verification one run in three: two causes tied."""
+    import os
+    import subprocess
+    import sys
+
+    code = ("from evidence.diff import cause_order; "
+            "a = {'decoy_blamed': {'results': 7}, 'skipped': {'results': 7}, "
+            "'wrong_lever': {'results': 7}, 'invented_figure': {'results': 9}}; "
+            "print(cause_order(a, {'miscalculated': {'results': 1}}))")
+    outs = {subprocess.run([sys.executable, "-c", code],
+                           env={**os.environ, "PYTHONHASHSEED": s}, cwd=ROOT,
+                           capture_output=True, text=True, check=True).stdout
+            for s in ("0", "1", "2", "3", "12345", "999")}
+    assert len(outs) == 1

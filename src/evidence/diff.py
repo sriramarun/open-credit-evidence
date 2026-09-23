@@ -71,6 +71,13 @@ def _interval(deltas: list[float]) -> tuple[float, float, float]:
     return mean, mean - half, mean + half
 
 
+def cause_order(before: dict[str, dict], after: dict[str, dict]) -> list[str]:
+    """Causes by how many failures they had before, most first; ties broken by name.
+    Set order varies between processes, and the verifier recomputes in a new one."""
+    return sorted(set(before) | set(after),
+                  key=lambda c: (-(before.get(c, {}).get("results", 0)), c))
+
+
 def _load(ev: Path) -> dict[str, Any]:
     return {
         "root": json.loads((ev / "CHECKSUMS.json").read_text())["root"],
@@ -134,7 +141,7 @@ def compare(before_dir: str | Path, after_dir: str | Path) -> dict[str, Any]:
 
     ca, cb = causes(a), causes(b)
     cause_rows = []
-    for cause in sorted(set(ca) | set(cb), key=lambda c: -(ca.get(c, {}).get("results", 0))):
+    for cause in cause_order(ca, cb):
         before = ca.get(cause, {}).get("results", 0)
         after = cb.get(cause, {}).get("results", 0)
         lever = (ca.get(cause) or cb.get(cause))["lever"]
