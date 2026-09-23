@@ -80,7 +80,9 @@ def numeric_fidelity(*, output: str, item: BenchmarkItem, **_: Any) -> CheckResu
     evidence: list[dict[str, Any]] = []
     bad: list[str] = []
     for raw, v in stated:
-        hit = next((d for d in doc_values if _close(v, d)), None)
+        # Closest match, ties to the smaller value: never depend on set iteration order.
+        hit = min((d for d in doc_values if _close(v, d)), key=lambda d: (abs(v - d), d),
+                  default=None)
         if hit is not None:
             evidence.append({"stated": raw, "value": v, "ok": True, "matched": "document",
                              "to": hit})
