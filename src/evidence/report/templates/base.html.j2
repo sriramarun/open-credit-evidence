@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} — {{ run.settings_name }}</title>
+<style>
+:root{--ink:#1c1f24;--muted:#5d6570;--line:#dfe3e8;--bg:#fbfbfa;--card:#fff;
+--go:#1d7a46;--go-bg:#e6f4ec;--cond:#8a5a00;--cond-bg:#fdf3dc;--no:#b3261e;--no-bg:#fbe9e7;
+--sim:#5b3fa6;--sim-bg:#efeafb;--link:#1f5fbf}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header{background:var(--card);border-bottom:1px solid var(--line);padding:14px 24px}
+header .run{color:var(--muted);font-size:13px}
+nav{display:flex;flex-wrap:wrap;gap:4px 18px;margin-top:8px;font-size:14px}
+nav a{color:var(--link);text-decoration:none}nav a.on{font-weight:600;color:var(--ink)}
+main{max-width:1000px;margin:0 auto;padding:24px}
+h1{font-size:24px;margin:0 0 4px}h2{font-size:18px;margin:28px 0 10px}h3{font-size:16px;margin:0 0 6px}
+p{margin:6px 0}.muted{color:var(--muted)}.small{font-size:13px}
+a{color:var(--link)}a.n{font-variant-numeric:tabular-nums;font-weight:600;text-decoration:none;border-bottom:1px dotted var(--link)}
+.banner{background:var(--sim-bg);color:var(--sim);border:1px solid #d6cbf3;border-radius:8px;padding:10px 14px;margin-bottom:18px;font-weight:600}
+.verdict{border-radius:10px;padding:16px 18px;margin:12px 0 18px;border:1px solid}
+.verdict .label{font-size:26px;font-weight:700;letter-spacing:.2px}
+.v-GO{background:var(--go-bg);color:var(--go);border-color:#bfe3cf}
+.v-COND{background:var(--cond-bg);color:var(--cond);border-color:#f1d9a3}
+.v-NO{background:var(--no-bg);color:var(--no);border-color:#f2c4bf}
+.v-SIM{background:var(--sim-bg);color:var(--sim);border-color:#d6cbf3}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f3f4f6;font-weight:600;font-size:13px;color:var(--muted)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.pill{display:inline-block;padding:1px 8px;border-radius:99px;font-size:12px;font-weight:600;white-space:nowrap}
+.s-go{background:var(--go-bg);color:var(--go)}.s-conditional{background:var(--cond-bg);color:var(--cond)}
+.s-no_go{background:var(--no-bg);color:var(--no)}.s-insufficient,.s-not_run{background:#eceef1;color:var(--muted)}
+.o-bank{background:#e8f0fc;color:#1f4f99}.o-vendor{background:var(--no-bg);color:var(--no)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:14px 0}
+.card .meta{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--muted);margin:4px 0 10px}
+.quote{background:#f6f7f9;border-left:3px solid #c9ced6;padding:8px 12px;margin:8px 0;font-size:14px;white-space:pre-wrap}
+dl{display:grid;grid-template-columns:minmax(150px,max-content) 1fr;gap:6px 16px;margin:8px 0}dt{color:var(--muted);font-size:13px}dd{margin:0}
+pre.patch{background:#0f1720;color:#e6edf3;border-radius:8px;padding:12px 14px;overflow-x:auto;font-size:13px;line-height:1.45}
+code{font:12.5px/1.4 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#f1f3f5;padding:1px 4px;border-radius:4px}
+pre.patch code{background:none;padding:0;color:inherit}
+ul{margin:6px 0;padding-left:20px}li{margin:3px 0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.stat .big{font-size:28px;font-weight:700;font-variant-numeric:tabular-nums}
+.agent{border:1px dashed #b9a7ea;background:#faf8ff;border-radius:8px;padding:8px 12px;margin:8px 0;font-size:14px}
+.agent .who{font-size:12px;color:var(--sim);font-weight:600}
+footer{max-width:1000px;margin:0 auto;padding:10px 24px 40px;color:var(--muted);font-size:12px}
+.scroll{overflow-x:auto}
+@media print{nav,header .run{display:none}body{background:#fff}.card,table{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header>
+  <div><strong>Credit Evidence Engine</strong> · evidence pack</div>
+  <div class="run">Run <code>{{ run.run_id }}</code> · settings <code>{{ run.settings_name }}</code> ({{ run.settings_sha256[:12] }}) · {{ agg.calls }} calls on {{ agg["items"] }} items{% if run.split %} ({{ run.split }} cases){% endif %} · finished {{ run.finished_at }}</div>
+  <nav>
+  {% for href, label in nav %}<a href="{{ href }}"{% if href == page %} class="on"{% endif %}>{{ label }}</a>{% endfor %}
+  </nav>
+</header>
+<main>
+{% if decision.simulated %}<div class="banner">Simulated assistant. These results come from the engine's built-in test double and are not evidence about any real assistant.</div>{% endif %}
+{% block body %}{% endblock %}
+</main>
+<footer>Every number on this page is computed from the transcripts in this evidence pack and links to the records it counts. <code>python -m evidence verify</code> recomputes all of them and names any that do not match.</footer>
+</body>
+</html>

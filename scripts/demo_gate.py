@@ -30,7 +30,8 @@ def _field(doc: str, label: str) -> str:
 
 def briefings(item: BenchmarkItem) -> tuple[str, str]:
     """Two briefings for this case, both entirely true."""
-    form, bureau = (c.content for c in item.context)
+    docs = {c.renderer: c.content for c in item.context}
+    form, bureau = docs["application_form"], docs["bureau_summary"]
     score = re.search(r"\*\*(\d+)\*\*", bureau).group(1)
     file_age = _field(bureau, "Credit file opened")
     delinq = _field(bureau, "Delinquencies, last 24 months")
@@ -70,6 +71,7 @@ def main() -> None:
     a = ap.parse_args()
 
     items = [BenchmarkItem.model_validate_json(line) for line in (PACK / "items.jsonl").open()]
+    items = [i for i in items if i.tags.get("variant") == "complete"]
     item = next((i for i in items if a.case and a.case in i.item_id), items[0])
     negative, good = briefings(item)
 

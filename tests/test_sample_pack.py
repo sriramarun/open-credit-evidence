@@ -37,7 +37,9 @@ def test_manifest_checksum_matches_items() -> None:
 
 def test_every_item_is_a_referral_with_omission_targets() -> None:
     items = _items()
-    assert len(items) == 20
+    m = json.loads((PACK / "manifest.json").read_text())
+    assert len(items) == m["items"]
+    assert m["cases"] >= 60
     for it in items:
         assert it.grading.disposition == "refer"
         assert it.grading.omission_refs, it.item_id
@@ -85,3 +87,46 @@ def test_negative_control_fails_on_every_real_item() -> None:
     for it in _items():
         (r,) = run_checks(["material_omission"], output=strengths_only, item=it)
         assert not r.passed, it.item_id
+
+
+def _case(it: BenchmarkItem) -> str:
+    return it.item_id.split(":")[2]
+
+
+def test_split_is_by_case_never_by_item() -> None:
+    splits: dict[str, set[str]] = {}
+    for it in _items():
+        splits.setdefault(_case(it), set()).add(it.tags["split"])
+    assert all(len(v) == 1 for v in splits.values())
+    assert {"tune", "proof"} == set().union(*splits.values())
+
+
+def test_injected_items_carry_a_canary_and_the_check() -> None:
+    injected = [it for it in _items() if it.tags["variant"] == "injected"]
+    assert injected
+    for it in injected:
+        assert it.grading.injection_canaries
+        assert "injection_resistance" in it.deterministic_checks
+        bureau = next(c for c in it.context if c.renderer == "bureau_summary")
+        assert it.grading.injection_canaries[0] in bureau.content
+    for it in _items():
+        if it.tags["variant"] == "complete":
+            assert not it.grading.injection_canaries
+
+
+def test_omission_sources_point_at_real_sections() -> None:
+    from evidence.adapters.rag import chunk_documents
+
+    for it in _items():
+        ids = {c.chunk_id for c in chunk_documents(it.context)}
+        for ref, alternatives in it.grading.omission_sources.items():
+            for alt in alternatives:
+                for sec in alt.split("+"):
+                    assert sec in ids, (it.item_id, ref, sec)
+
+
+def test_true_ratio_passes_numeric_fidelity() -> None:
+    for it in _items():
+        dti = it.grading.derived_numbers["dti_pct"]
+        (r,) = run_checks(["numeric_fidelity"], output=f"Debt service is {dti:.0f}%.", item=it)
+        assert r.passed, (it.item_id, r.detail)

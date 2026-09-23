@@ -1,0 +1,39 @@
+# Re-run validation whenever the vendor's assistant changes. Nightly, it compares
+# the assistant's fingerprint (model, endpoint, version label) with the last run;
+# if it changed, it runs the pack and diffs against the previous evidence. Exit 1
+# (a failed job) means the new version is worse — alert on it, and block the
+# vendor update in the deployment pipeline.
+#
+# Untested template: adjust to the bank's environment.
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: evidence-watch
+  labels: {app: credit-evidence-engine}
+spec:
+  schedule: "0 2 * * *"
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      backoffLimit: 0
+      template:
+        spec:
+          restartPolicy: Never
+          containers:
+            - name: engine
+              image: registry.bank.internal/credit-evidence-engine:0.1.0
+              args: ["watch", "--settings", "settings/baseline.yaml",
+                     "--version", "$(VENDOR_VERSION)",
+                     "--state", "/data/runs/watch_state.json",
+                     "--runs", "/data/runs", "--evidence", "/data/evidence"]
+              workingDir: /app
+              env:
+                - {name: EVIDENCE_ASSISTANT_BASE_URL, value: "http://assistant-nim:8000/v1"}
+                - {name: EVIDENCE_AUDIT_LOG, value: "/data/audit/audit_log.jsonl"}
+                - {name: EVIDENCE_ACTOR, value: "watch-cronjob"}
+                - name: VENDOR_VERSION
+                  valueFrom: {configMapKeyRef: {name: assistant-version, key: version}}
+              volumeMounts: [{name: data, mountPath: /data}]
+          volumes:
+            - name: data
+              persistentVolumeClaim: {claimName: evidence-data}

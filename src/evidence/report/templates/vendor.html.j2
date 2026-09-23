@@ -1,0 +1,14 @@
+{% extends "base.html.j2" %}
+{% block body %}
+<h1>Vendor findings</h1>
+<p class="muted">Failures the bank cannot fully fix through settings, for the vendor. Each lists cases the vendor can reproduce from this pack. A bank-side mitigation, where one exists, is listed too, so the vendor cannot answer "change your prompt" to a problem that is theirs.</p>
+<p class="small">Model under test: <code>{{ model_ids | join(', ') }}</code> · endpoint(s): <code>{{ endpoints | join(', ') }}</code></p>
+{% for f in vendor %}
+<div class="card"><h3>{{ f.title }}</h3>
+<div class="meta"><span><a class="n" href="records.html#cause-{{ f.cause }}">{{ f.results }}</a> failing results on {{ f["items"] }} cases</span></div>
+<p>{{ f.why }}</p>
+<dl><dt>Reproduce with</dt><dd>{% for c in f.cases %}<a href="records.html#t-{{ c.sha }}"><code>{{ c.case }}</code></a> {% endfor %}</dd>
+<dt>Bank-side mitigation</dt><dd>{% if f.mitigation %}{{ f.mitigation }}{% else %}None available through settings.{% endif %}</dd></dl>
+</div>
+{% else %}<p>No vendor-only findings in this run. Failures that persist after a proven bank-side change become vendor findings; see <code>evidence diff</code>.</p>{% endfor %}
+{% endblock %}

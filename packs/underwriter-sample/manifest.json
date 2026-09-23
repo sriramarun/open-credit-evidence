@@ -6,7 +6,7 @@
   "sdd": {
     "spec": "specs/credit_underwriting.yaml",
     "spec_sha256": "5a827b5de979bad9",
-    "generated": 700,
+    "generated": 2000,
     "seed": 7
   },
   "scorecard_version": "underwriter-scorecard-0.1.0",
@@ -15,16 +15,21 @@
     "reason": "output is a briefing, not an outcome prediction"
   },
   "population": {
-    "approve": 523,
-    "refer": 25,
-    "decline": 152
+    "approve": 1468,
+    "refer": 84,
+    "decline": 448
   },
-  "items": 20,
-  "cases": 20,
-  "items_sha256": "910ccb1b7c3012502dae9f25bb2744380cacaaa21d748794fe9c821d3dbaa699",
+  "items": 77,
+  "cases": 60,
+  "splits": {
+    "tune": 32,
+    "proof": 28
+  },
+  "injected_items": 17,
+  "items_sha256": "01d4c8bd0f13032ca23d431de6f3ed2faa0627c730c26c0d1341d780ca5bda02",
   "tasks": [
     "case_review"
   ],
   "obligations_file": "obligations.yaml",
-  "built_at": "2026-09-15T01:47:22+00:00"
+  "built_at": "2026-09-23T12:48:56+00:00"
 }

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Change record — {{ c.before.settings }} → {{ c.after.settings }}</title>
+<style>
+:root{--ink:#1c1f24;--muted:#5d6570;--line:#dfe3e8;--bg:#fbfbfa;--card:#fff;--go:#1d7a46;--go-bg:#e6f4ec;--cond:#8a5a00;--cond-bg:#fdf3dc;--no:#b3261e;--no-bg:#fbe9e7;--sim:#5b3fa6;--sim-bg:#efeafb;--link:#1f5fbf}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+main{max-width:1000px;margin:0 auto;padding:24px}h1{font-size:24px;margin:0 0 4px}h2{font-size:18px;margin:28px 0 10px}
+.muted{color:var(--muted)}.small{font-size:13px}a{color:var(--link)}
+.banner{background:var(--sim-bg);color:var(--sim);border:1px solid #d6cbf3;border-radius:8px;padding:10px 14px;margin-bottom:18px;font-weight:600}
+.warn{background:var(--cond-bg);color:var(--cond);border:1px solid #f1d9a3;border-radius:8px;padding:10px 14px;margin:8px 0}
+.verdict{border-radius:10px;padding:16px 18px;margin:12px 0 18px;border:1px solid}.verdict .label{font-size:26px;font-weight:700}
+.v-ACCEPT{background:var(--go-bg);color:var(--go);border-color:#bfe3cf}.v-REJECT{background:var(--no-bg);color:var(--no);border-color:#f2c4bf}.v-NO{background:#eceef1;color:var(--muted);border-color:var(--line)}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#f3f4f6;font-size:13px;color:var(--muted)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.pill{display:inline-block;padding:1px 8px;border-radius:99px;font-size:12px;font-weight:600}
+.s-improved{background:var(--go-bg);color:var(--go)}.s-regressed{background:var(--no-bg);color:var(--no)}.s-no_clear_change,.s-not_comparable{background:#eceef1;color:var(--muted)}
+pre{background:#0f1720;color:#e6edf3;border-radius:8px;padding:10px 12px;overflow-x:auto;font-size:13px;white-space:pre-wrap}
+code{font:12.5px/1.4 ui-monospace,Menlo,Consolas,monospace;background:#f1f3f5;padding:1px 4px;border-radius:4px}
+.scroll{overflow-x:auto}
+</style>
+</head>
+<body><main>
+{% if c.simulated %}<div class="banner">Simulated assistant. This comparison tests the engine; it is not evidence that the change works on a real assistant.</div>{% endif %}
+<h1>Change record</h1>
+<p class="muted"><a href="{{ links.before }}">{{ c.before.settings }}</a> ({{ c.before.split or 'all' }} cases) → <a href="{{ links.after }}">{{ c.after.settings }}</a> ({{ c.after.split or 'all' }} cases). Compared case by case.</p>
+{% for w in c.warnings %}<div class="warn">{{ w }}</div>{% endfor %}
+<div class="verdict {{ 'v-ACCEPT' if c.verdict == 'ACCEPT' else ('v-REJECT' if c.verdict == 'REJECT' else 'v-NO') }}"><div class="label">{{ c.verdict }}</div>
+<div class="small">Rule (bank-owned): accept if a check improves by at least {{ '%.0f' % (c.rule.min_gain * 100) }} points with the whole 95% interval above zero, and no check falls by more than {{ '%.0f' % (c.rule.max_regression * 100) }} points.</div></div>
+
+<h2>What changed in the settings</h2>
+{% if c.settings_changed %}<div class="scroll"><table><tr><th>Setting</th><th>Before</th><th>After</th></tr>
+{% for s in c.settings_changed %}<tr><td><code>{{ s.setting }}</code></td><td><pre>{{ s.before }}</pre></td><td><pre>{{ s.after }}</pre></td></tr>{% endfor %}
+</table></div>{% else %}<p>Nothing — the two runs used identical settings. Any difference is run-to-run variation.</p>{% endif %}
+
+<h2>What happened to each check</h2>
+<div class="scroll"><table>
+<tr><th>Check</th><th class="num">Cases</th><th class="num">Before</th><th class="num">After</th><th class="num">Change</th><th class="num">95% interval</th><th class="num">Helped</th><th class="num">Hurt</th><th class="num">Same</th><th>Status</th></tr>
+{% for r in c.checks %}{% if r.status == 'not_comparable' %}
+<tr><td><code>{{ r.check }}</code></td><td colspan="8" class="muted small">not exercised in both runs</td><td><span class="pill s-not_comparable">not comparable</span></td></tr>
+{% else %}
+<tr><td><code>{{ r.check }}</code></td><td class="num">{{ r.cases }}</td><td class="num">{{ '—' if r.before is none else '%.0f%%' % (r.before * 100) }}</td><td class="num">{{ '—' if r.after is none else '%.0f%%' % (r.after * 100) }}</td><td class="num">{{ '%+.0f' % (r.change * 100) }} pts</td><td class="num">{{ '%+.0f' % (r.interval[0] * 100) }} to {{ '%+.0f' % (r.interval[1] * 100) }}</td><td class="num">{{ r.helped }}</td><td class="num">{{ r.hurt }}</td><td class="num">{{ r.unchanged }}</td><td><span class="pill s-{{ r.status }}">{{ r.status | replace('_', ' ') }}</span></td></tr>
+{% endif %}{% endfor %}
+</table></div>
+
+<h2>Causes, before and after</h2>
+<div class="scroll"><table><tr><th>Cause</th><th>Lever</th><th class="num">Before</th><th class="num">After</th><th>Note</th></tr>
+{% for r in c.causes %}<tr><td>{{ r.cause | replace('_', ' ') }}</td><td>{{ r.lever }}</td><td class="num">{{ r.before }}</td><td class="num">{{ r.after }}</td><td class="small">{% if r.persists_after_targeting %}<strong>Persists after the bank changed this lever — raise with the vendor.</strong>{% elif r.new %}New after the change.{% elif r.after == 0 and r.before > 0 %}Gone.{% endif %}</td></tr>{% endfor %}
+</table></div>
+<p class="small muted">Before: pack root <code>{{ c.before.root[:16] }}</code> · After: pack root <code>{{ c.after.root[:16] }}</code>. <code>python -m evidence verify</code> on this folder re-checks both packs and recomputes this comparison.</p>
+</main></body></html>

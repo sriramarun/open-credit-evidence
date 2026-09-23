@@ -1,0 +1,21 @@
+# One change from baseline: also hand the assistant what the rules engine already
+# computed (the debt-to-income ratio and the reason codes), instead of making the
+# model do the arithmetic. A context lever the bank controls.
+name: sim-with-review-triggers
+description: SIMULATED. Baseline plus the rules engine's review triggers (computed ratio, reason codes).
+assistant:
+  adapter: scripted       # the test double — results are NEVER evidence
+  profile: vendor-sim
+  params: {temperature: 0.0, top_p: 1.0, max_tokens: 1200, seed: 7, thinking: false}
+instructions: |
+  You are supporting a credit underwriter. Write a short, factual briefing on the
+  application in the case file.
+context:
+  documents: [application_form, bureau_summary, lending_policy, referral_record]
+retrieval:
+  enabled: false           # hand over the whole case file
+  query: >-
+    reason for referral: affordability, debt-to-income, income, existing commitments,
+    instalment, bureau score, missed payments, policy limits, human oversight
+corpus: {path: corpus, top_k: 2}
+repeats: 3

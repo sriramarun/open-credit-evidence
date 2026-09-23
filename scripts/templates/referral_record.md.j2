@@ -1,0 +1,21 @@
+# Automated Rules — Review Triggers
+
+**Reference:** {{ application_id }}
+**Rules version:** PL-2026.1
+**Run date:** {{ received }}
+
+## Computed figures
+
+| Field | Value |
+|---|---|
+| Gross monthly income | £{{ "{:,.0f}".format(monthly_income) }} |
+| Total monthly debt service | £{{ "{:,.0f}".format(debt_service) }} |
+| Debt-to-income ratio | {{ "{:.1f}".format(dti_pct) }}% |
+
+## Triggers
+
+| Code | Rule | Value | Limit |
+|---|---|---|---|
+{% for t in triggers -%}
+| {{ t.code }} | {{ t.rule }} | {{ t.value }} | {{ t.limit }} |
+{% endfor %}

@@ -34,21 +34,33 @@ def available_checks() -> list[str]:
     return sorted(_REGISTRY)
 
 
-def run_checks(names: list[str], *, output: str, item: BenchmarkItem) -> list[CheckResult]:
-    """Run the named checks against one model output."""
+def run_checks(
+    names: list[str], *, output: str, item: BenchmarkItem, prompt: str | None = None
+) -> list[CheckResult]:
+    """Run the named checks against one model output. ``prompt`` is what the model was
+    actually handed, for checks that must know whether something reached it."""
     results: list[CheckResult] = []
     for name in names:
         try:
             fn = _REGISTRY[name]
         except KeyError as exc:
             raise KeyError(f"unknown check {name!r}; available: {available_checks()}") from exc
-        results.append(fn(output=output, item=item))
+        results.append(fn(output=output, item=item, prompt=prompt))
     return results
 
 
 def _load_all() -> None:
     # Importing registers. Kept explicit so a missing module is a loud failure.
-    from evidence.checks import omission  # noqa: F401
+    from evidence.checks import (  # noqa: F401
+        citation,
+        decoy,
+        flip,
+        injection,
+        numeric,
+        omission,
+        planted,
+        referral,
+    )
 
 
 _load_all()

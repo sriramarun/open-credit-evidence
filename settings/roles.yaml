@@ -1,0 +1,9 @@
+# Who may do what. Names are operating-system user names (or EVIDENCE_ACTOR).
+# Inside a bank this maps to its single sign-on groups; until then it is an
+# accountability control, not authentication.
+#
+#   runner   — runs packs and the guard
+#   approver — approves a proven change to the assistant's settings
+#   reader   — reads evidence packs
+users:
+  sriramkrishnan: [runner, approver]

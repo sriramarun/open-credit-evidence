@@ -1,0 +1,38 @@
+# One validation run: the case pack against the assistant, evidence pack written
+# to a persistent volume. Run it on demand or from the bank's deployment pipeline.
+#
+#   oc apply -f deploy/openshift/validation-job.yaml
+#
+# Untested template: adjust image, namespace, storage class and the assistant
+# endpoint (a NIM service inside the cluster) to the bank's environment.
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: evidence-validation
+  labels: {app: credit-evidence-engine}
+spec:
+  backoffLimit: 0
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: engine
+          image: registry.bank.internal/credit-evidence-engine:0.1.0
+          args: ["run", "--settings", "settings/baseline.yaml", "--split", "proof",
+                 "--evidence", "/data/evidence", "--runs", "/data/runs",
+                 "--attester", "$(ATTESTER)"]
+          env:
+            - {name: EVIDENCE_ASSISTANT_BASE_URL, value: "http://assistant-nim:8000/v1"}
+            - {name: EVIDENCE_ASSISTANT_MODEL, value: "vendor/assistant-model"}
+            - {name: EVIDENCE_AUDIT_LOG, value: "/data/audit/audit_log.jsonl"}
+            - {name: EVIDENCE_ACTOR, value: "validation-pipeline"}
+            - {name: ATTESTER, value: "Model Risk — Validation Team"}
+            - name: EVIDENCE_SEAL_KEY
+              valueFrom: {secretKeyRef: {name: evidence-seal, key: key}}
+          volumeMounts: [{name: data, mountPath: /data}]
+          resources:
+            requests: {cpu: "500m", memory: 512Mi}
+            limits: {cpu: "2", memory: 2Gi}
+      volumes:
+        - name: data
+          persistentVolumeClaim: {claimName: evidence-data}

@@ -140,4 +140,25 @@ def test_record_shape_is_engine_facing() -> None:
     assert s["judge"] == "check:material_omission"
     assert s["judge_trace_id"] is None
     assert set(s) == {"judge", "judge_trace_id", "value", "passed", "detail", "evidence",
-                      "needs_audit"}
+                      "needs_audit", "applicable"}
+
+
+def test_negated_verbatim_match_does_not_count() -> None:
+    """ "is not above the policy limit" contains an alias and states the opposite."""
+    text = "Debt service at 69 is fine. It is not above the policy limit of 40%."
+    item = ITEM.model_copy(deep=True)
+    # The fact is the breach, as the pack now phrases it.
+    item.grading.omission_labels["policy_limit_dti"] = "debt-to-income exceeds the 40% policy limit"
+    item.grading.omission_aliases["policy_limit_dti"] = ["above the policy limit"]
+    (r,) = run_checks(["material_omission"], output=text, item=item)
+    assert not r.passed, r.detail
+
+
+def test_figures_without_direction_do_not_match_a_directional_fact() -> None:
+    """ "within ... 40%" shares the figure with "exceeds the 40%" but not the direction."""
+    item = ITEM.model_copy(deep=True)
+    item.grading.omission_aliases["dti_ratio"] = []
+    text = "Debt-to-income is 69% of income and sits within the 40% policy limit."
+    (r,) = run_checks(["material_omission"], output=text, item=item)
+    ev = {e["ref"]: e for e in r.evidence}
+    assert not ev["dti_ratio"]["matched"], ev["dti_ratio"]

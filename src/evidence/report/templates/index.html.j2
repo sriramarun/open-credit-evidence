@@ -1,0 +1,19 @@
+{% extends "base.html.j2" %}
+{% block body %}
+<h1>Evidence pack</h1>
+<p class="muted">What the assistant got right and wrong on {{ agg["items"] }} constructed cases, what to change, and what this does not cover.</p>
+{% set v = decision.verdict %}
+<div class="verdict {{ vclass(decision) }}"><div class="label">{{ v }}</div>
+{% if decision.simulated %}<div>Against the thresholds it would be: <strong>{{ decision.would_be }}</strong></div>{% endif %}
+<div>First-attempt pass rate (every check passed): <a class="n" href="records.html#transcripts">{{ pct(agg.overall.pass_rate) }}</a> of {{ agg.overall.calls }} answers</div></div>
+<table>
+<tr><th>Read this</th><th>If you are</th><th>It tells you</th></tr>
+<tr><td><a href="decision.html">One-page decision</a></td><td>Model risk / risk committee</td><td>Go, go with conditions, or no-go — and why</td></tr>
+<tr><td><a href="failures.html">Failure cards</a></td><td>Business owner</td><td>What went wrong, with a real example of each kind</td></tr>
+<tr><td><a href="recommendations.html">Recommended changes</a></td><td>Business owner, IT</td><td>What to change, who can change it, and how to prove it worked</td></tr>
+<tr><td><a href="regulation.html">Regulation map</a></td><td>Compliance</td><td>Which obligations this evidences, partly covers, or does not touch</td></tr>
+<tr><td><a href="vendor.html">Vendor findings</a></td><td>Vendor manager</td><td>What only the vendor can fix, with cases they can reproduce</td></tr>
+<tr><td><a href="audit.html">Review queue</a></td><td>Reviewer</td><td>Matches a person should check, weakest first</td></tr>
+<tr><td><a href="records.html">Records</a></td><td>Auditor</td><td>Every answer and every check result</td></tr>
+</table>
+{% endblock %}

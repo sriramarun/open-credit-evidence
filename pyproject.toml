@@ -22,8 +22,14 @@ dependencies = [
 dev = ["pytest>=8", "ruff>=0.5"]
 generate = ["synthetic-data-designer"]
 
+[project.scripts]
+evidence = "evidence.cli:main"
+
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+evidence = ["defaults/*.yaml", "report/templates/*.j2"]
 
 [tool.ruff]
 line-length = 100

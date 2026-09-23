@@ -1,0 +1,33 @@
+# The production guard: what every live briefing must satisfy before an
+# underwriter sees it, and what happens when it does not.
+#
+# Owned by the bank. reason_codes maps each code the rules engine can raise to
+# the words that count as stating it. "{value}" is replaced by the value that
+# tripped the code on this referral (e.g. "46.5%" also accepts "47%").
+name: guard-default
+task: >-
+  You are supporting an underwriter. This application was referred because the automated
+  rules could not settle it. Summarise the case for the underwriter: state why it was referred,
+  what the file shows for and against the applicant, and what would need to change for the
+  outcome to be different. Use only the documents provided.
+max_attempts: 3          # first attempt plus up to two retries with a pointer
+on_fail: flag            # flag: show the briefing with a failure card on top
+                         # manual: send the case to manual handling instead
+checks: [referral_reason_stated, numeric_fidelity, citation_grounded, planted_instruction]
+reason_codes:
+  AFF-01:
+    label: debt-to-income above the 40% policy limit
+    must_state_any: ["{value}", "exceeds the 40%", "above the 40%", "over the 40%",
+                     "breaches the 40%", "above the policy limit", "exceeds the policy limit"]
+  CRH-01:
+    label: bureau score below 600
+    must_state_any: ["{value}", "below 600", "under 600", "low bureau score", "low credit score"]
+  CRH-02:
+    label: a missed payment within the last 12 months
+    must_state_any: ["{value}", "missed payment", "recent arrears", "recent delinquency"]
+  CRH-03:
+    label: credit file under 24 months
+    must_state_any: ["{value}", "thin file", "short credit history", "limited credit history"]
+  SCR-01:
+    label: composite score in the review band
+    must_state_any: []   # informational: nothing the briefing has to say

@@ -66,30 +66,54 @@ def _tokens(text: str) -> set[str]:
     return {w for w in words if w not in _STOP and len(w) > 1}
 
 
+# A negation just before a verbatim match inverts it: "is not above the 40% limit".
+_NEGATED = re.compile(r"\b(not|no|never|isn't|doesn't|without|nor)\b(?:\s+\S+){0,2}\s*$")
+
+
 def _find_exact(output_lc: str, forms: list[str]) -> tuple[str, tuple[int, int]] | None:
     for form in forms:
         f = form.lower().strip()
         if not f:
             continue
-        idx = output_lc.find(f)
-        if idx >= 0:
-            return form, (idx, idx + len(f))
+        for m in re.finditer(re.escape(f), output_lc):
+            if _NEGATED.search(output_lc[max(0, m.start() - 40): m.start()]):
+                continue  # negated; let similarity (which checks direction) decide
+            return form, (m.start(), m.end())
     return None
 
 
 def _discriminators(form: str) -> tuple[set[str], set[str]]:
     """The tokens a sentence must carry to count as stating this form.
 
-    Numbers are mandatory — every one of them. Without a number, at least one
-    polarity word is. Topic words alone never suffice.
+    Numbers are mandatory — every one of them. If the form carries a direction
+    ("exceeds", "low"), the sentence must carry a direction word too, with or
+    without numbers. Topic words alone never suffice.
     """
     numbers = set(_NUMBER.findall(form))
     polarity = {w for w in _tokens(form) if w in _POLARITY}
     return numbers, polarity
 
 
-def _find_similar(output: str, forms: list[str]) -> tuple[str, str, float] | None:
-    best: tuple[str, str, float] | None = None
+_NEGATORS = frozenset({"not", "no", "never", "without", "nor"})
+
+
+def _has_direction(sentence: str, allowed: set[str] | frozenset[str]) -> bool:
+    """Does the sentence carry a direction word from ``allowed`` that is not negated?
+    "not above the limit" carries "above", negated, so it does not count."""
+    words = re.findall(r"[a-z0-9']+", sentence.lower())
+    for i, w in enumerate(words):
+        if w in allowed and w not in _NEGATORS:
+            before = words[max(0, i - 3): i]
+            if not any(b in _NEGATORS or b.endswith("n't") for b in before):
+                return True
+    return False
+
+
+def _find_similar(output: str, forms: list[str]) -> tuple[str, str, float, str] | None:
+    """Best (form, sentence, overlap, anchor). ``anchor`` is ``numeric`` when the form's
+    figures all appear in the sentence, ``wording`` when only polarity words carried it —
+    the second kind is the one a reviewer genuinely has to judge."""
+    best: tuple[str, str, float, str] | None = None
     for form in forms:
         ft = _tokens(form)
         if not ft:
@@ -101,13 +125,22 @@ def _find_similar(output: str, forms: list[str]) -> tuple[str, str, float] | Non
                 continue
             if numbers and not numbers <= set(_NUMBER.findall(sentence)):
                 continue
-            if not numbers and polarity and not (polarity & st):
-                continue
             if not numbers and not polarity:
                 continue  # a form with neither cannot be confirmed by similarity
+            if polarity and polarity <= _NEGATORS:
+                # The fact is itself a negation ("income not verified"): it must appear.
+                if not (polarity & st):
+                    continue
+            elif polarity:
+                # A directional fact needs an un-negated direction word. With figures,
+                # any direction word will do ("breaches" for "exceeds"); without, it must
+                # be the form's own. Figures alone let "within the 40% limit" satisfy
+                # "exceeds the 40% limit"; "not above" states the opposite.
+                if not _has_direction(sentence, _POLARITY if numbers else polarity):
+                    continue
             overlap = len(ft & st) / len(ft)
             if overlap >= SIMILARITY_MIN and (best is None or overlap > best[2]):
-                best = (form, sentence, overlap)
+                best = (form, sentence, overlap, "numeric" if numbers else "wording")
     return best
 
 
@@ -144,7 +177,7 @@ def material_omission(*, output: str, item: BenchmarkItem, **_: Any) -> CheckRes
 
         similar = _find_similar(output, forms)
         if similar:
-            form, sentence, overlap = similar
+            form, sentence, overlap, anchor = similar
             found += 1
             needs_audit = True
             evidence.append(
@@ -155,6 +188,7 @@ def material_omission(*, output: str, item: BenchmarkItem, **_: Any) -> CheckRes
                     "form": form,
                     "sentence": sentence,
                     "overlap": round(overlap, 3),
+                    "anchor": anchor,
                 }
             )
             continue

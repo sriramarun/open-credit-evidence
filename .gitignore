@@ -13,3 +13,8 @@ __pycache__/
 .env
 /docs/deck/slides_3_5.pdf
 /docs/deck/assets/*.jp2
+/runs/
+/evidence/
+/changes/
+/guard/
+/audit/

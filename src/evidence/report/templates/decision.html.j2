@@ -1,0 +1,32 @@
+{% extends "base.html.j2" %}
+{% block body %}
+<h1>One-page decision</h1>
+<p class="muted">Judged against the thresholds in <code>thresholds.yaml</code>, which belong to the bank's model risk team.</p>
+<div class="verdict {{ vclass(decision) }}"><div class="label">{{ decision.verdict }}</div>
+{% if decision.simulated %}<div>Against the thresholds it would be: <strong>{{ decision.would_be }}</strong></div>{% endif %}
+<div>First-attempt pass rate: <a class="n" href="records.html#transcripts">{{ pct(decision.first_attempt_pass_rate) }}</a> of answers passed every check with no retry.</div></div>
+
+<h2>Check by check</h2>
+<div class="scroll"><table>
+<tr><th>Check</th><th>What a failure means</th><th class="num">Pass rate</th><th class="num">Failed</th><th class="num">GO at</th><th>Status</th></tr>
+{% for r in decision.checks %}
+<tr><td><code>{{ r.check }}</code></td><td class="small">{{ r.meaning }}</td>
+<td class="num">{% if r.get("pass_rate") is not none %}<a class="n" href="records.html#check-{{ r.check }}">{{ pct(r.pass_rate) }}</a>{% else %}—{% endif %}</td>
+<td class="num">{% if r.failed is defined %}<a class="n" href="records.html#fail-{{ r.check }}">{{ r.failed }}</a>{% if r.not_exercised %}<div class="small muted">{{ r.not_exercised }} not exercised</div>{% endif %}{% else %}—{% endif %}</td>
+<td class="num">{{ pct(r.go) }}</td><td><span class="pill s-{{ r.status }}">{{ status_label(r.status) }}</span></td></tr>
+{% endfor %}
+</table></div>
+
+{% if decision.conditions %}<h2>Conditions</h2><ul>{% for c in decision.conditions %}<li>{{ c }}</li>{% endfor %}</ul>{% endif %}
+
+<h2>Top risks</h2>
+{% if decision.risks %}<ol>{% for r in decision.risks %}
+<li><strong>{{ cause_label(r.cause) }}</strong> — <a class="n" href="records.html#cause-{{ r.cause }}">{{ r.results }}</a> failing results on {{ r["items"] }} cases. {{ r.explanation }} <span class="pill o-{{ r.owner }}">{{ r.owner }} can act</span> <a href="failures.html#{{ r.cause }}">See the card</a></li>
+{% endfor %}</ol>{% else %}<p>No failures.</p>{% endif %}
+
+<h2>Still to review by a person</h2>
+<p><a class="n" href="audit.html">{{ decision.needs_audit.total }}</a> facts were credited on similar wording rather than exact wording; <a class="n" href="audit.html">{{ decision.needs_audit.wording_only }}</a> of them rest on wording alone, with no figures to anchor them. These are listed weakest first.</p>
+
+<h2>What this does not test</h2>
+<ul>{% for n in decision.not_tested %}<li>{{ n.what }}{% if n.why %} — <span class="muted">{{ n.why }}</span>{% endif %}</li>{% endfor %}</ul>
+{% endblock %}
